@@ -8,10 +8,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "next": "^12.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-lazy-load-image-component": "^1.5.1"
   },
   "devDependencies": {
     "eslint": "7.32.0",
