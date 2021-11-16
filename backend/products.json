@@ -1,0 +1,2992 @@
+[
+    {
+        "id": "0208821d-fe14-4bc0-b6c5-033419301738",
+        "name": "יין טנא - קברנה סוביניון 2019",
+        "minAmount": "1",
+        "availability": true,
+        "category": 5,
+        "unitType": "יחידה",
+        "price": "65"
+    },
+    {
+        "unitType": "יחידה",
+        "availability": true,
+        "minAmount": "1",
+        "name": "חמציץ (מארז 200 גר')",
+        "id": "021f25e3-aaf9-4f4e-8769-21d115829b79",
+        "price": "18",
+        "category": 4
+    },
+    {
+        "minAmount": "1",
+        "price": "6",
+        "availability": true,
+        "category": 4,
+        "id": "02357c36-332e-4e82-a3bc-de0528d0293c",
+        "unitType": "יחידה",
+        "name": "רשד\\שיבה (צרור)"
+    },
+    {
+        "category": 4,
+        "availability": true,
+        "id": "0267b34a-f911-4047-ba50-38453feff136",
+        "minAmount": "1",
+        "name": "מלוחייה (מארז 200 גר')",
+        "price": "11",
+        "unitType": "יחידה"
+    },
+    {
+        "name": "חמוציות מסוכרות (קופסא 200 גר')",
+        "id": "034596bc-2a24-436b-90f7-57c0f2e20ac0",
+        "price": "14",
+        "category": 6,
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "יחידה"
+    },
+    {
+        "name": "ריבת קיווי איכותית (בוסטן 350 גר')",
+        "category": 5,
+        "availability": true,
+        "id": "034d9604-4117-4ba2-baa3-9c9e0e690e22",
+        "unitType": "יחידה",
+        "price": "35",
+        "minAmount": "1"
+    },
+    {
+        "category": 6,
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "price": "15",
+        "name": "הל (100 גר')",
+        "id": "05447ba7-6d5d-46d4-944a-5f31378d2bd5",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "id": "06e5857d-89e3-4f14-9592-67da2d973557",
+        "availability": true,
+        "unitType": "יחידה",
+        "category": 5,
+        "name": "דבש - הדרים (למדני 1 ק\"ג)",
+        "price": "50"
+    },
+    {
+        "availability": true,
+        "name": "גוג'י ברי (פרג)",
+        "id": "07843f75-fa60-47e0-a4d4-a36a92fbd2c5",
+        "price": "45",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "name": "בצל פנינה",
+        "category": 1,
+        "unitType": "קג",
+        "minAmount": "1",
+        "price": "15",
+        "id": "08f21b97-788e-4a54-8153-6a7eddbb4e8a",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "category": 1,
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "0a3eba14-c9da-4497-ade1-7ddfd2863ea8",
+        "price": "18",
+        "name": "גרגיר נחלים (מארז)"
+    },
+    {
+        "availability": true,
+        "name": "תפוח אגס נאשי",
+        "id": "0aa06d30-a3f6-4e7a-bc09-94481cebc449",
+        "price": "17",
+        "category": 1,
+        "minAmount": "1",
+        "unitType": "קג"
+    },
+    {
+        "name": "ממרח עגבניות מיובשות איכותי (משק אחיה 200 גר')",
+        "availability": true,
+        "id": "0bfc0e4f-0676-4e80-87e6-d5c3b38278d5",
+        "unitType": "יחידה",
+        "price": "30",
+        "minAmount": "1"
+    },
+    {
+        "unitType": "יחידה",
+        "price": "65",
+        "id": "0c7ab7c8-fd9c-4c6b-884e-00ec1071b58d",
+        "availability": true,
+        "minAmount": "1",
+        "name": "יין טנא - שיראז 2017"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "id": "0cf985f6-faf0-419c-9e4c-5b6bae6b095f",
+        "price": "35",
+        "name": "מלון קפוא (שקית 400 גר')",
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "price": "10",
+        "id": "0fa9e285-1e15-40c1-9eef-803982bf5487",
+        "category": 1,
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "מלפפון בייבי (מארז 200 גר')"
+    },
+    {
+        "price": "60",
+        "name": "אננס ישראלי (2 יח)",
+        "minAmount": "1",
+        "id": "10859fef-e4e3-4955-ba20-5646e0e90868",
+        "unitType": "יחידה",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "category": 1,
+        "availability": true,
+        "unitType": "קג",
+        "price": "15",
+        "name": "תפוח אדמה אגריה (הולנדי)",
+        "minAmount": "1",
+        "id": "10bb89e0-900f-4ed8-8e5c-d84294b8c9e0"
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "פטרוזליה (שקית 200 גר')",
+        "price": "6",
+        "category": 1,
+        "id": "10d9d028-d371-4b52-88eb-c42c01d1c99a",
+        "availability": true
+    },
+    {
+        "id": "10e94b06-8fc4-4410-866b-9d3d87e5c51c",
+        "minAmount": "1",
+        "unitType": "קג",
+        "price": "15",
+        "category": 1,
+        "name": "חציל תאילנדי לבן",
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "16",
+        "id": "114b6b72-35de-4267-aabc-7cbb68cd7192",
+        "availability": true,
+        "category": 1,
+        "name": "חמוציות ללא סוכר (קופסא 200 גר')"
+    },
+    {
+        "availability": true,
+        "price": "65",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "שמן זית כתית מעולה - סורי (1 ליטר)",
+        "id": "1198f91f-b720-440c-a81a-38eba420758c"
+    },
+    {
+        "unitType": "יחידה",
+        "name": "פלפל צ'ילי מיקס (מארז 200 גר')",
+        "price": "12",
+        "minAmount": "1",
+        "availability": true,
+        "category": 1,
+        "id": "1324b4ed-bd77-4c62-9fd3-41136eb55461"
+    },
+    {
+        "unitType": "יחידה",
+        "category": 1,
+        "id": "137abf91-dc3e-44c9-8860-1c434bea805c",
+        "name": "קייל (מארז)",
+        "availability": true,
+        "minAmount": "1",
+        "price": "12"
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "price": "22",
+        "id": "143beca4-1bd4-4695-8bee-cdd46f9f02bc",
+        "category": 1,
+        "name": "אגוזי ברזיל (קופסא 200 גר')",
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "price": "65",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "154adda6-e962-471b-879a-a3759d8475c4",
+        "name": "יין טנא - גוורצטרמינר 2020"
+    },
+    {
+        "category": 3,
+        "availability": true,
+        "minAmount": "1",
+        "price": "33",
+        "name": "ביצים - ביצי חופש - חלמון כתום (תבנית 12 יח')",
+        "unitType": "יחידה",
+        "id": "1654fce1-3860-4d90-bff6-eed627d57f4c"
+    },
+    {
+        "price": "7",
+        "name": "חציל חממה",
+        "availability": true,
+        "id": "16b78275-32f0-4df3-aba9-965bb88504e1",
+        "category": 1,
+        "minAmount": "1",
+        "unitType": "קג"
+    },
+    {
+        "availability": true,
+        "name": "אוכמניות (קופסא 125 גר') יבוא מדרום אמריקה- מינימום 6",
+        "category": 1,
+        "unitType": "יחידה",
+        "minAmount": "6",
+        "price": "11.66",
+        "id": "17bb33a6-ca34-44dd-a67f-39e4149f81ac"
+    },
+    {
+        "id": "18bfcca6-db72-4849-928b-d7933e0f5a7d",
+        "minAmount": "1",
+        "name": "שורש פטרוזליה 1 ראש",
+        "availability": true,
+        "price": "6",
+        "unitType": "יחידה",
+        "category": 1
+    },
+    {
+        "price": "10",
+        "category": 1,
+        "unitType": "יחידה",
+        "id": "18cb95f8-ca64-4186-a9eb-c0fddbe58a17",
+        "availability": true,
+        "name": "גזר (שק 1 ק\"ג)",
+        "minAmount": "1"
+    },
+    {
+        "name": "בוטנים קלוי (קופסא 200 גר')",
+        "price": "17",
+        "availability": true,
+        "category": 1,
+        "unitType": "יחידה",
+        "id": "18d14b89-2b64-4410-880a-e9cf23511706",
+        "minAmount": "1"
+    },
+    {
+        "unitType": "יחידה",
+        "price": "18",
+        "minAmount": "1",
+        "name": "חסה סלנובה (500 גר')",
+        "availability": true,
+        "category": 1,
+        "id": "1913c9c1-1182-4f8d-9e40-5b62ce9e6cb6"
+    },
+    {
+        "id": "1b6ff9b6-c94d-41de-b3d8-7b068a42e69a",
+        "name": "תפוז דם",
+        "availability": true,
+        "category": 1,
+        "price": "15",
+        "minAmount": "1",
+        "unitType": "קג"
+    },
+    {
+        "price": "6",
+        "name": "כרוב לבן",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "1c46d0fe-7aa1-4568-b8b1-0b33f26847d1",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "price": "40",
+        "name": "תמר קפוא (שקית 400 גר')",
+        "unitType": "יחידה",
+        "availability": true,
+        "minAmount": "1",
+        "id": "1c583cc6-7bd0-46e6-84d1-ed97f8bf2123"
+    },
+    {
+        "price": "15",
+        "minAmount": "1",
+        "id": "20477e7e-1e28-4875-b480-ea23ecaf6cbb",
+        "unitType": "יחידה",
+        "name": "קצח (100 גר')",
+        "availability": true
+    },
+    {
+        "price": "10",
+        "unitType": "יחידה",
+        "id": "21c2e142-0076-40b4-ad90-33f36a725703",
+        "name": "נבטים סיניים (מארז)",
+        "category": 1,
+        "availability": true,
+        "minAmount": "1"
+    },
+    {
+        "id": "21d98f6d-1df9-4fbf-92ca-3188e53870e5",
+        "minAmount": "1",
+        "name": "כורכום (100 גר')",
+        "price": "15",
+        "unitType": "יחידה",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "name": "גריסונים מכוסמין מלא חריף (אופה)",
+        "id": "21ef8a61-5885-4f48-90c3-2a6f76d8052d",
+        "price": "40"
+    },
+    {
+        "unitType": "יחידה",
+        "price": "45",
+        "id": "23162f21-adfc-4d7f-99d5-fe4d571b0eb6",
+        "name": "פירות יער קפואים (שקית 400 גר')",
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "category": 1,
+        "id": "234e6337-6cd8-4d87-a5a9-a61771a519e6",
+        "name": "צימוק ענק בהיר (קופסא 200 גר')",
+        "price": "22",
+        "unitType": "יחידה",
+        "availability": true
+    },
+    {
+        "id": "2491d556-fcd3-4fcc-986e-cbd0251cc94e",
+        "availability": true,
+        "unitType": "קג",
+        "price": "10",
+        "minAmount": "3",
+        "category": 1,
+        "name": "מנגו קיט"
+    },
+    {
+        "unitType": "יחידה",
+        "category": 1,
+        "availability": true,
+        "minAmount": "1",
+        "price": "20",
+        "id": "24eb1bab-985e-481b-8049-012e8019f11f",
+        "name": "עגבניות מגי (1.2 ק\"ג במארז)"
+    },
+    {
+        "minAmount": "1",
+        "name": "צימוק ענק כהה (קופסא 200 גר')",
+        "price": "22",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "2679e984-bad6-4e1d-8600-a2a36acdc2cc",
+        "category": 1
+    },
+    {
+        "availability": true,
+        "name": "ארטישוק ירושלמי ",
+        "id": "26c757d7-3998-4a5a-9fad-9216b4ad028f",
+        "category": 1,
+        "price": "25",
+        "minAmount": "1",
+        "unitType": "קג"
+    },
+    {
+        "availability": true,
+        "price": "25",
+        "name": "קוקוס תאילנדי לשתייה",
+        "unitType": "יחידה",
+        "id": "2784d537-39ba-40aa-94b3-95d11d62bd1b",
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "price": "15",
+        "name": "זעתר (100 גר')",
+        "availability": true,
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "290bb517-f614-46bf-b166-dbcfea162778"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "name": "תבלין חילבה (100 גר')",
+        "id": "293f1edb-1850-4327-9463-de9f10c13209",
+        "unitType": "יחידה",
+        "price": "15"
+    },
+    {
+        "id": "29683f9b-5d2f-4af8-8645-d7caa8331dd2",
+        "price": "11",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "category": 1,
+        "availability": true,
+        "name": "לואיזה (מארז 200 גר')"
+    },
+    {
+        "price": "10",
+        "availability": true,
+        "id": "2af70092-c41e-426d-b839-31caecf50691",
+        "category": 1,
+        "unitType": "יחידה",
+        "name": "אוכמניות (קופסא 125 גר') יבוא מדרום אמריקה מינימום 12",
+        "minAmount": "12"
+    },
+    {
+        "minAmount": "1",
+        "price": "17",
+        "availability": true,
+        "unitType": "יחידה",
+        "category": 1,
+        "name": "גרעיני מלון (קופסא 200 גר')",
+        "id": "2b0fe48a-2b95-475d-a0f0-71ac623b7c10"
+    },
+    {
+        "unitType": "יחידה",
+        "price": "30",
+        "name": "צפתית רכה \"עיזים\" - 1 ק\"ג (מחלבת נחלים)",
+        "availability": true,
+        "id": "2cc89260-5f1d-4370-9b83-9c8b3f8137a4",
+        "minAmount": "1"
+    },
+    {
+        "unitType": "יחידה",
+        "id": "2ef356f3-d6b2-4b54-9dc0-6c31db6dfb5e",
+        "minAmount": "1",
+        "name": "ממרח זעתר מדברי בשמן זית איכותי (משק אחיה 200 גר')",
+        "price": "30",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "price": "220",
+        "availability": true,
+        "id": "2fd95df9-3cea-4b4c-8331-4e3c7e7e141f",
+        "name": "שמן זית כתית מעולה - סורי (5 ליטר)",
+        "unitType": "יחידה"
+    },
+    {
+        "id": "30b20b79-5ff5-49b3-a77b-91c0dcad9a6e",
+        "name": "אננס מיובש ללא סוכר (קופסא 200 גר')",
+        "category": 1,
+        "availability": true,
+        "price": "22",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "category": 1,
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "31332e46-2189-4c9c-9791-1f87a6dba5b6",
+        "price": "18",
+        "name": "גרעיני אבטיח (קופסא 200 גר')"
+    },
+    {
+        "availability": true,
+        "id": "31ee339f-210e-4ba6-98cb-78100588cf00",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "category": 1,
+        "name": "דלעת יפנית",
+        "price": "15"
+    },
+    {
+        "category": 1,
+        "minAmount": "1",
+        "price": "11",
+        "id": "32ecb4a1-b7a0-4b74-9b12-668070eaae84",
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "טרגון (מארז 200 גר')"
+    },
+    {
+        "minAmount": "1",
+        "name": "אנונה (2-3 יח')",
+        "availability": true,
+        "unitType": "קג",
+        "price": "30",
+        "id": "33c9f539-4389-4afd-a7d6-969ad2d95e9f",
+        "category": 1
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "354e3a6f-da18-4a11-b868-f099ae0553e0",
+        "price": "16",
+        "availability": true,
+        "name": "מלון ספרדי ירוק",
+        "category": 1
+    },
+    {
+        "price": "30",
+        "name": "סנטמור עיזים - 100 גר' (מחלבת נחלים)",
+        "id": "36a6453c-3b9e-4691-831d-39f4f37c3a61",
+        "availability": true,
+        "unitType": "יחידה",
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "price": "18",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "36f2532b-561c-43e5-89ba-76277d0db50b",
+        "category": 1,
+        "name": "דלעת לבנה"
+    },
+    {
+        "id": "37503d02-7051-46d5-8478-39a166f82df6",
+        "price": "30",
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "name": "טפנד זיתים ירוקים איכותי (משק אחיה 200 גר')"
+    },
+    {
+        "name": "מיקס לחמין",
+        "availability": true,
+        "minAmount": "1",
+        "price": "13",
+        "category": 1,
+        "unitType": "יחידה",
+        "id": "3a6a8f2e-b7fd-47af-be7a-fb8f59eadf86"
+    },
+    {
+        "id": "3a9c95a9-0eec-4daa-8703-0b5ca11f5457",
+        "name": "אננס ישראלי (4 יח)",
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "price": "90",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "name": "ארטישוק",
+        "unitType": "קג",
+        "price": "35",
+        "id": "3ab3071f-b7b6-49a1-b54b-a88a6a8551a3",
+        "availability": true,
+        "category": 1
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "name": "תבלין חומוס גוהדי (100 גר')",
+        "unitType": "יחידה",
+        "id": "3b5fa21b-88a1-4a2e-b2f7-82c77bbe0208",
+        "price": "15"
+    },
+    {
+        "id": "3c560bbb-11b3-4777-aa1f-31b7211e0796",
+        "unitType": "יחידה",
+        "category": 1,
+        "name": "אוכמניות (קופסא 125 גר') יבוא מדרום אמריקה מינימום 3 ",
+        "minAmount": "3",
+        "availability": true,
+        "price": "17"
+    },
+    {
+        "id": "3d00a9e8-0943-4e8a-9150-c76670cf6227",
+        "unitType": "קג",
+        "name": "פומלית אדומה במבצע",
+        "price": "12",
+        "minAmount": "1",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "name": "תמר מג'הול",
+        "availability": true,
+        "category": 1,
+        "price": "40",
+        "minAmount": "1",
+        "id": "3d03728c-03c2-4159-a000-6b446ec16b0e",
+        "unitType": "קג"
+    },
+    {
+        "price": "20",
+        "id": "3d06d09a-76a3-4f01-a8ef-e90264ea327c",
+        "minAmount": "1",
+        "category": 1,
+        "availability": true,
+        "name": "פפאיה (1 קג')",
+        "unitType": "יחידה"
+    },
+    {
+        "unitType": "יחידה",
+        "name": "נענע (שקית)",
+        "minAmount": "1",
+        "category": 1,
+        "availability": true,
+        "price": "6",
+        "id": "3d5269e6-eadc-47e0-8684-2d9b6c188e6c"
+    },
+    {
+        "category": 1,
+        "minAmount": "1",
+        "name": "אגוזי מלך (קופסא 200 גר')",
+        "id": "3f6960de-4695-4a1c-86bf-d7f5b139157e",
+        "availability": true,
+        "unitType": "יחידה",
+        "price": "18"
+    },
+    {
+        "unitType": "קג",
+        "minAmount": "1",
+        "name": "ענב אדום קרימסון (ללא גלעינים)",
+        "id": "3f966daf-9782-4e50-8542-488a78b6edc1",
+        "category": 1,
+        "availability": true,
+        "price": "30"
+    },
+    {
+        "unitType": "יחידה",
+        "id": "3fa18ca6-7449-4534-96bc-58e787ef544c",
+        "price": "6",
+        "name": "כוסברה (שקית 200 גר')",
+        "category": 1,
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "id": "3fa66b92-fb8b-4048-88cb-a88a7f2d2196",
+        "unitType": "קג",
+        "price": "20",
+        "availability": true,
+        "name": "אפרסק",
+        "category": 1
+    },
+    {
+        "id": "3fcc578f-78da-4d1d-8a49-6f3f8c15c442",
+        "name": "ג'ינג'ר",
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "קג",
+        "category": 1,
+        "price": "40"
+    },
+    {
+        "minAmount": "1",
+        "id": "40c2c0e6-5ea2-411c-8ac2-05ed897a9d18",
+        "name": "פיסטוק קלוי (קופסא 200 גר')",
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "22"
+    },
+    {
+        "availability": true,
+        "id": "40d2f7c5-ea7c-49ba-9212-48bcfd9c46f8",
+        "name": "פטאיה",
+        "price": "15",
+        "minAmount": "1",
+        "category": 1,
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "id": "4157fb84-b614-4b02-81d1-4c5ba845efd0",
+        "unitType": "יחידה",
+        "name": "פטל אדום (קופסא 140 גר')",
+        "price": "35",
+        "availability": true,
+        "category": 1
+    },
+    {
+        "name": "חסה רומית",
+        "category": 1,
+        "minAmount": "1",
+        "id": "419f8557-9a33-46ed-9a34-6ec8d6c768ae",
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "13"
+    },
+    {
+        "minAmount": "1",
+        "id": "427099ae-5833-469d-ae59-613eb256938a",
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "פטה כבשים - 400 גר' (מחלבת נחלים)",
+        "price": "40"
+    },
+    {
+        "name": "דלעת ערמונים",
+        "id": "437efd01-675d-4eaf-b168-28b399086f18",
+        "category": 1,
+        "availability": true,
+        "price": "16",
+        "unitType": "קג",
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "name": "פקאן סיני מסוכר (קופסא 200 גר')",
+        "unitType": "יחידה",
+        "price": "24",
+        "id": "44557a16-9ae5-480e-a51c-309621a311af",
+        "category": 1
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "name": "קארי (100 גר')",
+        "id": "4606ccdf-c323-4b79-94e8-3de83d2b5819",
+        "price": "15",
+        "unitType": "יחידה"
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "דלעת חתיכה(350-400 גר') משק אריאל",
+        "id": "466d55fc-aa20-4fab-91d4-32c2583933b8",
+        "price": "15",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "price": "40",
+        "unitType": "יחידה",
+        "name": "גרנולה חלווה תמרים ושקדים (פרג)",
+        "id": "4691354f-4a64-4bc9-925e-471e03d9dce5"
+    },
+    {
+        "name": "חוויג' (100 גר')",
+        "id": "49014c9e-82d7-4e70-9d17-65181f0c7718",
+        "unitType": "יחידה",
+        "price": "15",
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "category": 1,
+        "availability": true,
+        "price": "30",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "49a6bfe8-6699-4f0f-bd3f-0c103e9f0166",
+        "name": "שום שחור (150 גר')"
+    },
+    {
+        "id": "4cf8394a-21de-4ddd-806d-8dcd5085d0b3",
+        "category": 1,
+        "availability": true,
+        "name": "אשכולית אדומה במבצע",
+        "minAmount": "1",
+        "price": "12",
+        "unitType": "קג"
+    },
+    {
+        "minAmount": "1",
+        "price": "20",
+        "unitType": "יחידה",
+        "category": 1,
+        "id": "4e88d559-30b7-4b6a-94e3-ec41c4f36821",
+        "availability": true,
+        "name": "בצל שאלוט (מארז 250 גר')"
+    },
+    {
+        "price": "10",
+        "category": 1,
+        "minAmount": "1",
+        "id": "4fb074a1-3654-4f55-97d5-df95f7f932b1",
+        "unitType": "קג",
+        "availability": true,
+        "name": "צנון"
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "4fccd254-70d7-4c01-ba11-9d8f8cc7b3e4",
+        "category": 1,
+        "name": "חסה ערבית ",
+        "price": "9",
+        "availability": true
+    },
+    {
+        "name": "חסה עגולה אייסברג ",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "5050ee8b-35a6-47fe-9e5f-fae9e2974c25",
+        "availability": true,
+        "category": 1,
+        "price": "10"
+    },
+    {
+        "name": "כוסברה עלים (100 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "533c4c31-96b4-4a40-8e0d-7f3d8a24b3e0",
+        "availability": true,
+        "price": "15"
+    },
+    {
+        "availability": true,
+        "name": "שום ישראלי",
+        "category": 1,
+        "id": "5417b967-bef5-4ee2-b963-efb5f0589d45",
+        "price": "35",
+        "unitType": "קג",
+        "minAmount": "1"
+    },
+    {
+        "name": "מנגו קפוא (שקית 400 גר')",
+        "id": "54731980-eb75-4bd4-91f8-af20f288f11a",
+        "price": "40",
+        "unitType": "יחידה",
+        "availability": true,
+        "minAmount": "1"
+    },
+    {
+        "id": "551a9680-e89a-422a-b31c-6131f2ba0dcd",
+        "unitType": "יחידה",
+        "availability": true,
+        "name": "קממבר כבשים - 100 גר' (מחלבת נחלים)",
+        "price": "25",
+        "minAmount": "1"
+    },
+    {
+        "price": "10",
+        "id": "55765322-8208-45ca-96b5-bc36d631a97a",
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "גרעינים שחורים ללא מלח  (קופסא 200 גר')",
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "unitType": "יחידה",
+        "name": "ביצים מועשרות באומגה 3 - חלמון כתום (תבנית 30 יח' גודל L)",
+        "minAmount": "1",
+        "id": "56e59411-d929-4099-92f0-f57fbe39be27",
+        "availability": true,
+        "price": "45",
+        "category": 1
+    },
+    {
+        "id": "56e9772a-4000-462a-87b2-653b5df579e7",
+        "unitType": "יחידה",
+        "category": 1,
+        "minAmount": "1",
+        "availability": true,
+        "name": "צימוק אוזבקי (קופסא 200 גר')",
+        "price": "15"
+    },
+    {
+        "minAmount": "1",
+        "id": "5788d048-d6c1-4a4e-8e3a-814cd2463a03",
+        "price": "25",
+        "availability": true,
+        "name": "זית סורי מבוקע בלאדי ",
+        "unitType": "יחידה"
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "57b79e4b-aab4-442e-b105-d07292e0386b",
+        "price": "29",
+        "availability": true,
+        "name": "לימון בלאדי (פרג)"
+    },
+    {
+        "availability": true,
+        "id": "58417cb2-1f89-417d-b373-992910dd837e",
+        "price": "20",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "name": "פטריות יער (מארז 150 גר')",
+        "category": 1
+    },
+    {
+        "id": "58aa8f0e-9b3b-4a5c-9b40-cd8dc2d48a8b",
+        "minAmount": "1",
+        "unitType": "קג",
+        "price": "10",
+        "availability": true,
+        "category": 1,
+        "name": "פלפל צ'ילי חריף"
+    },
+    {
+        "minAmount": "1",
+        "category": 1,
+        "price": "25",
+        "availability": true,
+        "id": "5907999e-b247-492f-815b-3822c6e1ccb5",
+        "unitType": "קג",
+        "name": "שרי מנומר"
+    },
+    {
+        "name": "במיה הודית (מארז 500 גר')",
+        "id": "5a11da40-0388-4048-8a0c-f51d34eb5aa0",
+        "unitType": "יחידה",
+        "price": "25",
+        "availability": true,
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "availability": true,
+        "price": "35",
+        "name": "ריבת תאנים ואגוזים איכותית (בוסטן 350 גר')",
+        "id": "5a308e29-5040-4adf-9a3a-1fc0cd06c802"
+    },
+    {
+        "unitType": "יחידה",
+        "price": "30",
+        "availability": true,
+        "name": "פלחי בננה מיובשים (פרג)",
+        "id": "5a3d7638-62a1-44ad-999b-a69dfcecb4f4",
+        "minAmount": "1"
+    },
+    {
+        "name": "תמר בונבון (מגש)",
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "קג",
+        "id": "5ae74ac9-fa59-4b42-ab80-66b1f778d93a",
+        "category": 1,
+        "price": "50"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "5b19713e-e1d5-4c11-adb1-227ea846a494",
+        "name": "כרוב בלאדי למילוי",
+        "availability": true,
+        "price": "12",
+        "category": 1
+    },
+    {
+        "category": 1,
+        "price": "12",
+        "name": "זוקיני",
+        "minAmount": "1",
+        "availability": true,
+        "id": "5ba2e49d-d4dd-4c97-89e8-4e380fdac29f",
+        "unitType": "קג"
+    },
+    {
+        "id": "5ca54745-5dcc-4ed4-b816-3b3a4e283c0f",
+        "price": "15",
+        "availability": true,
+        "name": "אורגנו (100 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "name": "ריבת תפוז ויסקי איכותית (בוסטן 350 גר')",
+        "availability": true,
+        "id": "5d631a4d-ca6d-4f7a-97c6-454e256daed4",
+        "price": "35"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "40",
+        "name": "גריסונים מכוסמין מלא (אופה)",
+        "id": "5eb7ccba-b890-484f-9505-e9c4363faa10"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "id": "5f18e3c9-f839-47c6-965a-472eddb4c754",
+        "name": "גריסונים מכוסמין (אופה)",
+        "price": "40",
+        "unitType": "יחידה"
+    },
+    {
+        "price": "8",
+        "id": "5f2d0b12-82c1-4fea-8456-076c981878e9",
+        "unitType": "קג",
+        "category": 1,
+        "name": "בננה ",
+        "availability": true,
+        "minAmount": "1"
+    },
+    {
+        "availability": true,
+        "price": "12",
+        "id": "5ffb0b15-171a-48f7-b98f-86f7e4d55641",
+        "unitType": "יחידה",
+        "name": "צימוק כהה (קופסא 200 גר')",
+        "minAmount": "1",
+        "category": 1
+    },
+    {
+        "unitType": "יחידה",
+        "id": "63543792-aa8c-49c9-a3d7-79558afd2e9c",
+        "name": "סליקורניה (מארז 200 גר')",
+        "minAmount": "1",
+        "price": "8",
+        "availability": true,
+        "category": 1
+    },
+    {
+        "id": "63fd2200-ccdd-4ef4-9368-bfe0bc014ae6",
+        "name": "אשכולית במבצע",
+        "minAmount": "1",
+        "category": 1,
+        "unitType": "קג",
+        "availability": true,
+        "price": "12"
+    },
+    {
+        "id": "6407403e-9095-4932-aca2-59a5b80ecbd9",
+        "availability": true,
+        "name": "תערובת לאורז מקסיקני (100 גר')",
+        "minAmount": "1",
+        "price": "15",
+        "unitType": "יחידה"
+    },
+    {
+        "unitType": "יחידה",
+        "availability": true,
+        "minAmount": "1",
+        "name": "שמן זית כתית מעולה - ארבקינה (1 ליטר)",
+        "price": "65",
+        "id": "64d3f168-dabf-434f-a39a-f04203d7600a"
+    },
+    {
+        "name": "פלפל כתום",
+        "category": 1,
+        "availability": true,
+        "minAmount": "1",
+        "price": "12",
+        "id": "67d777b3-a205-44ce-aa61-211f2d311d2e",
+        "unitType": "קג"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "67daa9d9-c105-4257-9235-2567a45548c6",
+        "availability": true,
+        "price": "15",
+        "name": "שום פרוס (100 גר')"
+    },
+    {
+        "id": "6829c9a9-5ccc-4b11-b9e5-d62e5a7a266c",
+        "availability": true,
+        "name": "זעתר\\אזוב (מארז)",
+        "price": "6",
+        "unitType": "יחידה",
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "price": "12",
+        "unitType": "יחידה",
+        "id": "69396f3c-30f5-460d-a902-3b37a46d2a18",
+        "category": 1,
+        "name": "צימוק בהיר (קופסא 200 גר')"
+    },
+    {
+        "price": "25",
+        "unitType": "קג",
+        "category": 1,
+        "availability": true,
+        "minAmount": "1",
+        "id": "69450d5b-24d8-47db-bad8-4f5a0a8799a8",
+        "name": "לימון יאזו"
+    },
+    {
+        "availability": true,
+        "price": "10",
+        "name": "עגבנייה ישראלית אשכולות ",
+        "unitType": "קג",
+        "category": 1,
+        "minAmount": "1",
+        "id": "69fcb257-9103-467a-9d50-690ba64abd31"
+    },
+    {
+        "id": "6a6ec224-f37d-4795-ae67-975740f47ede",
+        "minAmount": "1",
+        "category": 1,
+        "name": "נבטי חומוס (מארז 300 גר')",
+        "unitType": "יחידה",
+        "price": "20",
+        "availability": true
+    },
+    {
+        "name": "פלפל מתוק גרוס (100 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "15",
+        "id": "6a925623-52b3-43ec-bcec-b86772db2f93",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "category": 1,
+        "name": "עגבנייה תמר",
+        "unitType": "קג",
+        "id": "6af17350-8d4a-4d3f-8d6c-8f5d2b16b9eb",
+        "price": "9"
+    },
+    {
+        "id": "6b5eda06-adcb-4a23-be0f-9551371097a6",
+        "minAmount": "1",
+        "name": "קשיו (קופסא 200 גר')",
+        "availability": true,
+        "unitType": "יחידה",
+        "category": 1,
+        "price": "18"
+    },
+    {
+        "category": 1,
+        "availability": true,
+        "id": "6d266d5d-265e-44e4-bc0b-e25c070d2aa3",
+        "price": "22",
+        "name": "קשיו קלוי (קופסא 200 גר')",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "category": 1,
+        "name": "פלפל הברנו (מיקס חריף - 150 גר')",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "6da86ded-db28-4f36-95b3-c63461f69397",
+        "minAmount": "1",
+        "price": "20"
+    },
+    {
+        "id": "6dd64289-48ff-4df2-8f90-3f1184f1f0c8",
+        "category": 1,
+        "name": "חצילונים מנומר (מארז 250 גר')",
+        "minAmount": "1",
+        "availability": true,
+        "price": "18",
+        "unitType": "יחידה"
+    },
+    {
+        "name": "ריבת תות איכותית (בוסטן 350 גר')",
+        "id": "6e0205f7-47fb-4038-b157-82753d6d7a15",
+        "availability": true,
+        "price": "35",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "name": "חסה מסולסלת",
+        "availability": true,
+        "id": "6e9427c0-59ef-4245-bfcb-a287ee6210c6",
+        "category": 1,
+        "minAmount": "1",
+        "price": "15",
+        "unitType": "יחידה"
+    },
+    {
+        "id": "6fd8fcab-c629-4aa6-aa8e-9f05192d77c7",
+        "category": 1,
+        "unitType": "יחידה",
+        "price": "15",
+        "availability": true,
+        "name": "קייל סגול (מארז)",
+        "minAmount": "1"
+    },
+    {
+        "price": "20",
+        "category": 1,
+        "id": "70020833-9fd8-4698-be44-bc455400ce17",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "availability": true,
+        "name": "מלון גליה "
+    },
+    {
+        "price": "15",
+        "name": "גריל עוף (100 גר')",
+        "minAmount": "1",
+        "id": "707b3d17-6ddc-4736-9cd4-853341de0ea3",
+        "unitType": "יחידה",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "name": "מלח לימון (100 גר')",
+        "availability": true,
+        "id": "70b86071-c09e-4270-8196-6dbad7380329",
+        "price": "15",
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "name": "סחוג (פרג)",
+        "unitType": "יחידה",
+        "id": "71236b49-4972-45a9-9e8c-fbea37e1b1c8",
+        "price": "29"
+    },
+    {
+        "availability": true,
+        "name": "רצועות קוקוס (פרג)",
+        "minAmount": "1",
+        "price": "40",
+        "unitType": "יחידה",
+        "id": "72d00cd9-449a-4ec6-8b77-33fd2148a70a"
+    },
+    {
+        "availability": true,
+        "category": 1,
+        "unitType": "יחידה",
+        "name": "קוקוס",
+        "id": "73d1863c-62b3-4341-9b3d-247a3e70003e",
+        "minAmount": "1",
+        "price": "12"
+    },
+    {
+        "id": "74f86d9a-29d8-467a-bea1-843b96ae9579",
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "קג",
+        "category": 1,
+        "name": "תפוח אדמה סגול",
+        "price": "18"
+    },
+    {
+        "unitType": "קג",
+        "name": "פלפל צהוב",
+        "minAmount": "1",
+        "availability": true,
+        "category": 1,
+        "id": "76afe23e-3660-492a-9ff6-9508746b808d",
+        "price": "12"
+    },
+    {
+        "id": "782f3660-18dd-492c-8ffd-8442d83071cf",
+        "price": "30",
+        "availability": true,
+        "category": 1,
+        "unitType": "קג",
+        "minAmount": "1",
+        "name": "שזיף אדום"
+    },
+    {
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "30",
+        "id": "79505863-759a-48e0-8d41-eb999e2178b7",
+        "minAmount": "1",
+        "name": "תבשיל בורגול ופטריות (חוות תקוע)"
+    },
+    {
+        "id": "7a00cdae-0975-477b-8a9f-011567cd2857",
+        "name": "בולגרית עיזים - 400 גר' (מחלבת נחלים)",
+        "unitType": "יחידה",
+        "price": "40",
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "price": "9",
+        "name": "קולורבי",
+        "unitType": "קג",
+        "minAmount": "1",
+        "category": 1,
+        "id": "7aeba95b-10a5-41da-92b9-35e3042e3680"
+    },
+    {
+        "minAmount": "1",
+        "id": "7b424eb7-6803-48d4-b792-a2acd05d899d",
+        "name": "תפוח עץ פינק ליידי ישראלי",
+        "price": "17",
+        "unitType": "קג",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "category": 1,
+        "price": "20",
+        "name": "חבוש",
+        "availability": true,
+        "unitType": "קג",
+        "id": "7c266b3a-d8ad-4a25-b4ea-65a6fa6cf7fe",
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "availability": true,
+        "name": "סומק (100 גר')",
+        "price": "15",
+        "id": "7e43e2bc-4889-4ad4-b1fd-544b21066907"
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "id": "7eb243f4-98e4-429e-9a12-d59f12c4fa3a",
+        "unitType": "יחידה",
+        "price": "15",
+        "name": "פילדלפיה (100 גר')"
+    },
+    {
+        "id": "7eba0e36-d237-4bf3-a949-329982940ff3",
+        "price": "25",
+        "name": "פטריות שיטאקי מארז",
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "category": 1,
+        "name": "קובו",
+        "price": "30",
+        "id": "7ee6a04b-6bf2-4a14-b9b1-a8a4767fdf27",
+        "availability": true,
+        "unitType": "קג"
+    },
+    {
+        "price": "10",
+        "unitType": "קג",
+        "minAmount": "2",
+        "category": 1,
+        "name": "אבוקדו אטינגר",
+        "id": "7f908810-12c7-46ed-b79a-5a4007688e45",
+        "availability": true
+    },
+    {
+        "id": "7fe26811-1ac9-4e42-a449-f337b3258819",
+        "category": 1,
+        "availability": true,
+        "name": "לימון ליים- לימון ירוק",
+        "minAmount": "1",
+        "price": "15",
+        "unitType": "קג"
+    },
+    {
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true,
+        "id": "83d660a2-cf0b-402d-8891-e74f21a4282a",
+        "price": "20",
+        "minAmount": "1",
+        "name": "דלעת ספגטי"
+    },
+    {
+        "price": "15",
+        "minAmount": "1",
+        "id": "840cc172-dd1c-4f43-8488-e99d7cb45333",
+        "availability": true,
+        "category": 1,
+        "name": "קייל שחור (מארז)",
+        "unitType": "יחידה"
+    },
+    {
+        "price": "18",
+        "availability": true,
+        "category": 1,
+        "name": "רוקולה\\ארוגולה (מארז 200 גר')",
+        "id": "84270b2c-a838-4cee-b6df-db5946f33ec3",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "יחידה",
+        "price": "25",
+        "name": "תפוח אדמה לבן (שק 2.8 ק\"ג)",
+        "category": 1,
+        "id": "8465ddf4-11f3-469e-814a-d76e5a74ac53"
+    },
+    {
+        "name": "שומר",
+        "availability": true,
+        "unitType": "קג",
+        "price": "12",
+        "minAmount": "1",
+        "category": 1,
+        "id": "8498279a-4d0c-4f89-8412-0de0aaa1c5f8"
+    },
+    {
+        "availability": true,
+        "category": 1,
+        "minAmount": "1",
+        "price": "30",
+        "name": "שעועית רחבה",
+        "id": "84f3d50c-6878-450e-bf53-c51a821c3266",
+        "unitType": "קג"
+    },
+    {
+        "unitType": "קג",
+        "name": "פומלה במבצע",
+        "price": "15",
+        "availability": true,
+        "id": "85b6ddcb-0ef5-43ac-bb74-8844e7a74002",
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "name": "שום כתוש (פרג)",
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "29",
+        "minAmount": "1",
+        "id": "86396554-db07-4810-b6c2-f8111ca7abb1"
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "קג",
+        "id": "882893a6-7ff2-458f-8be3-0e2791222e1d",
+        "price": "25",
+        "category": 1,
+        "name": "שרי צהוב"
+    },
+    {
+        "id": "89b38749-a661-4744-8d33-86d394b800b8",
+        "name": "בטטה מיני (מארז 300 גר')",
+        "minAmount": "1",
+        "availability": true,
+        "price": "18",
+        "category": 1,
+        "unitType": "יחידה"
+    },
+    {
+        "price": "20",
+        "name": "בטטה סגולה",
+        "availability": true,
+        "unitType": "קג",
+        "category": 1,
+        "id": "8a2c5791-475a-4ddf-805e-ee786feeec25",
+        "minAmount": "1"
+    },
+    {
+        "category": 1,
+        "unitType": "קג",
+        "price": "30",
+        "minAmount": "1",
+        "id": "8c48d460-d95d-4057-acce-8cdf0e5b18d7",
+        "availability": true,
+        "name": "תאנים שחורות"
+    },
+    {
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true,
+        "id": "8cb64246-2cc4-4c16-bd60-aadb7327f551",
+        "minAmount": "1",
+        "name": "צרור מרווה",
+        "price": "8"
+    },
+    {
+        "availability": true,
+        "unitType": "קג",
+        "minAmount": "1",
+        "price": "20",
+        "id": "8d6a7235-eeb3-4224-927b-d4c94c7481e0",
+        "category": 1,
+        "name": "שישקה כתום"
+    },
+    {
+        "category": 1,
+        "minAmount": "1",
+        "name": "נבטוטים וקטניות (מארז)",
+        "id": "8f9326ae-be47-4cdf-9f97-484223c22579",
+        "price": "17",
+        "availability": true,
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "id": "908d5704-f3f5-4d24-87d9-c9f52c2315de",
+        "price": "30",
+        "name": "סברס",
+        "category": 1,
+        "unitType": "קג",
+        "availability": true
+    },
+    {
+        "name": "סלרי (מארז)",
+        "availability": true,
+        "id": "92748eaa-0cfa-44bd-a4fd-4e52e648e071",
+        "minAmount": "1",
+        "category": 1,
+        "price": "8",
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "price": "20",
+        "id": "92894777-8817-4c05-8640-3c10dab4a663",
+        "name": "פלפל חלפיניו(ירוק חריף) 150 גר",
+        "unitType": "יחידה",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "id": "92b74899-598a-420e-a99b-b0a6edd4b191",
+        "name": "מיקס עלי מיקרו (מארז)",
+        "availability": true,
+        "price": "20",
+        "unitType": "יחידה",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "price": "80",
+        "unitType": "יחידה",
+        "id": "92c6af6e-192e-4214-953b-82d3eb15e11a",
+        "category": 1,
+        "name": "אננס ישראלי (3 יח)",
+        "availability": true
+    },
+    {
+        "category": 1,
+        "name": "גרעיני דלעת (קופסא 200 גר')",
+        "price": "18",
+        "minAmount": "1",
+        "availability": true,
+        "id": "9355c03a-fbf2-4635-ad57-066338203efb",
+        "unitType": "יחידה"
+    },
+    {
+        "id": "9452354b-24dc-4451-8a94-bb459541914c",
+        "availability": true,
+        "price": "22",
+        "unitType": "יחידה",
+        "name": "שקד קלוי (קופסא 200 גר')",
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "id": "948fd4b6-bdc4-45f2-8346-7ae09562cdb4",
+        "availability": true,
+        "price": "15",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "טוסקנה (100 גר')"
+    },
+    {
+        "minAmount": "1",
+        "price": "45",
+        "id": "954b52f8-35e9-41e3-b91b-e69f0723cef3",
+        "unitType": "יחידה",
+        "availability": true,
+        "name": "תערובת אגוזים ופירות יבשים (פרג)"
+    },
+    {
+        "name": "ענב טלי אדום סקרלוטה",
+        "category": 1,
+        "id": "96747aff-35ff-4942-b150-4cd3946a412f",
+        "unitType": "קג",
+        "minAmount": "1",
+        "availability": true,
+        "price": "45"
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "id": "96b6ddf0-11c7-4ae3-8e76-ef56691c6c9c",
+        "name": "שזיף בלי גרעין (קופסא 200 גר')",
+        "unitType": "יחידה",
+        "price": "15",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "name": "אנדיב לבן (מארז)",
+        "price": "25",
+        "id": "97470988-325a-4ac2-8027-17459256b30d",
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true
+    },
+    {
+        "category": 1,
+        "availability": true,
+        "name": "משמש אוזבקי (קופסא 200 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "17",
+        "id": "975b0867-b9a8-4841-a3d6-888a0344b806"
+    },
+    {
+        "id": "978e575b-6d92-45f7-bc5c-e2d9411eef93",
+        "minAmount": 1,
+        "name": "פטריות שינוקי (מארז 150 גר')",
+        "unitType": "יחידה",
+        "category": 1,
+        "availability": true,
+        "price": "20"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "98483020-206c-4f50-af1b-ac7e627a4699",
+        "price": "30",
+        "availability": true,
+        "name": "תבשיל פתיתים ופטריות (חוות תקוע)"
+    },
+    {
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "25",
+        "minAmount": "1",
+        "name": "מלון לבן בונבון",
+        "id": "98522c9b-af1a-4618-b84c-e8da5fe8e276",
+        "category": 1
+    },
+    {
+        "unitType": "קג",
+        "name": "מלפפון",
+        "category": 1,
+        "availability": true,
+        "id": "98965026-721e-48dc-ada3-b8aac58ee07c",
+        "minAmount": "1",
+        "price": "6"
+    },
+    {
+        "availability": true,
+        "category": 1,
+        "name": "נבטי חמנייה (מארז)",
+        "price": "10",
+        "id": "98b31515-1d38-4e3b-a753-f843ad7f4117",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "price": "13",
+        "unitType": "קג",
+        "id": "9a3121cf-17a9-4cbf-8900-9caf10a0f794",
+        "minAmount": "1",
+        "category": 1,
+        "name": "תפוח עץ סמיט",
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "15",
+        "minAmount": "1",
+        "id": "9ac24e33-37a7-47e2-ba37-e4a0ace4f8f6",
+        "name": "כמון (100 גר')"
+    },
+    {
+        "unitType": "יחידה",
+        "name": "ריבת פסיפלורה ותפוח איכותית (בוסטן 350 גר')",
+        "availability": true,
+        "price": "35",
+        "id": "9bb9ad9e-1203-46df-a476-79738f237eb7",
+        "minAmount": "1"
+    },
+    {
+        "availability": true,
+        "id": "9c5a95d8-1e61-426e-a9bb-d81254629804",
+        "price": "30",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "name": "תירס צהוב (מארז 5 קלחים)",
+        "category": 1
+    },
+    {
+        "id": "9c7ba330-17f7-49d2-994e-6e51be21cbc7",
+        "category": 1,
+        "minAmount": "1",
+        "price": "30",
+        "name": "מיץ רימון/תפוזים סחוט טבעי (ליטר)",
+        "unitType": "יחידה",
+        "availability": true
+    },
+    {
+        "name": "שזיף עם גרעין (קופסא 200 גר')",
+        "category": 1,
+        "price": "14",
+        "unitType": "יחידה",
+        "availability": true,
+        "id": "9cef3540-f3b2-4e51-91da-bec1f55774c5",
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "price": "15",
+        "name": "ראס אל חנות (100 גר')",
+        "id": "9d639722-cd18-423b-b306-a5f81d7206ac",
+        "unitType": "יחידה",
+        "availability": true
+    },
+    {
+        "price": "8.75",
+        "id": "9e7f2250-ce7b-482c-b87e-941db9063851",
+        "unitType": "קג",
+        "minAmount": "4",
+        "availability": true,
+        "name": "אבוקדו אטינגר",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "name": "חציל לבן (מארז 200 גר')",
+        "price": "25",
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true,
+        "id": "9f36ecc0-0c0a-45bb-9a6a-26dc5b2ee322"
+    },
+    {
+        "availability": true,
+        "category": 1,
+        "unitType": "יחידה",
+        "price": "8",
+        "id": "9f739f4a-cab4-4b44-b5e3-5be5772bcfeb",
+        "name": "צרור עירית",
+        "minAmount": "1"
+    },
+    {
+        "category": 1,
+        "price": "30",
+        "id": "9fb89aa8-bc4f-4b05-9f70-214a107901a0",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "ביצים אורגניות (תבנית 12 יח' גודל L)",
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "availability": true,
+        "category": 1,
+        "minAmount": "1",
+        "price": "9",
+        "id": "a2337c13-a758-49a3-aea3-280ef621c730",
+        "name": "כרוב סגול"
+    },
+    {
+        "name": "לימון בודהה",
+        "unitType": "יחידה",
+        "id": "a2e77108-41c2-4abc-ab55-0156ebd76c2f",
+        "category": 1,
+        "price": "20",
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "price": "15",
+        "name": "פפריקה מתוקה (100 גר')",
+        "id": "a47ed2eb-173e-402e-8ba0-1dd3d7b371fa"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "a584d724-0104-4ff4-89df-d2e055c0e716",
+        "name": "שום דק (100 גר')",
+        "availability": true,
+        "price": "15"
+    },
+    {
+        "id": "a596e00a-2444-4ecf-867c-5b90be061294",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "25",
+        "availability": true,
+        "name": "קממבר עיזים - 100 גר' (מחלבת נחלים)"
+    },
+    {
+        "price": "25",
+        "minAmount": "1",
+        "category": 1,
+        "unitType": "יחידה",
+        "name": "שעועית ירוקה (400 גר')",
+        "id": "a62ea64d-8706-465d-aa54-01b07c335318",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "id": "a6d61d1f-5d47-4dfe-98fa-a40edba10b94",
+        "name": "מיקס נבטים (מארז)",
+        "price": "20",
+        "availability": true,
+        "unitType": "יחידה",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "id": "a728d501-a656-48e3-bd95-e598cfff3757",
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "ריבת משמש איכותית (בוסטן 350 גר')",
+        "price": "35"
+    },
+    {
+        "availability": true,
+        "id": "a76dd591-6983-4835-8c8e-ddcb7fe41856",
+        "minAmount": "1",
+        "name": "דבש - קיפודן (למדני 1 ק\"ג)",
+        "unitType": "יחידה",
+        "price": "50"
+    },
+    {
+        "unitType": "קג",
+        "category": 1,
+        "name": "תפוח אדמה באטר (הולנדי)",
+        "minAmount": "1",
+        "availability": true,
+        "id": "a7b7251a-34a4-4612-9dec-9a9cd69c0175",
+        "price": "15"
+    },
+    {
+        "category": 1,
+        "unitType": "יחידה",
+        "name": "פקאן (קופסא 200 גר')",
+        "id": "a8c3714d-5e23-4767-9e69-52aa45fc078e",
+        "availability": true,
+        "minAmount": "1",
+        "price": "22"
+    },
+    {
+        "unitType": "קג",
+        "name": "לימון",
+        "id": "a9591fd8-19dd-43d3-9fb8-1a8c257910e7",
+        "category": 1,
+        "minAmount": "1",
+        "price": "10",
+        "availability": true
+    },
+    {
+        "name": "בננה קפואה (שקית 400 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "35",
+        "availability": true,
+        "id": "a9daa504-0eb6-4aad-ada4-de58177b43d5"
+    },
+    {
+        "unitType": "יחידה",
+        "id": "aace3e27-cd09-41ee-ab91-f41759a22761",
+        "availability": true,
+        "minAmount": "1",
+        "name": "דבש - שזיף (למדני 1 ק\"ג)",
+        "price": "50"
+    },
+    {
+        "availability": true,
+        "id": "ababe7f0-2abe-48b8-afd7-430e248f2f11",
+        "name": "ברוקולי (ראש)",
+        "price": "15",
+        "unitType": "יחידה",
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "id": "abd1cdda-1b4f-40a9-bfc8-dc8ba3fc5c44",
+        "name": "פטל אדום קפוא (שקית 400 גר')",
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "55"
+    },
+    {
+        "id": "ad41824e-5cbd-41f9-a94b-9c5f24174c51",
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "40",
+        "category": 1,
+        "minAmount": "1",
+        "name": "צרור אספרגוס"
+    },
+    {
+        "name": "מיקס עליי בייבי (מארז)",
+        "availability": true,
+        "id": "ae5a29f3-9f28-48cc-990d-e715e48af7e3",
+        "category": 1,
+        "price": "11",
+        "unitType": "יחידה",
+        "minAmount": "1"
+    },
+    {
+        "availability": true,
+        "unitType": "יחידה",
+        "category": 1,
+        "name": "תרד ניו זילנד (200 גר')",
+        "price": "13",
+        "minAmount": "1",
+        "id": "aef0e347-71e2-4c0c-b8b1-6983fcb6b7fa"
+    },
+    {
+        "category": 1,
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "availability": true,
+        "id": "af7b8104-09d8-4bfc-8210-acaa02165f57",
+        "name": "צנוניות (שקית 150 גר')",
+        "price": "8"
+    },
+    {
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "ממרח פסטו בזיליקום איכותי (משק אחיה 200 גר')",
+        "price": "30",
+        "id": "afaf22ab-d12a-4abf-b2f5-624cd700b549",
+        "minAmount": "1"
+    },
+    {
+        "unitType": "קג",
+        "id": "b2243331-b9ed-4c2c-962a-9882c7ff5eb2",
+        "price": "12",
+        "name": "פלפל בהיר",
+        "minAmount": "1",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "category": 1,
+        "unitType": "קג",
+        "minAmount": "1",
+        "name": "בטטה ",
+        "id": "b315cb3e-8f5a-4863-b4f0-bad0de41cfcf",
+        "price": "10",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "15",
+        "name": "פלפל לבן (100 גר')",
+        "id": "b316a632-9017-47ab-9e64-4b6d760a146d"
+    },
+    {
+        "availability": true,
+        "price": "15",
+        "minAmount": "1",
+        "name": "גויאבה ",
+        "unitType": "קג",
+        "category": 1,
+        "id": "b3446338-ae15-4ef7-8d7a-c14fab9322c9"
+    },
+    {
+        "unitType": "קג",
+        "category": 1,
+        "price": "18",
+        "id": "b3730039-f87f-4624-aea1-30c1d0af0877",
+        "availability": true,
+        "name": "חציל בייבי מנומר",
+        "minAmount": "1"
+    },
+    {
+        "id": "b46010a7-4e84-4ea9-9622-9afdb0587f68",
+        "name": "שרי כתום",
+        "category": 1,
+        "availability": true,
+        "price": "25",
+        "minAmount": "1",
+        "unitType": "קג"
+    },
+    {
+        "category": 1,
+        "price": "12",
+        "name": "פלפל אדום",
+        "id": "b49204f4-e693-433b-9178-2e8050b89019",
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "קג"
+    },
+    {
+        "availability": true,
+        "name": "קוויאר כמהין",
+        "price": "38",
+        "id": "b4df9029-2883-4dfe-815b-9a23920672c7",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "category": 1,
+        "id": "b509fea6-57b5-4c54-9036-d67b61dd533f",
+        "availability": true,
+        "name": "אננס ישראלי (8 יח)",
+        "unitType": "יחידה",
+        "price": "150"
+    },
+    {
+        "unitType": "יחידה",
+        "id": "b54357f2-1e24-4980-8821-c80b70c19956",
+        "price": "22",
+        "minAmount": "1",
+        "availability": true,
+        "category": 1,
+        "name": "אגוזי לוז (קופסא 200 גר')"
+    },
+    {
+        "category": 1,
+        "id": "b57c148d-d13b-4537-aa6a-a19d7b099d37",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "צרור רוזמרין",
+        "availability": true,
+        "price": "8"
+    },
+    {
+        "name": "פפריקה חריפה (100 גר')",
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "b58ebbd2-fc8f-43df-b474-f9151375d2bf",
+        "price": "15"
+    },
+    {
+        "minAmount": "1",
+        "name": "תפוז במבצע",
+        "id": "b63a280c-859e-4614-b53c-45f30cedb629",
+        "price": "9",
+        "availability": true,
+        "unitType": "קג",
+        "category": 1
+    },
+    {
+        "price": "35",
+        "minAmount": "1",
+        "category": 1,
+        "name": "פקאן",
+        "availability": true,
+        "unitType": "קג",
+        "id": "b9343ae4-26cd-4b7b-a94f-aef48ead8499"
+    },
+    {
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true,
+        "id": "b9c6062c-18cb-458d-a983-5b33adae5192",
+        "minAmount": "1",
+        "name": "פאקצ'וי (מארז 200 גר')",
+        "price": "18"
+    },
+    {
+        "id": "bafe9597-69b6-4097-bef4-7507723130a9",
+        "minAmount": "1",
+        "name": "צפתית רכה \"בקר\" - 1 ק\"ג (מחלבת נחלים)",
+        "price": "50",
+        "unitType": "יחידה",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "price": "15",
+        "unitType": "יחידה",
+        "id": "bcd80aac-5143-48f9-a3f1-224158200917",
+        "name": "פלפל שחור (100 גר')",
+        "availability": true
+    },
+    {
+        "minAmount": "1",
+        "name": "שישקה ירוק",
+        "unitType": "קג",
+        "category": 1,
+        "availability": true,
+        "price": "20",
+        "id": "bf4231e0-a957-4f76-8ab2-5cba20773b5d"
+    },
+    {
+        "unitType": "קג",
+        "price": "9",
+        "minAmount": "1",
+        "name": "קלמנטינה במבצע",
+        "availability": true,
+        "category": 1,
+        "id": "bf750dc0-943d-4ef8-83e5-e305b2680708"
+    },
+    {
+        "availability": true,
+        "name": "סומסומיה (פרג)",
+        "unitType": "יחידה",
+        "price": "29",
+        "id": "bf909f02-116a-4ebb-a1dc-512c2ac417ca",
+        "minAmount": "1"
+    },
+    {
+        "name": "תירס לבן (מארז 5 קלחים)",
+        "id": "bf928570-ff66-4cfb-890d-61daf8954f96",
+        "minAmount": "1",
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "45"
+    },
+    {
+        "minAmount": "1",
+        "id": "bfa49dfe-c085-489d-bfc8-2cd02937255b",
+        "unitType": "יחידה",
+        "availability": true,
+        "category": 1,
+        "name": "שקד ענק (קופסא 200 גר')",
+        "price": "18"
+    },
+    {
+        "unitType": "קג",
+        "category": 1,
+        "availability": true,
+        "price": "25",
+        "name": "קיווי ירוק ישראלי",
+        "minAmount": "1",
+        "id": "bff6cec0-70f1-4111-992b-6db076cc62cd"
+    },
+    {
+        "price": "12",
+        "category": 1,
+        "availability": true,
+        "id": "c0cee77a-cf19-4042-8c9d-3b08f6b4276e",
+        "name": "קישוא קטנים",
+        "minAmount": "1",
+        "unitType": "קג"
+    },
+    {
+        "id": "c10685fa-7cfc-4070-a694-4f2e964d9861",
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "יחידה",
+        "price": "16",
+        "name": "מלון גולדן",
+        "category": 1
+    },
+    {
+        "price": "20",
+        "id": "c17da7de-93d3-411d-8c67-c400ee295e3c",
+        "availability": true,
+        "minAmount": "1",
+        "category": 1,
+        "name": "אפרסמון קרמבו",
+        "unitType": "קג"
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "15",
+        "id": "c1e24543-2a11-45c8-acd4-f9aa3714f61f",
+        "availability": true,
+        "name": "תבלין שווארמה (100 גר')"
+    },
+    {
+        "name": "חצילונים (מארז 250 גר')",
+        "id": "c24130fa-bf6c-436d-a27c-2181f8971899",
+        "price": "18",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "price": "8",
+        "name": "טימין (200 גר')",
+        "category": 1,
+        "id": "c2e0f9c5-4813-4668-a7fd-cc58ebcf6cb0",
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "availability": true,
+        "minAmount": "1",
+        "name": "פלפל שאטה (100 גר')",
+        "id": "c41ddc10-0252-455b-97fc-7a4723297d31",
+        "price": "15"
+    },
+    {
+        "unitType": "קג",
+        "price": "10",
+        "minAmount": "1",
+        "id": "c4e349ce-0bb2-43d9-8806-fd7d03340a05",
+        "name": "תפוח עץ חרמון",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "id": "c7d2c332-7143-4043-b08d-e1cafa9fe367",
+        "price": "5",
+        "unitType": "יחידה",
+        "availability": true,
+        "name": "בצל ירוק (צרור)",
+        "minAmount": "1",
+        "category": 1
+    },
+    {
+        "unitType": "יחידה",
+        "name": "פלפל טינקרבל ננסי (קופסא 250 גר')",
+        "availability": true,
+        "price": "10",
+        "id": "c7d9c74b-9450-4b9c-be0a-bac34c197b57",
+        "minAmount": "1",
+        "category": 1
+    },
+    {
+        "price": "11",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "c804b9db-6e50-46dc-8b9a-8506bc2582bd",
+        "category": 1,
+        "minAmount": "1",
+        "name": "עגבניות מיובשות (150 גר')"
+    },
+    {
+        "price": "10",
+        "name": "תפוח אדמה בייבי (שקית 100 גר')",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "availability": true,
+        "id": "c808259f-2c7a-47b8-af14-0ad97572ce31",
+        "category": 1
+    },
+    {
+        "name": "תפוח עץ גאלה",
+        "price": "10",
+        "category": 1,
+        "minAmount": "1",
+        "id": "cab7b9a9-9497-4a3f-9133-d2fcdc5460ec",
+        "unitType": "קג",
+        "availability": true
+    },
+    {
+        "id": "cba3b5c2-16b2-42d5-9d11-bcbb860cfc6c",
+        "price": "15",
+        "minAmount": "1",
+        "category": 1,
+        "name": "שרי אשכולות",
+        "availability": true,
+        "unitType": "קג"
+    },
+    {
+        "price": "15",
+        "id": "cbac8d2f-d7f6-4306-9191-5f00bdafb8e8",
+        "minAmount": "1",
+        "name": "תבלין שמיר (100 גר')",
+        "availability": true,
+        "unitType": "יחידה"
+    },
+    {
+        "id": "cbcb27b5-257d-4d02-bbc1-2dc54f9f817d",
+        "minAmount": "1",
+        "price": "11",
+        "unitType": "יחידה",
+        "name": "עלי חזרת (צרור)",
+        "category": 1,
+        "availability": true
+    },
+    {
+        "category": 1,
+        "price": "7",
+        "minAmount": "1",
+        "availability": true,
+        "id": "ccb89143-5d1a-4c8e-990c-dda3c67a8d3b",
+        "name": "בצל סגול",
+        "unitType": "קג"
+    },
+    {
+        "category": 1,
+        "availability": true,
+        "price": "19",
+        "name": "פטריות פורטבלו (מארז)",
+        "unitType": "יחידה",
+        "id": "cd141dec-5f90-45d4-9709-60cb3c80ab4c",
+        "minAmount": "1"
+    },
+    {
+        "id": "ce54f58e-5dff-4842-b220-c662e30dd87b",
+        "minAmount": "1",
+        "name": "בצל ",
+        "unitType": "קג",
+        "availability": true,
+        "category": 1,
+        "price": "7"
+    },
+    {
+        "price": "10",
+        "unitType": "קג",
+        "category": 1,
+        "id": "cf971cda-4f42-40a0-9395-0c9b2100a3f8",
+        "availability": true,
+        "minAmount": "4",
+        "name": "אבוקדו האס"
+    },
+    {
+        "id": "d0a33626-9a58-4c87-bc1b-6137bfb7126e",
+        "name": "בהרט (100 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "15",
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "price": "15",
+        "id": "d0feb586-6d71-4630-b341-43bc73214698",
+        "minAmount": "1",
+        "name": "תבלין על האש (100 גר')",
+        "availability": true
+    },
+    {
+        "category": 1,
+        "minAmount": "1",
+        "id": "d24e8682-1a05-4cdf-a753-21266625fd35",
+        "name": "לוביה",
+        "unitType": "קג",
+        "availability": true,
+        "price": "25"
+    },
+    {
+        "category": 1,
+        "availability": true,
+        "name": "למון גראס (מארז)",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "price": "20",
+        "id": "d3c30cd5-5a8c-4d52-9a8e-9b982c1545c8"
+    },
+    {
+        "id": "d4604a57-9e1f-40da-9e34-2e02b5f6549b",
+        "unitType": "יחידה",
+        "price": "29",
+        "availability": true,
+        "minAmount": "1",
+        "name": "פלפל צ'ומה (פרג)"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "קג",
+        "category": 1,
+        "availability": true,
+        "price": "10",
+        "name": "פלפל ירוק חריף",
+        "id": "d4d690e4-617d-434c-8211-8a89e06f5e9e"
+    },
+    {
+        "id": "d764e4cc-b866-4895-b1c6-c7dd31cee725",
+        "category": 1,
+        "name": "שרי תמר",
+        "unitType": "קג",
+        "price": "25",
+        "availability": true,
+        "minAmount": "1"
+    },
+    {
+        "id": "d8a85220-25f1-47ed-8683-daccacd9191f",
+        "availability": true,
+        "price": "18",
+        "unitType": "יחידה",
+        "category": 1,
+        "minAmount": "1",
+        "name": "שקד בינוני (קופסא 200 גר')"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "id": "d9e3b603-8101-4666-8337-b2805d3fda84",
+        "unitType": "יחידה",
+        "price": "15",
+        "name": "פלפל ארבע עונות (100 גר')"
+    },
+    {
+        "category": 1,
+        "unitType": "קג",
+        "availability": true,
+        "price": "20",
+        "name": "אגס קוסטיה",
+        "minAmount": "1",
+        "id": "da1fd72b-9702-4fad-9397-3071361b9873"
+    },
+    {
+        "price": "15",
+        "id": "da32a35c-4bc9-4e75-a2ec-fa2a2e0aa473",
+        "unitType": "יחידה",
+        "availability": true,
+        "name": "קוקוס (100 גר')",
+        "minAmount": "1"
+    },
+    {
+        "id": "da32b6d3-51fe-4f82-9999-193e26146a6b",
+        "price": "40",
+        "unitType": "יחידה",
+        "name": "גריסונים (אופה)",
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "צרור אורגנו",
+        "price": "8",
+        "category": 1,
+        "id": "daa49b0a-6436-4512-b56e-f590b705cc43",
+        "minAmount": "1"
+    },
+    {
+        "id": "dc1d181a-fb60-46e0-bf08-6c7d5763bd78",
+        "unitType": "יחידה",
+        "availability": true,
+        "category": 1,
+        "minAmount": "1",
+        "price": "18",
+        "name": "שקד אמריקאי (קופסא 200 גר')"
+    },
+    {
+        "name": "עלי מנגולד (מארז 220 גר')",
+        "category": 1,
+        "unitType": "יחידה",
+        "price": "8",
+        "availability": true,
+        "minAmount": "1",
+        "id": "dc5b1973-f6f2-4994-9c92-1c0a924b11d3"
+    },
+    {
+        "id": "dc61123a-eb57-4cec-bd29-66cd5cb5fa39",
+        "price": "20",
+        "category": 1,
+        "name": "שום קלוף (קופסא 500 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "id": "dcb52635-d50c-416a-b9fa-ab24b333ae3e",
+        "name": "פטריות שמפניון (מארז זברה)",
+        "price": "20",
+        "availability": true,
+        "category": 1,
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "price": "29",
+        "unitType": "יחידה",
+        "name": "אריסה (פרג)",
+        "id": "dd859bfb-bc1a-4700-8aac-161b9b323fd9"
+    },
+    {
+        "name": "דלעת קומו קומו",
+        "id": "ddebc635-a4a4-4a88-b959-7013d6faa100",
+        "price": "18",
+        "availability": true,
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "category": 1
+    },
+    {
+        "category": 1,
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "קג",
+        "id": "de16baac-1181-43cb-bee1-4174062e6043",
+        "price": "15",
+        "name": "חציל בלאדי "
+    },
+    {
+        "minAmount": "1",
+        "name": "קינמון (100 גר')",
+        "unitType": "יחידה",
+        "id": "de25d6b7-d96b-4c00-9cbf-0119adf4735c",
+        "price": "15",
+        "availability": true
+    },
+    {
+        "price": "12",
+        "availability": true,
+        "minAmount": "1",
+        "name": "פלפל ירוק",
+        "category": 1,
+        "unitType": "קג",
+        "id": "de2ad2b3-57a3-4a4a-be1f-2107b2a7bc8a"
+    },
+    {
+        "id": "dec8adbb-57f4-4bbd-9f13-465b1abc2f96",
+        "name": "סלק אדום מהגולן",
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "קג",
+        "category": 1,
+        "price": "10"
+    },
+    {
+        "price": "30",
+        "availability": true,
+        "unitType": "יחידה",
+        "category": 1,
+        "name": "אבטיח (6\\7 קג')",
+        "id": "def78271-925c-48d3-bf40-a1f1dd64b113",
+        "minAmount": "1"
+    },
+    {
+        "unitType": "קג",
+        "name": "שישקה צהוב",
+        "price": "20",
+        "availability": true,
+        "minAmount": "1",
+        "category": 1,
+        "id": "df5826af-fb54-462d-b5d1-0c0594a26cfe"
+    },
+    {
+        "minAmount": "1",
+        "price": "35",
+        "unitType": "יחידה",
+        "id": "dfa8e0d4-eadb-4303-81d9-ae215f833b3c",
+        "availability": true,
+        "name": "ריבת תאנים איכותית (בוסטן 350 גר')"
+    },
+    {
+        "id": "dfac1297-3c95-4dc1-96e7-de53b3523464",
+        "availability": true,
+        "name": "פטרוזיליה עלים (100 גר')",
+        "unitType": "יחידה",
+        "price": "15",
+        "minAmount": "1"
+    },
+    {
+        "price": "8",
+        "availability": true,
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "id": "dfec5a50-b918-4a9b-832d-0efed3830f15",
+        "name": "כרובית",
+        "category": 1
+    },
+    {
+        "id": "e19e7b07-1617-4208-bd4c-110fe5dd2af8",
+        "category": 1,
+        "name": "פיסטוק (קופסא 200 גר')",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "18",
+        "availability": true
+    },
+    {
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "מקלות קינמון (100 גר')",
+        "id": "e1a5a992-e540-4c69-bd73-73f0194f2ac8",
+        "availability": true,
+        "price": "15"
+    },
+    {
+        "name": "צ'ילי מקסיקני (100 גר')",
+        "availability": true,
+        "price": "15",
+        "id": "e1b72e44-f053-4127-b17e-de99ba5f453e",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "price": "25",
+        "minAmount": "2",
+        "unitType": "יחידה",
+        "availability": true,
+        "category": 1,
+        "name": "חדש תות שדה (125 גרם)",
+        "id": "e1c9c19c-4d0d-4ae8-945a-33dafadbcbe5"
+    },
+    {
+        "minAmount": "1",
+        "price": "40",
+        "id": "e274b2d2-ba85-42c7-a626-c726614bd3db",
+        "name": "קרמבולה",
+        "availability": true,
+        "unitType": "קג",
+        "category": 1
+    },
+    {
+        "minAmount": "1",
+        "name": "כוסברה טחון (100 גר')",
+        "id": "e274c817-4467-4cbf-9cef-213462237d29",
+        "price": "15",
+        "availability": true,
+        "unitType": "יחידה"
+    },
+    {
+        "minAmount": "1",
+        "id": "e42907f7-879d-452d-a5b8-0dade9d0e92a",
+        "category": 1,
+        "name": "ביצים מועשרות באומגה 3 - חלמון כתום (תבנית 12 יח' גודל L)",
+        "unitType": "יחידה",
+        "price": "30",
+        "availability": true
+    },
+    {
+        "id": "e42a1c28-758c-48a0-83bf-77fe49fcfd9d",
+        "name": "תפוח עץ מוזהב",
+        "availability": true,
+        "category": 1,
+        "price": "15",
+        "unitType": "קג",
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "id": "e4ce1815-eb5b-4f29-9aee-f57718e86740",
+        "price": "15",
+        "unitType": "יחידה",
+        "availability": true,
+        "name": "פלפל שחור גרוס (100 גר')"
+    },
+    {
+        "minAmount": "1",
+        "id": "e5aaf076-6afa-4fbd-9cd0-02595065afa1",
+        "availability": true,
+        "name": "פלפל אנגלי (100 גר')",
+        "price": "15",
+        "unitType": "יחידה"
+    },
+    {
+        "name": "חסה לליק (2  יח' במארז)",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "e6350e76-defd-4e9e-9e89-f90383aa94f7",
+        "minAmount": "1",
+        "price": "13"
+    },
+    {
+        "category": 1,
+        "minAmount": "6",
+        "unitType": "קג",
+        "id": "e64e518a-138c-47bf-8bf7-1fe9d3440c05",
+        "availability": true,
+        "price": "8.33",
+        "name": "מנגו קיט (קרטון) "
+    },
+    {
+        "availability": true,
+        "name": "תפוח אדמה אדום (שק 2.8 ק\"ג)",
+        "category": 1,
+        "minAmount": "1",
+        "id": "e7565c23-cb3d-48ee-9a2e-67e6ae066609",
+        "price": "25",
+        "unitType": "יחידה"
+    },
+    {
+        "id": "e7abae42-c11a-44f4-b126-c51bafef08c2",
+        "minAmount": "1",
+        "category": 1,
+        "availability": true,
+        "price": "20",
+        "unitType": "יחידה",
+        "name": "פטריות שימוג'י (מארז)"
+    },
+    {
+        "id": "e81f3eac-ee14-4276-924e-fc339073197b",
+        "price": "37",
+        "availability": true,
+        "name": "ממרח חמאה - עשבי תיבול ושום (מן האדמה)",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "availability": true,
+        "name": "דלעת כתר המלכה",
+        "id": "e863d057-f972-40fe-a945-b0d4cac9f22d",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "price": "18",
+        "category": 1
+    },
+    {
+        "name": "אננס קפוא (שקית 400 גר')",
+        "minAmount": "1",
+        "price": "40",
+        "availability": true,
+        "unitType": "יחידה",
+        "id": "e8aca32c-c3fd-41cd-98a3-07ef3bcac2c0"
+    },
+    {
+        "unitType": "יחידה",
+        "name": "שומית\\עירית (צרור)",
+        "minAmount": "1",
+        "category": 1,
+        "price": "5",
+        "id": "e8b3f1da-cd4b-472d-9dc4-84b206bb0bd0",
+        "availability": true
+    },
+    {
+        "name": "שורש כורכום (מארז 120 גר')",
+        "unitType": "יחידה",
+        "availability": true,
+        "category": 1,
+        "minAmount": "1",
+        "price": "15",
+        "id": "e95d74d3-6140-424a-8029-96f54b32458b"
+    },
+    {
+        "availability": true,
+        "price": "15",
+        "name": "גזר צבעוני (שקית)",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "id": "e9a7d61e-4739-4668-aaeb-fb16fd70499b",
+        "category": 1
+    },
+    {
+        "unitType": "יחידה",
+        "price": "28",
+        "id": "ec0ce2a4-9406-46cb-83a2-69a2bda35045",
+        "availability": true,
+        "name": "טחינה אתיופית מלאה",
+        "minAmount": "1"
+    },
+    {
+        "minAmount": "1",
+        "name": "אפרסמון",
+        "price": "15",
+        "unitType": "קג",
+        "category": 1,
+        "id": "ed58a34f-c85b-4407-86b6-ed21e36c93aa",
+        "availability": true
+    },
+    {
+        "name": "שישקה אדום",
+        "price": "20",
+        "category": 1,
+        "availability": true,
+        "id": "ed80d7ba-e527-4ccb-9b12-1da608b8df71",
+        "unitType": "קג",
+        "minAmount": "1"
+    },
+    {
+        "price": "12",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "availability": true,
+        "id": "ee81b7bf-2dbc-405d-8016-f76942610957",
+        "name": "תמר דקל (קופסא 200 גר')",
+        "category": 1
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "name": "חדש תות שדה (125 גר)",
+        "price": "30",
+        "category": 1,
+        "unitType": "יחידה",
+        "id": "eecbf296-bd13-42f8-b069-c1564b54f4bf"
+    },
+    {
+        "unitType": "קג",
+        "price": "25",
+        "name": "ערמונים",
+        "category": 1,
+        "minAmount": "1",
+        "availability": true,
+        "id": "ef1c9306-68ed-4455-b292-ef2adf465842"
+    },
+    {
+        "availability": true,
+        "price": "6",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "שמיר (שקית 200 גר')",
+        "category": 1,
+        "id": "f0055572-db56-4bb5-8e08-4ae331069a44"
+    },
+    {
+        "price": "20",
+        "availability": true,
+        "name": "גויאבה אדומה",
+        "unitType": "קג",
+        "minAmount": "1",
+        "id": "f13eeb1a-0706-4e12-ba70-a1bb6d6d1cc9",
+        "category": 1
+    },
+    {
+        "availability": true,
+        "name": "אננס מיובש מסוכר (קופסא 200 גר')",
+        "category": 1,
+        "price": "15",
+        "unitType": "יחידה",
+        "id": "f1b65fd0-ace2-4fd1-899d-914367b588fb",
+        "minAmount": "1"
+    },
+    {
+        "id": "f3156d2e-b5c3-49e0-bc6e-b9c8cc1dd202",
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "חרדל גרגירים (100 גר')",
+        "price": "15",
+        "minAmount": "1"
+    },
+    {
+        "price": "10",
+        "category": 1,
+        "id": "f55638be-ac1d-457b-bf16-0764b557f61b",
+        "availability": true,
+        "minAmount": "1",
+        "unitType": "קג",
+        "name": "כרישה\\פרסה\\לוף"
+    },
+    {
+        "id": "f570f32f-765a-4a6a-a05b-d5b15433e444",
+        "category": 1,
+        "availability": true,
+        "price": "25",
+        "minAmount": "1",
+        "name": "אנדיב אדום (מארז)",
+        "unitType": "יחידה"
+    },
+    {
+        "name": "ריבת ריבת בצל איכותית (בוסטן 350 גר')",
+        "unitType": "יחידה",
+        "price": "35",
+        "minAmount": "1",
+        "id": "f5ccb9df-f91a-4790-84ed-7efc7b524020",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "price": "37",
+        "name": "ממרח חמאה - פטריות פורוצ'יני ושמן כמהין (מן האדמה)",
+        "id": "f6a56bdc-44c0-4ae5-9eda-a16d75415f83",
+        "minAmount": "1",
+        "unitType": "יחידה"
+    },
+    {
+        "id": "f9b24757-fe77-4fb5-9c15-48b926771ed5",
+        "name": "משמש (קופסא 200 גר')",
+        "minAmount": "1",
+        "availability": true,
+        "unitType": "יחידה",
+        "category": 1,
+        "price": "12"
+    },
+    {
+        "minAmount": "1",
+        "name": "רימון עכו",
+        "id": "f9bfd306-3150-4c17-9ecd-8488ac25678f",
+        "category": 1,
+        "price": "10",
+        "availability": true,
+        "unitType": "קג"
+    },
+    {
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "name": "מארז בזיליקום",
+        "availability": true,
+        "price": "10",
+        "id": "f9f29219-04bb-4722-8ccd-150531fcfe0e",
+        "category": 1
+    },
+    {
+        "name": "פאפיה מסוכרת (קופסא 200 גר')",
+        "id": "fadf5979-7d31-4748-aece-0d0f2a0760e4",
+        "minAmount": "1",
+        "category": 1,
+        "unitType": "יחידה",
+        "availability": true,
+        "price": "15"
+    },
+    {
+        "availability": true,
+        "category": 1,
+        "price": "20",
+        "minAmount": "1",
+        "id": "fb2c8e9b-ee2d-4e97-8331-1fadb14494bd",
+        "unitType": "יחידה",
+        "name": "לבבות קיסר (מארז 400 גר')"
+    },
+    {
+        "price": "33",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "category": 1,
+        "id": "fbafdb87-cde8-4b5b-89fc-8091ab96bf5c",
+        "name": "ביצים מהמשק (תבנית 30 יח' גודל L)",
+        "availability": true
+    },
+    {
+        "id": "fc0fc674-67d2-4d78-8f0b-ef3976f5d369",
+        "unitType": "יחידה",
+        "minAmount": "1",
+        "name": "פסיפלורה קפואה (שקית 400 גר')",
+        "price": "45",
+        "availability": true
+    },
+    {
+        "availability": true,
+        "minAmount": "1",
+        "price": "10",
+        "id": "fda49465-216a-461c-97c5-03fe2d7983f6",
+        "unitType": "יחידה",
+        "category": 1,
+        "name": "דלורית(1 ק''ג ביחידה)"
+    },
+    {
+        "category": 1,
+        "minAmount": "1",
+        "id": "fde91ec1-12f1-4d2c-a776-18dc49fc98d2",
+        "price": "12",
+        "availability": true,
+        "unitType": "יחידה",
+        "name": "בוטנים (קופסא 200 גר')"
+    },
+    {
+        "minAmount": "1",
+        "availability": true,
+        "name": "אגוז מוסקט טחון (100 גר')",
+        "price": "15",
+        "unitType": "יחידה",
+        "id": "fe2c0402-0a01-41bd-8ef0-752386861d3d"
+    },
+    {
+        "category": 1,
+        "price": "12.5",
+        "minAmount": "2",
+        "availability": true,
+        "id": "fe75fe69-bd13-46f8-87b8-b82cecc9e22c",
+        "name": "אבוקדו האס",
+        "unitType": "קג"
+    },
+    {
+        "id": "ff7259ff-2e95-4d01-bb93-8d2068b79ab4",
+        "availability": true,
+        "name": "אגס ספדונה מהגולן",
+        "unitType": "קג",
+        "minAmount": "1",
+        "category": 1,
+        "price": "22"
+    },
+    {
+        "minAmount": "1",
+        "name": "סלק קלוף ושטוף (מארז 500 גר')",
+        "category": 1,
+        "availability": true,
+        "id": "ff8aba6b-4f04-41a9-99d2-d3fb5b7929d2",
+        "unitType": "יחידה",
+        "price": "18"
+    },
+    {
+        "availability": true,
+        "name": "חלבה פיסטוק (מן האדמה)",
+        "id": "ff8c0304-d015-4397-b74d-0db9d3fb8bd9",
+        "minAmount": "1",
+        "unitType": "יחידה",
+        "price": "35"
+    }
+]
