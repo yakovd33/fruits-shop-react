@@ -88,7 +88,7 @@ export default function Home({ cartItems, setCartItems }) {
 			category_query = '&category=' + category;
 		}
 
-		axios.get('http://localhost:5000/products/?page=' + curPage + category_query).then((res) => {
+		axios.get('https://sahar-fruits.herokuapp.com/products/?page=' + curPage + category_query).then((res) => {
 			setProducts(res.data.products);
 			setTotalLength(res.data.length);
 			setTotalPages(Math.ceil(res.data.length / 20));
@@ -125,7 +125,7 @@ export default function Home({ cartItems, setCartItems }) {
 
 					<div id="main-products-list">
 						{ products && products.map((product) => (
-							<ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } price={ product.price } unit={ product.unitType } image={ `http://localhost:5000/image/${ product.id }.jpg ` }/>
+							<ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } price={ product.price } unit={ product.unitType } image={ `https://sahar-fruits.herokuapp.com/image/${ product.id }.jpg ` }/>
 						)) }
 					</div>
 
