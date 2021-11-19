@@ -48,7 +48,7 @@ const Header = ({ cartTog, setCartTog, cartItems }) => {
                 </div>
             </div>
 
-            <a href="https://api.whatsapp.com/send?phone=972528629030&amp;text=שלום פרי וירק ארצנו." class="float" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=972528629030&amp;text=שלום פרי וירק ארצנו." className="float" target="_blank" rel="noreferrer">
                 <BsWhatsapp/>
             </a>
         </>
