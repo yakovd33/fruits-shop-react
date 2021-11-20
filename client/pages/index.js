@@ -93,7 +93,7 @@ export default function Home({ cartItems, setCartItems }) {
             query += `&search=${ searchKeywords }`;
         }
 
-		axios.get('http://localhost:5000/products/?page=' + curPage + query).then((res) => {
+		axios.get(process.env.API_URL + '/products/?page=' + curPage + query).then((res) => {
 			setProducts(res.data.products);
 			setTotalLength(res.data.length);
 			setTotalPages(Math.ceil(res.data.length / 20));
