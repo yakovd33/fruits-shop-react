@@ -17,7 +17,7 @@ body {
 }
 
 .website-content {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 /* Scrollbar */
@@ -152,8 +152,13 @@ a {
   margin-bottom: 7px;
 }
 
+#header-logo {
+  display: flex;
+  align-items: center;
+}
+
 #header-logo img {
-  height: 55px;
+  height: 30px;
   margin-left: 60px;
   cursor: pointer;
 }
@@ -425,6 +430,16 @@ a {
 
 .slider-arrow {
   cursor: pointer;
+}
+
+#product-search-input {
+  padding: 14px;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
 }
 
 /* Product Showcase */

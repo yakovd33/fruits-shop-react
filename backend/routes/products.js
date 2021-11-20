@@ -9,6 +9,7 @@ router.get("/", async (req, res, next) => {
 
 	let page = req.query.page;
 	let category_id = req.query.category;
+	let search = req.query.search;
 
 	if (!page) {
 		page = 1;
@@ -24,6 +25,10 @@ router.get("/", async (req, res, next) => {
 			filter = { category: category_id };
 		} else {
 			filter = {};
+		}
+
+		if (search) {
+			filter.name = { $regex: '^' + search, $options: 'i' };
 		}
 
 		await productModel.find(filter).then(async (results) => {

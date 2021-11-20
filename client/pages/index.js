@@ -81,14 +81,19 @@ export default function Home({ cartItems, setCartItems }) {
 	const [ curPage, setCurPage ] = useState(1);
 	const [ totalPages, setTotalPages ] = useState(1);
 	const [ category, setCategory ] = useState('all');
+    const [ searchKeywords, setSearchKeywords ] = useState('');
 
 	const loadProducts = () => {
-		let category_query = '';
+		let query = '';
 		if (category != 'all') {
-			category_query = '&category=' + category;
+			query = '&category=' + category;
 		}
 
-		axios.get('https://sahar-fruits.herokuapp.com/products/?page=' + curPage + category_query).then((res) => {
+        if (searchKeywords.length) {
+            query += `&search=${ searchKeywords }`;
+        }
+
+		axios.get('http://localhost:5000/products/?page=' + curPage + query).then((res) => {
 			setProducts(res.data.products);
 			setTotalLength(res.data.length);
 			setTotalPages(Math.ceil(res.data.length / 20));
@@ -102,7 +107,7 @@ export default function Home({ cartItems, setCartItems }) {
 	useEffect(() => {
 		setCurPage(1);
 		loadProducts();
-	}, [ category ]);
+	}, [ category, searchKeywords ]);
 
 	return (
 		<>
@@ -123,6 +128,10 @@ export default function Home({ cartItems, setCartItems }) {
 						<div className={ `main-product-category-filter ${ category == 7 ? 'active' : '' }` } onClick={ () => setCategory(7) }>מבצעים</div>
 					</div>
 
+                    <form action="" id="products-search-form">
+                        <input type="text" placeholder="חפש/י מוצרים" value={ searchKeywords } onChange={ (e) => setSearchKeywords(e.target.value) } id="product-search-input" />
+                    </form>
+
 					<div id="main-products-list">
 						{ products && products.map((product) => (
 							<ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } price={ product.price } unit={ product.unitType } image={ `https://sahar-fruits.herokuapp.com/image/${ product.id }.jpg ` }/>
@@ -130,7 +139,9 @@ export default function Home({ cartItems, setCartItems }) {
 					</div>
 
 					<div id="home-pagination">
-						{ [...Array(totalPages)].map((_, index) => <div className={ `pagination-item ${index + 1 == curPage ? 'active' : ''}` } onClick={ () => setCurPage(index + 1) }>{ index + 1 }</div>) }
+						{ [...Array(totalPages)].map((_, index) => (
+                            <div className={ `pagination-item ${index + 1 == curPage ? 'active' : ''} ${ index < (curPage - 4) || index > (curPage + 2) ? 'hide' : '' }` } onClick={ () => setCurPage(index + 1) }>{ index + 1 }</div>) 
+                        )}
 					</div>
 				</div>
 			</div>
