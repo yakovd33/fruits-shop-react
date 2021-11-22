@@ -5,6 +5,16 @@ import OrderForm from '../OrderForm';
 
 const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ orderFormTog, setOrderFormTog ] = useState(false);
+    const [ cartSum, setCartSum ] = useState(0);
+
+    useEffect(() => {
+        let sum = 0;
+        cartItems.map((item) => {
+            sum += (item.price * item.amount);
+        });
+
+        setCartSum(sum)
+    }, [ cartItems ]);
 
     return ( 
         <div id="cart-wrap">
@@ -19,6 +29,10 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                     )) }
 
                    <p className={ `${ cartItems.length ? 'hide' : '' }` }>העגלה ריקה, אולי תוסיפו קצת ירקות?</p>
+                </div>
+
+                <div id="cart-sum">
+                    <strong>סיכום הזמנה: </strong> { cartSum }₪
                 </div>
 
                 <div id="cart-link-to-checkout" onClick={ () => setOrderFormTog(!orderFormTog) }>להמשך הזמנה</div>

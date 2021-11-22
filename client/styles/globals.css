@@ -236,6 +236,10 @@ a {
   transition: 0.4 s ease-in-out;
 }
 
+#cart-sum {
+  margin-top: 10px;
+}
+
 #cart-bg.active {
   display: block;
 }
@@ -319,6 +323,7 @@ a {
 
 .cart-item-price {
   margin-right: 10px;
+  float: left;
 }
 
 .cart-item-amount {
@@ -575,8 +580,8 @@ a {
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 0 30px #9a9a9a3b;
-  min-width: 400px;
-  max-width: 90%;
+  width: 400px;
+  max-width: 82%;
 }
 
 #order-form .input-group {
