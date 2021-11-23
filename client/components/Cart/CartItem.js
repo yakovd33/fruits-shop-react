@@ -1,9 +1,32 @@
+import React, { useState } from 'react';
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from 'react-icons/ai';
 
-const CartItem = ({ name, price, image, amount, cartItems, setCartItems }) => {
+const CartItem = ({ id, name, price, image, amount, cartItems, setCartItems }) => {
     const handleDelete = () => {
         const newCart = cartItems.filter((item) => item.name !== name);
         setCartItems(newCart);  
+    }
+
+    const handlePlus = () => {
+        let newCart = cartItems.map((item, i) => {
+            if (item.name == name) {
+                return { ...item, amount: amount + 1 };
+            } else return item
+        });
+
+        setCartItems(newCart);
+    }
+
+    const handleMinus = () => {
+        let newCart = cartItems.map((item, i) => {
+            if (item.name == name) {
+                if (item.amount > 1) {
+                    return { ...item, amount: amount - 1 };
+                } else return item
+            } else return item;
+        });
+
+        setCartItems(newCart)
     }
 
     return ( 
@@ -22,9 +45,9 @@ const CartItem = ({ name, price, image, amount, cartItems, setCartItems }) => {
                 
                 <div className="cart-item-amount">
                     <div className="cart-item-form-amount">
-                        <button className="cart-item-form-plus"><AiOutlineMinus/></button>
+                        <button className="cart-item-form-plus" onClick={ handleMinus }><AiOutlineMinus/></button>
                         <input type="number" className="cart-item-form-amount-field" value={ amount } data-np-checked="1"/>
-                        <button className="cart-item-form-minus"><AiOutlinePlus/></button>
+                        <button className="cart-item-form-minus" onClick={ handlePlus }><AiOutlinePlus/></button>
                     </div>
                 </div>
             </div>

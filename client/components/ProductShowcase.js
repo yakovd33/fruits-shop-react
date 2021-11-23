@@ -4,6 +4,33 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 const ProductShowcase = ({ name, price, image, unit, cartItems, setCartItems }) => {
     const [ amount, setAmount ] = useState(1);
 
+    const handleAddToCart = () => {
+        document.getElementById("header-cart-icon").setAttribute('class', 'grow');
+
+        setTimeout(() => {
+            document.getElementById("header-cart-icon").setAttribute('class', '');
+        }, 500);
+
+        let found = false;
+
+        cartItems.map((item) => {
+            if (item.name == name) {
+                found = true;
+            }
+        });
+
+        if (!found) {
+            setCartItems(cartItems => [ ...cartItems, { name: name, amount: amount, price: price, image: image } ]);
+        } else {
+            let newCart = cartItems.map((item, i) => {
+                if (item.name == name) return { ...item, amount: item.amount + 1 };
+                else return item
+            });
+    
+            setCartItems(newCart);
+        }
+    }
+
     return (
         <div className="product-showcase">
             <div className="product-showcase-image">
@@ -24,7 +51,7 @@ const ProductShowcase = ({ name, price, image, unit, cartItems, setCartItems }) 
                     </div>
                 </div>
 
-                <div className="cute-btn product-showcase-add-to-cart" onClick={ () => setCartItems(cartItems => [ ...cartItems, { name: name, amount: amount, price: price, image: image } ]) }>הוספה לעגלה</div>
+                <div className="cute-btn product-showcase-add-to-cart" onClick={ handleAddToCart }>הוספה לעגלה</div>
             </div>
         </div>
     );

@@ -604,3 +604,49 @@ a {
 #order-form-feedback {
   margin-bottom: 10px;
 }
+
+.grow {
+  animation-name: grow;
+  animation-duration: 0.5s;
+}
+
+@keyframes grow {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.2) }
+  100% { transform: scale(1) }
+}
+
+#about-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  object-position: top;
+}
+
+#about-image-wrap {
+  position: relative;
+}
+
+#about-image-wrap:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  max-height: 450px;
+}
+
+#about-image-wrap:after {
+  content: "אודות";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  z-index: 999;
+}
