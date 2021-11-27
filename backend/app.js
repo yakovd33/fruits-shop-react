@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 
@@ -17,6 +18,7 @@ const productsRouter = require('./routes/products');
 const ordersRouter = require('./routes/orders');
 
 var app = express();
+app.use(bodyParser.urlencoded({extended: true}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

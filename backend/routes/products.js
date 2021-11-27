@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const productModel = require("../models/productModel");
 const multer = require("multer");
+const path = require("path");
 
 // Get all products
 router.get("/", async (req, res, next) => {
@@ -10,6 +11,7 @@ router.get("/", async (req, res, next) => {
 	let page = req.query.page;
 	let category_id = req.query.category;
 	let search = req.query.search;
+	let all = req.query.all;
 
 	if (!page) {
 		page = 1;
@@ -28,7 +30,13 @@ router.get("/", async (req, res, next) => {
 		}
 
 		if (search) {
-			filter.name = { $regex: '^' + search, $options: 'i' };
+			filter.name = { "$regex": search, "$options": "i" };
+		}
+
+		if (all) {
+			limit = 999;
+		} else {
+			limit = 20;
 		}
 
 		await productModel.find(filter).then(async (results) => {
@@ -39,8 +47,8 @@ router.get("/", async (req, res, next) => {
 			result.products = await productModel
 				.find(filter)
 				.sort({ id: "asc" })
-				.limit(20)
-				.skip(20 * (page - 1));
+				.limit(limit)
+				.skip(limit * (page - 1));
 		});
 	} catch (err) {
 		res.status(500).send(err._message);
@@ -49,33 +57,71 @@ router.get("/", async (req, res, next) => {
 	res.status(200).json(result);
 });
 
-const storage = multer.diskStorage({
+// Delete products
+router.delete("/:id", async (req, res, next) => {
+	let id = req.params.id;
+
+	res.send(id);
+
+	if (id) {
+		try {
+			await productModel.deleteOne({ id: id });
+		} catch (e) {
+			console.log(e);
+		}
+		console.log(id);
+	}
+});
+
+const MIME_TYPE_MAP = {
+	'image/png': 'png',
+	'image/jpeg': 'jpg',
+	'image/jpg': 'jpg'
+};  
+
+var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, "./uploads/");
+	  cb(null, 'uploads')
 	},
 	filename: function (req, file, cb) {
-		cb(null, new Date().toISOString() + file.originalname);
-	},
-});
-
-const fileFilter = (req, file, cb) => {
-	// reject a file
-	if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-		cb(null, true);
-	} else {
-		cb(null, false);
+		const ext = MIME_TYPE_MAP[file.mimetype];
+		cb(null, Date.now() + '.' + ext);
+	  	// cb(null, Date.now())
 	}
-};
+  })
+   
+var upload = multer({ storage: storage });
 
-const upload = multer({
-	storage: storage,
-	limits: {
-		fileSize: 1024 * 1024 * 5,
-	},
-	fileFilter: fileFilter,
+router.post('/', upload.single('file'), async (req, res, next) => {
+	let file = req.file;
+	
+	if (file) {
+		try {
+			let file_id = file.filename.split('.')[0];
+			req.body.id = file_id
+			let newProduct = new productModel(req.body);
+			await newProduct.save();
+			// console.log(req);
+			
+			res.send('מוצר נוסף בהצלחה');
+		} catch (e) {
+			console.log(e);
+		}
+	}
 });
 
-// Add new product
-router.post("/", (req, res, next) => {});
+router.post('/update/:id', async (req, res, next) => {
+	let id = req.params.id;
+
+	try {
+		productModel.findOneAndUpdate({ id: id }, {
+			$set: { 'price': req.body.price }
+		}, (err, docs) => {
+			if (!err) res.send('שינוי בוצע בהצלחה.')
+		})
+	} catch (e) {
+		console.log(e);
+	}
+});
 
 module.exports = router;

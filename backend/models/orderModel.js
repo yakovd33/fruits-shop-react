@@ -8,7 +8,8 @@ const orderSchema = new mongoose.Schema({
     apartment: { type: String, required: true },
     notes: { type: String },
     cart: { type: String },
-    price: { type: String }
+    price: { type: String },
+    date: { type: Number, default: Date.now() }
 });
 
 module.exports = mongoose.model('Order', orderSchema);
