@@ -6,6 +6,30 @@ const EditProduct = ({ id, product, setShowEdit }) => {
         {
             id: 1,
             name: 'ירקות'
+        },
+        {
+            id: 2,
+            name: 'פירות'
+        },
+        {
+            id: 3,
+            name: 'מעדנייה'
+        },
+        {
+            id: 4,
+            name: 'ירק ופטריות'
+        },
+        {
+            id: 5,
+            name: 'מזווה'
+        },
+        {
+            id: 6,
+            name: 'יבשים'
+        },
+        {
+            id: 7,
+            name: 'מבצעים'
         }
     ]);
 
