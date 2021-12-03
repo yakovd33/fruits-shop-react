@@ -276,10 +276,6 @@ a {
 }
 
 /* Cart item */
-#cart-items {
-  /* height: calc(100% - 50px); */
-}
-
 .cart-item {
   display: flex;
   padding: 20px;
@@ -456,15 +452,20 @@ a {
   text-align: center;
 }
 
+.old-price {
+  text-decoration: line-through;
+  color: #979797;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  font-weight: bold;
+}
+
 .product-showcase .product-showcase-image img {
   max-width: 100%;
   height: 200px;
   object-fit: contain;
-}
-
-.product-showcase .cart-item-amount-wrap {
-  /* display: flex;
-  justify-content: center; */
 }
 
 .product-showcase .cart-item-amount-wrap .cart-item-amount {

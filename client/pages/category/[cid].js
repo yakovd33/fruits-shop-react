@@ -36,7 +36,7 @@ const Category = ({ cartItems, setCartItems }) => {
             <div id="home-main-content">
                 <div id="main-products-list">
                     { products && products.map((product) => (
-                        <ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } price={ product.price } unit={ product.unitType } image={ `${ process.env.API_URL }/image/${ product.id }.jpg ` }/>
+                        <ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } salePrice={ product.salePrice } price={ product.price } unit={ product.unitType } image={ `${ process.env.API_URL }/image/${ product.id }.jpg ` }/>
                     )) }
                 </div>
 

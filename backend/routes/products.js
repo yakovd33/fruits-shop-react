@@ -98,7 +98,8 @@ router.post('/', upload.single('file'), async (req, res, next) => {
 	if (file) {
 		try {
 			let file_id = file.filename.split('.')[0];
-			req.body.id = file_id
+			req.body.id = file_id;
+
 			let newProduct = new productModel(req.body);
 			await newProduct.save();
 			// console.log(req);
@@ -113,9 +114,18 @@ router.post('/', upload.single('file'), async (req, res, next) => {
 router.post('/update/:id', async (req, res, next) => {
 	let id = req.params.id;
 
+	console.log(req.body)
+
 	try {
 		productModel.findOneAndUpdate({ id: id }, {
-			$set: { 'price': req.body.price }
+			$set: { 
+				'price': req.body.price,
+				'salePrice': req.body.salePrice,
+				'name': req.body.name,
+				'category': req.body.category,
+				'availability': req.body.availability,
+				'unitType': req.body.unitType,
+		 	}
 		}, (err, docs) => {
 			if (!err) res.send('שינוי בוצע בהצלחה.')
 		})

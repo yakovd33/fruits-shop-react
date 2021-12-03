@@ -40,6 +40,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
     const [ cat, setCat ] = useState(product.category);
     const [ unit, setUnit ] = useState(product.unitType);
     const [ price, setPrice ] = useState(product.price);
+    const [ salePrice, setSalePrice ] = useState(product.salePrice);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -50,7 +51,8 @@ const EditProduct = ({ id, product, setShowEdit }) => {
             availability: stock,
             category: cat,
             unitType: unit,
-            price: price
+            price: price,
+            salePrice: salePrice
         }).then((res) => {
             console.log(res);
             setFeedback(res.data);
@@ -97,6 +99,10 @@ const EditProduct = ({ id, product, setShowEdit }) => {
 
                 <div className="input-group">
                     <input type="number" placeholder="מחיר" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
+                </div>
+
+                <div className="input-group">
+                    <input type="number" placeholder="מחיר מבצע" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
                 </div>
 
                 { feedback && <p id="new-product-feedback">{ feedback }</p> }

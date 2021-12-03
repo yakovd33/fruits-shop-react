@@ -40,6 +40,7 @@ const NewProduct = () => {
     const [ cat, setCat ] = useState(1);
     const [ unit, setUnit ] = useState('ק"ג');
     const [ price, setPrice ] = useState('');
+    const [ salePrice, setSalePrice ] = useState('');
     const [ image, setImage ] = useState(null);
 
     const random = (length = 8) => {
@@ -57,6 +58,7 @@ const NewProduct = () => {
         fd.append('category', cat);
         fd.append('unitType', unit);
         fd.append('price', price);
+        fd.append('salePrice', salePrice);
         fd.append('file', image);
 
         axios.post(`${process.env.API_URL}/products/`, fd, {
@@ -112,6 +114,10 @@ const NewProduct = () => {
 
             <div className="input-group">
                 <input type="number" placeholder="מחיר" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
+            </div>
+
+            <div className="input-group">
+                <input type="number" placeholder="מחיר מבצע" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
             </div>
 
             <div className="input-group">

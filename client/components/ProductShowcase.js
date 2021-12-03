@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+var parse = require('html-react-parser');
 
-const ProductShowcase = ({ name, price, image, unit, cartItems, setCartItems }) => {
+const ProductShowcase = ({ name, price, salePrice, image, unit, cartItems, setCartItems }) => {
     const [ amount, setAmount ] = useState(1);
 
     const handleAddToCart = () => {
@@ -38,7 +39,9 @@ const ProductShowcase = ({ name, price, image, unit, cartItems, setCartItems }) 
             </div>
 
             <div className="product-showcase-name">{ name }</div>
-            <div className="product-showcase-price">{ price }₪ / { unit }</div>
+            <div className="product-showcase-price">
+                { parse(`${!salePrice ? `${price}₪` : `<span className="old-price">${price}₪</span> <span className="new-price">${salePrice}₪</span>`}`) } / { unit }
+            </div>
 
             <div className="product-showcase-add-to-cart-form">
                 <div className="cart-item-amount-wrap">
