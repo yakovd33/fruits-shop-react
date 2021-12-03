@@ -134,7 +134,11 @@ export default function Home({ cartItems, setCartItems }) {
 
 					<div id="main-products-list">
 						{ products && products.map((product) => (
-							<ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } price={ product.price } salePrice={ product.salePrice } unit={ product.unitType } image={ `${process.env.API_URL}/image/${ product.id }.jpg ` }/>
+                            <div>
+                                { product.salePrice }
+                            </div>
+
+							// <ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } price={ product.price } salePrice={ product.salePrice } unit={ product.unitType } image={ `${process.env.API_URL}/image/${ product.id }.jpg ` }/>
 						)) }
 					</div>
 
