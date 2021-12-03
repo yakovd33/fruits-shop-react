@@ -452,6 +452,13 @@ a {
   text-align: center;
 }
 
+.showcase-price {
+  display: none;
+}
+
+.showcase-price.db {
+  display: inline-block;
+}
 .old-price {
   text-decoration: line-through;
   color: #979797;
@@ -460,6 +467,7 @@ a {
 
 .new-price {
   font-weight: bold;
+  margin-right: 5px;
 }
 
 .product-showcase .product-showcase-image img {
