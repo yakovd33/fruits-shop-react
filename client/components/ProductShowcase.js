@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-// var parse = require('html-react-parser');
+const parse = require('html-react-parser');
 
 const ProductShowcase = ({ name, price, salePrice, image, unit, cartItems, setCartItems }) => {
-    const parse = (html) => {
-        return html;
-    }
+    // const parse = (html) => {
+    //     return html;
+    // }
 
     const [ amount, setAmount ] = useState(1);
 
