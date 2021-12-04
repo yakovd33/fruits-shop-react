@@ -20,6 +20,8 @@ const OrdersList = () => {
 			{orders.map((order) => (
 				<OrderListItem
 					order={ order }
+					orders={ orders }
+					setOrders={ setOrders }
 				/>
 			))}
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from 'react-icons/ai';
 
-const CartItem = ({ id, name, price, image, amount, cartItems, setCartItems }) => {
+const CartItem = ({ id, name, price, image, amount, minAmount, cartItems, setCartItems }) => {
     const handleDelete = () => {
         const newCart = cartItems.filter((item) => item.name !== name);
         setCartItems(newCart);  
@@ -18,15 +18,17 @@ const CartItem = ({ id, name, price, image, amount, cartItems, setCartItems }) =
     }
 
     const handleMinus = () => {
-        let newCart = cartItems.map((item, i) => {
-            if (item.name == name) {
-                if (item.amount > 1) {
-                    return { ...item, amount: amount - 1 };
-                } else return item
-            } else return item;
-        });
+        if (amount > minAmount) {
+            let newCart = cartItems.map((item, i) => {
+                if (item.name == name) {
+                    if (item.amount > 1) {
+                        return { ...item, amount: amount - 1 };
+                    } else return item
+                } else return item;
+            });
 
-        setCartItems(newCart)
+            setCartItems(newCart)
+        }
     }
 
     return ( 

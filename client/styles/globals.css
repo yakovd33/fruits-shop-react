@@ -450,6 +450,7 @@ a {
   border-radius: 5px;
   box-shadow: 0 0 30px #9a9a9a3b;
   text-align: center;
+  position: relative;
 }
 
 .showcase-price {
@@ -468,6 +469,33 @@ a {
 .new-price {
   font-weight: bold;
   margin-right: 5px;
+}
+
+.sale-badge {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  top: -10px;
+  left: -10px;
+  background-color: #4caf50;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.7rem;
+  z-index: 9999;
+  display: none;
+}
+
+.sale-badge.vis {
+  display: block;
+}
+
+#no-products-found-p {
+  margin-top: 10px;
+  color: tomato;
+  font-weight: bold;
+  text-align: center;
 }
 
 .product-showcase .product-showcase-image img {

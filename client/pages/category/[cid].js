@@ -47,9 +47,11 @@ const Category = ({ cartItems, setCartItems }) => {
                     />
                 </form>
 
+                { !products.length && <p id="no-products-found-p">לא נמצאו מוצרים התואמים את החיפוש.</p> }
+
                 <div id="main-products-list">
                     { products && products.map((product) => (
-                        <ProductShowcase cartItems={ cartItems } setCartItems={ setCartItems } name={ product.name } salePrice={ product.salePrice } price={ product.price } unit={ product.unitType } image={ `${ process.env.API_URL }/image/${ product.id }.jpg ` }/>
+                        <ProductShowcase cartItems={ cartItems } minAmount={ product.minAmount } setCartItems={ setCartItems } name={ product.name } salePrice={ product.salePrice } price={ product.price } unit={ product.unitType } image={ `${ process.env.API_URL }/image/${ product.id }.jpg ` }/>
                     )) }
                 </div>
 

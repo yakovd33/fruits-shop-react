@@ -25,7 +25,7 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
 
                 <div id="cart-items">
                     { cartItems.map((item) => (
-                        <CartItem name={ item.name } price={ item.price } image={ item.image } amount={ item.amount } cartItems= { cartItems } setCartItems={ setCartItems }/>
+                        <CartItem name={ item.name } minAmount={ item.minAmount } price={ item.price } image={ item.image } amount={ item.amount } cartItems= { cartItems } setCartItems={ setCartItems }/>
                     )) }
 
                    <p className={ `${ cartItems.length ? 'hide' : '' }` }>העגלה ריקה, אולי תוסיפו קצת ירקות?</p>

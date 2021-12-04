@@ -1,11 +1,26 @@
-const OrderListItem = ({ order }) => {
+import React, { useState, useEffect } from 'react';
+import { BiTrash } from 'react-icons/bi';
+import axios from 'axios';
+
+const OrderListItem = ({ order, orders, setOrders }) => {
+	const [ cart, setCart ] = useState(JSON.parse(order.cart));
+
     const format_time = (s) => {
         var date = new Date(+s);
         return date.toLocaleString()
-    }
-      
+	}
+
+	const handleDelete = () => {
+		if (prompt('על מנת למחוק הזמנה הקש סיסמא') == '123123') {
+			axios.delete(`${process.env.API_URL}/orders/${order._id}`).then((res) => {
+				setOrders(orders.filter((item) => item._id !== order._id));
+			});
+		}
+	}
+
 	return (
 		<div className="order-list-item">
+			<div className="order-delete-btn" onClick={ handleDelete }><BiTrash/></div>
 			<div className="order-list-item-line">
 				<div className="title">שם מלא</div>
 				<div className="det">{order.fullname}</div>
@@ -39,6 +54,19 @@ const OrderListItem = ({ order }) => {
             <div className="order-list-item-line">
 				<div className="title">תאריך</div>
 				<div className="det">{format_time(order.date)}</div>
+			</div>
+
+			<div className="order-list-item-line">
+				<div className="title">מוצרים:</div>
+			</div>
+
+			<div className="order-list-item-cart">
+				{ cart.map((item) => (
+					<div className="order-cart-item">
+						{ item.name } * { item.amount }
+						<br/>
+					</div>
+				)) }
 			</div>
 		</div>
 	);

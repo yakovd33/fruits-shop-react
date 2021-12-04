@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
-const ProductShowcase = ({ name, price, salePrice, image, unit, cartItems, setCartItems }) => {
-    const [ amount, setAmount ] = useState(1);
+const ProductShowcase = ({ name, price, salePrice, minAmount, image, unit, cartItems, setCartItems }) => {
+    const [ amount, setAmount ] = useState(minAmount);
+
+    useEffect(() => {
+        setAmount(minAmount);
+    }, [ minAmount ])
 
     const handleAddToCart = () => {
         document.getElementById("header-cart-icon").setAttribute('class', 'grow');
@@ -20,7 +24,7 @@ const ProductShowcase = ({ name, price, salePrice, image, unit, cartItems, setCa
         });
 
         if (!found) {
-            setCartItems(cartItems => [ ...cartItems, { name: name, amount: amount, price: price, image: image } ]);
+            setCartItems(cartItems => [ ...cartItems, { name, amount, minAmount, price, image } ]);
         } else {
             let newCart = cartItems.map((item, i) => {
                 if (item.name == name) return { ...item, amount: item.amount + 1 };
@@ -33,6 +37,7 @@ const ProductShowcase = ({ name, price, salePrice, image, unit, cartItems, setCa
 
     return (
         <div className="product-showcase">
+            { <span className={ `sale-badge ${salePrice && salePrice != 0 ? 'vis' : ''}` }>במבצע</span> }
             <div className="product-showcase-image">
                 <img src={ image } alt=""/>
             </div>
@@ -55,7 +60,7 @@ const ProductShowcase = ({ name, price, salePrice, image, unit, cartItems, setCa
                 <div className="cart-item-amount-wrap">
                     <div className="cart-item-amount">
                         <div className="cart-item-form-amount">
-                            <button className="cart-item-form-plus" onClick={ () => setAmount(amount - 1) }><AiOutlineMinus/></button>
+                            <button className="cart-item-form-plus" onClick={ () => { if (amount > minAmount) setAmount(amount - 1) } }><AiOutlineMinus/></button>
                             <input type="number" className="cart-item-form-amount-field" value={ amount } onChange={ (e) => setAmount(e.target.value) } data-np-checked="1"/>
                             <button className="cart-item-form-minus" onClick={ () => setAmount(amount + 1) }><AiOutlinePlus/></button>
                         </div>

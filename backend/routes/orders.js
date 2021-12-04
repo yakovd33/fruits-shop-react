@@ -33,4 +33,15 @@ router.post("/", function (req, res, next) {
 	}
 });
 
+// Delete an order
+router.delete('/:id', (req, res, next) => {
+	let order_id = req.params.id;
+
+	Order.findOneAndDelete({ _id: new mongoose.Types.ObjectId(order_id) }).then((re) => {
+		console.log(re)
+	});
+
+	res.send('success')
+})
+
 module.exports = router;

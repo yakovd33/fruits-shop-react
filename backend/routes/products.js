@@ -24,7 +24,12 @@ router.get("/", async (req, res, next) => {
 
 	try {
 		if (category_id) {
-			filter = { category: category_id };
+			if (category_id != 7) {
+				filter = { category: category_id };
+			} else {
+				// Get all products on sale
+				filter = { salePrice: { $ne: 0 } }
+			}
 		} else {
 			filter = {};
 		}

@@ -22,6 +22,7 @@ export default function Home({ cartItems, setCartItems }) {
 			id: "021f25e3-aaf9-4f4e-8769-21d115829b79",
 			price: "18",
 			category: 4,
+			salePrice: 0
 		},
 		{
 			minAmount: "1",
@@ -31,6 +32,7 @@ export default function Home({ cartItems, setCartItems }) {
 			id: "02357c36-332e-4e82-a3bc-de0528d0293c",
 			unitType: "יחידה",
 			name: "רשד\\שיבה (צרור)",
+			salePrice: 0
 		},
 		{
 			category: 4,
@@ -40,6 +42,7 @@ export default function Home({ cartItems, setCartItems }) {
 			name: "מלוחייה (מארז 200 גר')",
 			price: "11",
 			unitType: "יחידה",
+			salePrice: 0
 		},
 		{
 			name: "חמוציות מסוכרות (קופסא 200 גר')",
@@ -49,6 +52,7 @@ export default function Home({ cartItems, setCartItems }) {
 			minAmount: "1",
 			availability: true,
 			unitType: "יחידה",
+			salePrice: 0
 		},
 		{
 			name: "ריבת קיווי איכותית (בוסטן 350 גר')",
@@ -58,6 +62,7 @@ export default function Home({ cartItems, setCartItems }) {
 			unitType: "יחידה",
 			price: "35",
 			minAmount: "1",
+			salePrice: 0
 		},
 		{
 			category: 6,
@@ -67,6 +72,7 @@ export default function Home({ cartItems, setCartItems }) {
 			name: "הל (100 גר')",
 			id: "05447ba7-6d5d-46d4-944a-5f31378d2bd5",
 			availability: true,
+			salePrice: 0
 		},
 		{
 			minAmount: "1",
@@ -76,6 +82,7 @@ export default function Home({ cartItems, setCartItems }) {
 			category: 5,
 			name: 'דבש - הדרים (למדני 1 ק"ג)',
 			price: "50",
+			salePrice: 0
 		},
 	]);
 
@@ -198,11 +205,14 @@ export default function Home({ cartItems, setCartItems }) {
 						/>
 					</form>
 
+					{ !products.length && <p id="no-products-found-p">לא נמצאו מוצרים התואמים את החיפוש.</p> }
+
 					<div id="main-products-list">
 						{products &&
 							products.map((product) => (
 								<ProductShowcase
 									cartItems={cartItems}
+									minAmount={ product.minAmount }
 									setCartItems={setCartItems}
 									name={product.name}
 									price={product.price}
