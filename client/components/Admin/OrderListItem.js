@@ -4,6 +4,17 @@ import axios from 'axios';
 
 const OrderListItem = ({ order, orders, setOrders }) => {
 	const [ cart, setCart ] = useState(JSON.parse(order.cart));
+	const [ finalPrice, setFinalPrice ] = useState(0);
+
+	useEffect(() => {
+		let sum = 0;
+
+		cart.map((item) => {
+			sum += (item.price * item.amount);
+		});
+
+		setFinalPrice(sum);
+	}, [ cart ]);
 
     const format_time = (s) => {
         var date = new Date(+s);
@@ -54,6 +65,11 @@ const OrderListItem = ({ order, orders, setOrders }) => {
             <div className="order-list-item-line">
 				<div className="title">תאריך</div>
 				<div className="det">{format_time(order.date)}</div>
+			</div>
+
+			<div className="order-list-item-line">
+				<div className="title">מחיר סופי:</div>
+				<div className="det">{ finalPrice }₪</div>
 			</div>
 
 			<div className="order-list-item-line">

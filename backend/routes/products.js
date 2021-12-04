@@ -116,6 +116,7 @@ router.post('/', upload.single('file'), async (req, res, next) => {
 	}
 });
 
+// Edit product
 router.post('/update/:id', async (req, res, next) => {
 	let id = req.params.id;
 

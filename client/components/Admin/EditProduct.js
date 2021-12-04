@@ -73,7 +73,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
 
                 <div className="input-group">
                     <label htmlFor="">במלאי</label>
-                    <select name="" id="">
+                    <select name="" id="" onChange={ (e) => setStock(e.target.value) }>
                         <option value="true">כן</option>
                         <option value="false">לא</option>
                     </select>
@@ -90,7 +90,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
 
                 <div className="input-group">
                     <label htmlFor="">סוג יחידה</label>
-                    <select name="" id="">
+                    <select name="" id="" onChange={ (e) => setUnit(e.target.value) }>
                         <option value={`ק"ג`}>ק"ג</option>
                         <option value={`יחידה`}>יחידה</option>
                         <option value={`חבילה`}>חבילה</option>

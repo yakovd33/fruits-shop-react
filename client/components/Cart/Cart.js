@@ -6,14 +6,19 @@ import OrderForm from '../OrderForm';
 const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ orderFormTog, setOrderFormTog ] = useState(false);
     const [ cartSum, setCartSum ] = useState(0);
+    const [ cartSumBeforeDiscounts, setCartSumBeforeDiscounts ] = useState(0);
 
     useEffect(() => {
         let sum = 0;
+        let sum2 = 0;
+
         cartItems.map((item) => {
             sum += (item.price * item.amount);
+            sum2 += (item.originalPrice * item.amount);
         });
 
-        setCartSum(sum)
+        setCartSum(sum);
+        setCartSumBeforeDiscounts(sum2);
     }, [ cartItems ]);
 
     return ( 
@@ -32,7 +37,8 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                 </div>
 
                 <div id="cart-sum">
-                    <strong>סיכום הזמנה: </strong> { cartSum }₪
+                    { (cartSumBeforeDiscounts != cartSum) && <div><strong>סכום לפני הנחה: </strong> { cartSumBeforeDiscounts }₪</div> }
+                    <div><strong>סיכום הזמנה: </strong> { cartSum }₪</div>
                 </div>
 
                 <div id="cart-link-to-checkout" onClick={ () => setOrderFormTog(!orderFormTog) }>להמשך הזמנה</div>

@@ -24,7 +24,8 @@ const ProductShowcase = ({ name, price, salePrice, minAmount, image, unit, cartI
         });
 
         if (!found) {
-            setCartItems(cartItems => [ ...cartItems, { name, amount, minAmount, price, image } ]);
+            let finalPrice = (salePrice) ? salePrice : price;
+            setCartItems(cartItems => [ ...cartItems, { name, amount, minAmount, originalPrice: price, price: finalPrice, image } ]);
         } else {
             let newCart = cartItems.map((item, i) => {
                 if (item.name == name) return { ...item, amount: item.amount + 1 };
