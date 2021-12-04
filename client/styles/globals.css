@@ -542,7 +542,7 @@ a {
 #main-products-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-top: 20px;
   width: 100%;
 }
@@ -550,6 +550,7 @@ a {
 #main-products-list .product-showcase {
   width: calc(25% - 60px);
   margin-bottom: 13px;
+  margin-left: 10px;
 }
 
 #home-pagination {
