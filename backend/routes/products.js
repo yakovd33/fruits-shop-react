@@ -127,6 +127,7 @@ router.post('/update/:id', async (req, res, next) => {
 			$set: { 
 				'price': req.body.price,
 				'salePrice': req.body.salePrice,
+				'minAmount': req.body.minAmount,
 				'name': req.body.name,
 				'category': req.body.category,
 				'availability': req.body.availability,
