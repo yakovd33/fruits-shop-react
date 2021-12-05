@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const mongoose = require('mongoose');
 const Order = require("../models/orderModel");
 
 // Get all orders
@@ -37,9 +38,15 @@ router.post("/", function (req, res, next) {
 router.delete('/:id', (req, res, next) => {
 	let order_id = req.params.id;
 
-	Order.findOneAndDelete({ _id: new mongoose.Types.ObjectId(order_id) }).then((re) => {
-		console.log(re)
-	});
+	console.log(order_id)
+
+	try {
+		Order.findOneAndDelete({ _id: new mongoose.Types.ObjectId(order_id) }).then((re) => {
+			console.log(re)
+		}).error((err) => console.log(err));
+	} catch (e) {
+		console.log(e);
+	}
 
 	res.send('success')
 })
