@@ -120,6 +120,15 @@ export default function Home({ cartItems, setCartItems }) {
 		loadProducts();
 	}, [category, searchKeywords]);
 
+	useEffect(() => {
+        // Scroll to top when page changes
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+         });
+    }, [ curPage ])
+
 	return (
 		<>
 			<Slider />

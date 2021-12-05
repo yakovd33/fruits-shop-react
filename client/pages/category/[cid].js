@@ -35,8 +35,17 @@ const Category = ({ cartItems, setCartItems }) => {
 	}, [ curPage, router.query, searchKeywords ]);
 
     useEffect(() => {
-        setCurPage(1);
+        setCurPage(1); 
 	}, [ router.query, searchKeywords ]);
+
+    useEffect(() => {
+        // Scroll to top when page changes
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+         });
+    }, [ curPage ])
 
     return ( <>
         <div className="container">
