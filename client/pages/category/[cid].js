@@ -34,6 +34,10 @@ const Category = ({ cartItems, setCartItems }) => {
         }
 	}, [ curPage, router.query, searchKeywords ]);
 
+    useEffect(() => {
+        setCurPage(1);
+	}, [ router.query, searchKeywords ]);
+
     return ( <>
         <div className="container">
             <div id="home-main-content">
