@@ -41,6 +41,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
     const [ unit, setUnit ] = useState(product.unitType);
     const [ price, setPrice ] = useState(product.price);
     const [ salePrice, setSalePrice ] = useState(product.salePrice);
+    const [ image, setImage ] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -56,7 +57,22 @@ const EditProduct = ({ id, product, setShowEdit }) => {
         }).then((res) => {
             console.log(res);
             setFeedback(res.data);
+
+            // Upload image
+            let file_fd = new FormData();
+            file_fd.append('file', image);
+            file_fd.append('product_id', id);
+
+            axios.post(`https://eropa.co.il/fruits/upload.php`, file_fd).then((res) => {
+                console.log(res);
+            })
         })
+    }
+
+    const handleCuteSelect = (e) => {
+        e.preventDefault();
+
+        document.getElementById("file-select-product").click();
     }
 
     return ( 
@@ -103,6 +119,13 @@ const EditProduct = ({ id, product, setShowEdit }) => {
 
                 <div className="input-group">
                     <input type="number" placeholder="מחיר מבצע" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
+                </div>
+
+                <div className="input-group">
+                    <div className="cute-file-select">
+                        <input type="file" id="file-select-product" onChange={ (e) => setImage(e.target.files[0]) }/>
+                        <button className="cute-btn" onClick={ (e) => handleCuteSelect(e) }>בחר תמונה</button>
+                    </div>
                 </div>
 
                 { feedback && <p id="new-product-feedback">{ feedback }</p> }

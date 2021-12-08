@@ -12,7 +12,7 @@ const Header = ({ cartTog, setCartTog, cartItems }) => {
         <>
             <div id="header">
                 <div id="header-right">
-                    <Link href="/"><div id="header-logo"><img src="/images/logo.png" alt="" /></div></Link>
+                    <Link href="/"><a><div id="header-logo"><img src="/images/logo.png" alt="" /></div></a></Link>
                     <div id="header-links" className={ `${ mobileNavTog ? 'active' : '' }` }>
                         <Link href="/"><a className="header-link active">דף הבית</a></Link>
                         <Link href="/about"><a className="header-link">אודות</a></Link>

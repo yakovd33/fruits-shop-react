@@ -227,7 +227,7 @@ export default function Home({ cartItems, setCartItems }) {
 									price={product.price}
 									salePrice={product.salePrice}
 									unit={product.unitType}
-									image={`${process.env.API_URL}/image/${product.id}.jpg `}
+									image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
 								/>
 							))}
 					</div>

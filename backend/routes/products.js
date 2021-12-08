@@ -100,20 +100,27 @@ var upload = multer({ storage: storage });
 router.post('/', upload.single('file'), async (req, res, next) => {
 	let file = req.file;
 	
-	if (file) {
+	// Uncomment when uploading files to the server
+	// if (file) {
 		try {
-			let file_id = file.filename.split('.')[0];
-			req.body.id = file_id;
+			// let file_id = file.filename.split('.')[0];
+			// req.body.id = file_id;
+
+			var product_id = Date.now();
+			req.body.id = product_id;
 
 			let newProduct = new productModel(req.body);
 			await newProduct.save();
 			// console.log(req);
 			
-			res.send('מוצר נוסף בהצלחה');
+			res.json({
+				msg: 'מוצר נוסף בהצלחה',
+				id: product_id
+			});
 		} catch (e) {
 			console.log(e);
 		}
-	}
+	// }
 });
 
 // Edit product
