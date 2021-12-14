@@ -111,7 +111,6 @@ router.post('/', upload.single('file'), async (req, res, next) => {
 
 			let newProduct = new productModel(req.body);
 			await newProduct.save();
-			// console.log(req);
 			
 			res.json({
 				msg: 'מוצר נוסף בהצלחה',

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Script from 'next/script'
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -15,6 +16,8 @@ const Layout = ({ children, cartItems, setCartItems }) => {
                 { children }
                 
             <Footer/>
+
+            <Script src="https://cdn.enable.co.il/licenses/enable-L804575kdnhulif-0221-25262/init.js" />
         </div>
     );
 }

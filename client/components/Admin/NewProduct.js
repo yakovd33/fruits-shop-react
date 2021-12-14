@@ -115,7 +115,7 @@ const NewProduct = () => {
 
             <div className="input-group">
                 <label htmlFor="">סוג יחידה</label>
-                <select name="" id="">
+                <select name="" id="" onClick={ (e) => setUnit(e.target.value) }>
                     <option value={`ק"ג`}>ק"ג</option>
                     <option value={`יחידה`}>יחידה</option>
                     <option value={`חבילה`}>חבילה</option>
