@@ -29,7 +29,6 @@ router.get("/", async (req, res, next) => {
 // Add new order
 router.post("/", async function (req, res, next) {
 	try {
-		console.log('eeeee');
 		// Get product prices from DB
 		let cart = JSON.parse(req.body.cart);
 		let final_price = 0;
@@ -59,7 +58,7 @@ router.post("/", async function (req, res, next) {
 		
 		// let result = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
 
-		// res.status(200).json(result.data);
+		res.status(200).json(result.data);
 		res.send('eee');
 	} catch (e) {
 		console.log(e);
