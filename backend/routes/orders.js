@@ -35,10 +35,14 @@ router.post("/", async function (req, res, next) {
 
 		for (var i = 0; i < cart.length; i++) {
 			let productId = cart[i].id;
-
+			
 			let product = await Product.findOne({ _id: productId });
-			let price = product.salePrice ? product.salePrice : product.price;
-			final_price += price;
+
+			if (product) {
+				let price = product.salePrice ? product.salePrice : product.price;
+				final_price += price;
+				// console.log('price: ' + product.price);
+			}
 		}
 		
 		const newOrder = new Order(req.body);
