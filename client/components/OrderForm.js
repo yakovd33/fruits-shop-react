@@ -13,17 +13,34 @@ const OrderForm = ({ setOrderFormTog }) => {
 
     const handleSubmit = () => {
         if (fullname && phone && city && street && apartment) {
-            axios.post(`${process.env.API_URL}/orders`, {
-                fullname: fullname,
-                phone: phone,
-                city: city,
-                street: street,
-                apartment: apartment,
-                notes: notes,
-                cart: localStorage.getItem('cart')
-            }).then((res) => {
+            // axios.post(`${process.env.API_URL}/orders`, {
+            //     fullname: fullname,
+            //     phone: phone,
+            //     city: city,
+            //     street: street,
+            //     apartment: apartment,
+            //     notes: notes,
+            //     cart: localStorage.getItem('cart')
+            // }).then((res) => {
+            //     console.log(res)
+            // });
+
+            let pageField = [];
+            pageField['fullName'] = fullname;
+            pageField['phone'] = phone;
+            pageField['email'] = 'yakovd33@gmail.com';
+            
+            axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess', {
+                pageCode: 'adad7d131ec4',
+                userId: '1364e144d2bda404',
+                sum: 100,
+                successUrl: 'https://pryerek.co.il/thanks',
+                cancelUrl: 'https://pryerek.co.il',
+                description: 'הזמנה מאתר פרי וירק ארצנו',
+
+            }, (res) => {
                 console.log(res)
-            });
+            })
 
             setFeedback('ההזמנה בוצעה בהצלחה.');
             setIsEmptyFields(false);
