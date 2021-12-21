@@ -608,7 +608,11 @@ a {
 }
 
 /* Order form */
-#order-form {
+.hidden {
+  display: none;
+}
+
+#order-form, #payment-form {
   background-color: #fff;
   position: fixed;
   z-index: 9999999;
@@ -622,6 +626,16 @@ a {
   max-width: 82%;
   max-height: 70%;
   overflow-y: auto;
+}
+
+#payment-form {
+  height: 90%;
+  max-height: 90%;
+}
+
+#payment-form iframe {
+  width: 100%;
+  height: 100%
 }
 
 #order-form .input-group {
@@ -689,4 +703,10 @@ a {
   font-size: 1.8rem;
   font-weight: bold;
   z-index: 999;
+}
+
+/* Thanks page */
+#thanks-page {
+  text-align: center;
+  padding-top: 30px;
 }

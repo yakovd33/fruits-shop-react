@@ -73,6 +73,11 @@ const OrderListItem = ({ order, orders, setOrders }) => {
 			</div>
 
 			<div className="order-list-item-line">
+				<div className="title">בוצע תשלום:</div>
+				<div className="det">{ `${ order.payed ? 'כן' : 'לא' }` }</div>
+			</div>
+
+			<div className="order-list-item-line">
 				<div className="title">מוצרים:</div>
 			</div>
 
