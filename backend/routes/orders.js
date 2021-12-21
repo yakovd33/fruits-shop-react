@@ -56,10 +56,9 @@ router.post("/", async function (req, res, next) {
 		params.append('pageField[email]', req.body.email);
 		params.append('cField1', newOrder._id);
 		
-		// let result = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
+		let result = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
 
 		res.status(200).json(result.data);
-		res.send('eee');
 	} catch (e) {
 		console.log(e);
 	}
