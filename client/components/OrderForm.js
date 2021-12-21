@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const OrderForm = ({ setOrderFormTog }) => {
     const [ fullname, setFullname ] = useState('');
+    const [ email, setEmail ] = useState('');
     const [ phone, setPhone ] = useState('');
     const [ city, setCity ] = useState('');
     const [ street, setStreet ] = useState('');
@@ -19,9 +20,10 @@ const OrderForm = ({ setOrderFormTog }) => {
     }, [ paymentUrl ]);
 
     const handleSubmit = () => {
-        if (fullname && phone && city && street && apartment) {
+        if (fullname && email && phone && city && street && apartment) {
             axios.post(`${process.env.API_URL}/orders`, {
                 fullname: fullname,
+                fullname: email,
                 phone: phone,
                 city: city,
                 street: street,
@@ -49,6 +51,10 @@ const OrderForm = ({ setOrderFormTog }) => {
             <div id="order-form" className={ `${ paymentUrl ? 'hidden' : '' }` }>
                 <div className="input-group">
                     <input type="text" className={ `${ isEmptyFields && !fullname ? 'empty' : '' }` } value={ fullname } onChange={ (e) => setFullname(e.target.value) } placeholder="שם מלא" name="fullname" />
+                </div>
+
+                <div className="input-group">
+                    <input type="email" className={ `${ isEmptyFields && !email ? 'empty' : '' }` } value={ email } onChange={ (e) => setEmail(e.target.value) } placeholder="אימייל" name="email" />
                 </div>
 
                 <div className="input-group">

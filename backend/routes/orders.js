@@ -34,13 +34,13 @@ router.post("/", async function (req, res, next) {
 		const params = new URLSearchParams();
 		params.append('pageCode', 'adad7d131ec4');
 		params.append('userId', '1364e144d2bda404');
-		params.append('sum', '100');
+		params.append('sum', newOrder.price);
 		params.append('successUrl', 'https://pryerek.co.il/thanks?order=true');
 		params.append('cancelUrl', 'https://pryerek.co.il');
 		params.append('description', 'הזמנה מאתר פרי וירק ארצנו');
 		params.append('pageField[fullName]', req.body.fullname);
 		params.append('pageField[phone]', req.body.phone);
-		params.append('pageField[email]', 'yakovd33@gmail.com');
+		params.append('pageField[email]', req.body.email);
 		params.append('cField1', newOrder._id);
 		
 		let result = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
@@ -72,18 +72,51 @@ router.post('/pay/:id', (req, res, next) => {
 	let order_id = req.params.id;
 
 	try {
+		// Order.findOneAndUpdate({ _id: order_id }, {
+		// 	$set: { 
+		// 		'payed': true
+		//  	}
+		// }, (err, docs) => {
+		// 	console.log(err)
+		// })
+	} catch (e) {
+		console.log(e)
+	}
+
+	res.status(200).send('');
+});
+
+router.post('/pay', async (req, res, next) => {
+	let order_id = req.body.data.customFields.cField1;
+	// let paymentSum = req.body.sum;
+	// let transactionId = req.body.transactionId;
+	// let transactionToken = req.body.transactionToken;
+
+	try {
+		// Approve transaction with Meshulam API
+		// const params = new URLSearchParams(req.body);
+		// params.append('pageCode', 'adad7d131ec4');
+		// params.append('transactionId', transactionId);
+		// params.append('transactionToken', transactionToken);
+		// params.append('paymentSum', paymentSum);
+
+		// let response = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/approveTransaction/', params);
+		// console.log(response.data);
+
 		Order.findOneAndUpdate({ _id: order_id }, {
 			$set: { 
 				'payed': true
 		 	}
 		}, (err, docs) => {
 			console.log(err)
-		})
+		});
 	} catch (e) {
 		console.log(e)
 	}
 
-	res.status(200).send('');
-})
+	console.log('payyyy');
+	// axios.get('http://eropa.co.il/log.php?log=' + JSON.stringify(req));
+	res.send('lalala');
+});
 
 module.exports = router;
