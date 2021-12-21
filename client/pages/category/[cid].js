@@ -64,7 +64,7 @@ const Category = ({ cartItems, setCartItems }) => {
 
                 <div id="main-products-list">
                     { products && products.map((product) => (
-                        <ProductShowcase cartItems={ cartItems } minAmount={ product.minAmount } setCartItems={ setCartItems } name={ product.name } salePrice={ product.salePrice } price={ product.price } unit={ product.unitType } image={ `https://eropa.co.il/fruits/uploads/${ product.id }.jpg ` }/>
+                        <ProductShowcase id={ product._id } cartItems={ cartItems } minAmount={ product.minAmount } setCartItems={ setCartItems } name={ product.name } salePrice={ product.salePrice } price={ product.price } unit={ product.unitType } image={ `https://eropa.co.il/fruits/uploads/${ product.id }.jpg ` }/>
                     )) }
                 </div>
 

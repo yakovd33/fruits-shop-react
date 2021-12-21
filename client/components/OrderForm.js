@@ -34,7 +34,7 @@ const OrderForm = ({ setOrderFormTog }) => {
                 console.log(res.data);
 
                 if (res.data.data.url) {
-                    setPaymentUrl(res.data.data.url);
+                    // setPaymentUrl(res.data.data.url);
                 }
             });
 

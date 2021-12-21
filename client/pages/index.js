@@ -220,6 +220,7 @@ export default function Home({ cartItems, setCartItems }) {
 						{products &&
 							products.map((product) => (
 								<ProductShowcase
+									id={ product._id }
 									cartItems={cartItems}
 									minAmount={ product.minAmount }
 									setCartItems={setCartItems}

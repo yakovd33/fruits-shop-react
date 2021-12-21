@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const mongoose = require('mongoose');
 const Order = require("../models/orderModel");
+const Product = require('../models/productModel');
 const axios = require('axios').default;
 
 // Get all orders
@@ -28,13 +29,26 @@ router.get("/", async (req, res, next) => {
 // Add new order
 router.post("/", async function (req, res, next) {
 	try {
+		console.log('eeeee');
+		// Get product prices from DB
+		let cart = JSON.parse(req.body.cart);
+		let final_price = 0;
+
+		for (var i = 0; i < cart.length; i++) {
+			let productId = cart[i].id;
+
+			let product = await Product.findOne({ _id: productId });
+			let price = product.salePrice ? product.salePrice : product.price;
+			final_price += price;
+		}
+		
 		const newOrder = new Order(req.body);
 		await newOrder.save();
 
 		const params = new URLSearchParams();
 		params.append('pageCode', 'adad7d131ec4');
 		params.append('userId', '1364e144d2bda404');
-		params.append('sum', newOrder.price);
+		params.append('sum', final_price);
 		params.append('successUrl', 'https://pryerek.co.il/thanks?order=true');
 		params.append('cancelUrl', 'https://pryerek.co.il');
 		params.append('description', 'הזמנה מאתר פרי וירק ארצנו');
@@ -43,9 +57,10 @@ router.post("/", async function (req, res, next) {
 		params.append('pageField[email]', req.body.email);
 		params.append('cField1', newOrder._id);
 		
-		let result = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
+		// let result = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
 
-		res.status(200).json(result.data);
+		// res.status(200).json(result.data);
+		res.send('eee');
 	} catch (e) {
 		console.log(e);
 	}
@@ -55,7 +70,7 @@ router.post("/", async function (req, res, next) {
 router.delete('/:id', (req, res, next) => {
 	let order_id = req.params.id;
 
-	console.log(order_id)
+	console.log(order_id);
 
 	try {
 		Order.findOneAndDelete({ _id: new mongoose.Types.ObjectId(order_id) }).then((re) => {
