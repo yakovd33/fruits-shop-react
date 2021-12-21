@@ -23,7 +23,7 @@ const OrderForm = ({ setOrderFormTog }) => {
         if (fullname && email && phone && city && street && apartment) {
             axios.post(`${process.env.API_URL}/orders`, {
                 fullname: fullname,
-                fullname: email,
+                email: email,
                 phone: phone,
                 city: city,
                 street: street,
