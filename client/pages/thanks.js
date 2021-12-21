@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 
-const thanks = () => {
+const Thanks = () => {
     const router = useRouter();
     const { cField1 } = router.query;
 
@@ -25,4 +25,4 @@ const thanks = () => {
     )
 }
 
-export default thanks
+export default Thanks
