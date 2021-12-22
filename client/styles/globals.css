@@ -208,6 +208,21 @@ a {
   align-items: center;
 }
 
+#call-btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  line-height: 65px;
+  font-size: 1.4rem;
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 99999;
+  box-shadow: 0 0 17px #5d5d5d94;
+}
+
 /* Footer */
 #main-footer {
   padding: 20px;
@@ -649,6 +664,16 @@ a {
   border: 1px solid #ebebeb;
   width: 100%;
   box-sizing: border-box;
+}
+
+#order-form input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+
+#order-form input[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 #order-form input.empty {

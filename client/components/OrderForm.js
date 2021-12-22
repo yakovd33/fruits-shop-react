@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 const OrderForm = ({ setOrderFormTog }) => {
     const [ fullname, setFullname ] = useState('');
@@ -12,6 +13,7 @@ const OrderForm = ({ setOrderFormTog }) => {
     const [ feedback, setFeedback ] = useState('');
     const [ isEmptyFields, setIsEmptyFields ] = useState(false);
     const [ paymentUrl, setPaymentUrl ] = useState(null);
+    const [ termsAgreed, setTermsAgreed ] = useState(false);
 
     useEffect(() => {
         if (paymentUrl) {
@@ -20,29 +22,31 @@ const OrderForm = ({ setOrderFormTog }) => {
     }, [ paymentUrl ]);
 
     const handleSubmit = () => {
-        if (fullname && email && phone && city && street && apartment) {
-            axios.post(`${process.env.API_URL}/orders`, {
-                fullname: fullname,
-                email: email,
-                phone: phone,
-                city: city,
-                street: street,
-                apartment: apartment,
-                notes: notes,
-                cart: localStorage.getItem('cart')
-            }).then((res) => {
-                console.log(res.data);
+        if (termsAgreed) {
+            if (fullname && email && phone && city && street && apartment) {
+                axios.post(`${process.env.API_URL}/orders`, {
+                    fullname: fullname,
+                    email: email,
+                    phone: phone,
+                    city: city,
+                    street: street,
+                    apartment: apartment,
+                    notes: notes,
+                    cart: localStorage.getItem('cart')
+                }).then((res) => {
+                    console.log(res.data);
 
-                if (res.data.data.url) {
-                    setPaymentUrl(res.data.data.url);
-                }
-            });
+                    if (res.data.data.url) {
+                        setPaymentUrl(res.data.data.url);
+                    }
+                });
 
-            setFeedback('הנך מועבר/ת לתשלום.');
-            setIsEmptyFields(false);
-        } else {
-            setIsEmptyFields(true);
-            setFeedback('עלייך למלא את כל שדות החובה.');
+                setFeedback('הנך מועבר/ת לתשלום.');
+                setIsEmptyFields(false);
+            } else {
+                setIsEmptyFields(true);
+                setFeedback('עלייך למלא את כל שדות החובה.');
+            }
         }
     }
 
@@ -77,10 +81,14 @@ const OrderForm = ({ setOrderFormTog }) => {
                     <textarea type="text" value={ notes } onChange={ (e) => setNotes(e.target.value) } placeholder="הערות" name="notes"></textarea>
                 </div>
 
+                <div className="input-group">
+                    <label htmlFor=""><input type="checkbox" onChange={ () => setTermsAgreed(!termsAgreed) } checked={ termsAgreed }/> אני מאשר/ת את <Link href="/legal"><a href="/legal">תקנון האתר.</a></Link></label>
+                </div>
+
                 { feedback && <p id="order-form-feedback">{ feedback }</p> }
 
                 <div className="input-group">
-                    <input type="submit" onClick={ handleSubmit } className="cute-btn" value="ביצוע הזמנה" />
+                    <input type="submit" onClick={ handleSubmit } className="cute-btn" value="ביצוע הזמנה" disabled={ !termsAgreed } />
                 </div>
             </div>
 

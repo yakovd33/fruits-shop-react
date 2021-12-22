@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { BsWhatsapp } from 'react-icons/bs';
+import { BsWhatsapp, BsFillTelephoneFill } from 'react-icons/bs';
 import { FaAngleDown } from 'react-icons/fa';
 import Link from 'next/link';
 
@@ -50,6 +50,10 @@ const Header = ({ cartTog, setCartTog, cartItems }) => {
 
             <a href="https://api.whatsapp.com/send?phone=972528629030&amp;text=שלום פרי וירק ארצנו." className="float" target="_blank" rel="noreferrer">
                 <BsWhatsapp/>
+            </a>
+
+            <a href="tel:" id="call-btn">
+                <BsFillTelephoneFill/>
             </a>
         </>
     );
