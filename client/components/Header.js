@@ -52,7 +52,7 @@ const Header = ({ cartTog, setCartTog, cartItems }) => {
                 <BsWhatsapp/>
             </a>
 
-            <a href="tel:" id="call-btn">
+            <a href="tel:0528629030" id="call-btn">
                 <BsFillTelephoneFill/>
             </a>
         </>
