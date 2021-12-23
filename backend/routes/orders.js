@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Order = require("../models/orderModel");
 const Product = require('../models/productModel');
 const axios = require('axios').default;
+var FormData = require('form-data');
 
 // Get all orders
 router.get("/", async (req, res, next) => {
@@ -85,40 +86,18 @@ router.delete('/:id', (req, res, next) => {
 	res.send('success')
 });
 
-router.post('/pay/:id', (req, res, next) => {
-	let order_id = req.params.id;
-
-	try {
-		// Order.findOneAndUpdate({ _id: order_id }, {
-		// 	$set: { 
-		// 		'payed': true
-		//  	}
-		// }, (err, docs) => {
-		// 	console.log(err)
-		// })
-	} catch (e) {
-		console.log(e)
-	}
-
-	res.status(200).send('');
-});
-
 router.post('/pay', async (req, res, next) => {
 	let order_id = req.body.data.customFields.cField1;
-	// let paymentSum = req.body.sum;
-	// let transactionId = req.body.transactionId;
-	// let transactionToken = req.body.transactionToken;
+	let paymentSum = req.body.sum;
+	let transactionId = req.body.transactionId;
+	let transactionToken = req.body.transactionToken;
 
 	try {
 		// Approve transaction with Meshulam API
-		const params = new URLSearchParams(req.body);
-		params.append('pageCode', 'adad7d131ec4');
-		// params.append('transactionId', transactionId);
-		// params.append('transactionToken', transactionToken);
-		// params.append('paymentSum', paymentSum);
+		const data = new FormData(req.body);
+		data.append('pageCode', 'adad7d131ec4');
 
-		let response = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/approveTransaction/', params);
-		// console.log(response.data);
+		let response = await axios.post(`https://sandbox.meshulam.co.il/api/light/server/1.0/approveTransaction/`, data);
 
 		Order.findOneAndUpdate({ _id: order_id }, {
 			$set: { 
