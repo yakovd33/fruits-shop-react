@@ -627,6 +627,10 @@ a {
   display: none;
 }
 
+#order-form {
+  display: none !important;
+}
+
 #order-form, #payment-form {
   background-color: #fff;
   position: fixed;
