@@ -224,6 +224,7 @@ export default function Home({ cartItems, setCartItems }) {
 									cartItems={cartItems}
 									minAmount={ product.minAmount }
 									setCartItems={setCartItems}
+									description={ product.description }
 									name={product.name}
 									price={product.price}
 									salePrice={product.salePrice}

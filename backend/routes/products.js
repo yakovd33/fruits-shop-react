@@ -138,6 +138,7 @@ router.post('/update/:id', async (req, res, next) => {
 				'category': req.body.category,
 				'availability': req.body.availability,
 				'unitType': req.body.unitType,
+				'description': req.body.description,
 		 	}
 		}, (err, docs) => {
 			if (!err) res.send('שינוי בוצע בהצלחה.')

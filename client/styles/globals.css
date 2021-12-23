@@ -468,6 +468,13 @@ a {
   position: relative;
 }
 
+.product-description {
+  margin-top: 5px;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
 .showcase-price {
   display: none;
 }

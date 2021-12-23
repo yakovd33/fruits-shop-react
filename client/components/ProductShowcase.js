@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
-const ProductShowcase = ({ id, name, price, salePrice, minAmount, image, unit, cartItems, setCartItems }) => {
+const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, image, unit, cartItems, setCartItems }) => {
     const [ amount, setAmount ] = useState(minAmount);
 
     useEffect(() => {
@@ -56,6 +56,8 @@ const ProductShowcase = ({ id, name, price, salePrice, minAmount, image, unit, c
 
                 / { unit }
             </div>
+
+            { description && <div className="product-description">{ description }</div> }
 
             <div className="product-showcase-add-to-cart-form">
                 <div className="cart-item-amount-wrap">
