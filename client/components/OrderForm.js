@@ -82,7 +82,7 @@ const OrderForm = ({ setOrderFormTog }) => {
                 </div>
 
                 <div className="input-group">
-                    <label htmlFor=""><input type="checkbox" onChange={ () => setTermsAgreed(!termsAgreed) } checked={ termsAgreed }/> אני מאשר/ת את <Link href="/legal"><a href="/legal">תקנון האתר.</a></Link></label>
+                    <label htmlFor=""><input type="checkbox" onChange={ () => setTermsAgreed(!termsAgreed) } checked={ termsAgreed }/> אני מאשר/ת את <Link href="/legal">תקנון האתר.</Link></label>
                 </div>
 
                 { feedback && <p id="order-form-feedback">{ feedback }</p> }
