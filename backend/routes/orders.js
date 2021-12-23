@@ -111,13 +111,13 @@ router.post('/pay', async (req, res, next) => {
 
 	try {
 		// Approve transaction with Meshulam API
-		// const params = new URLSearchParams(req.body);
-		// params.append('pageCode', 'adad7d131ec4');
+		const params = new URLSearchParams(req.body);
+		params.append('pageCode', 'adad7d131ec4');
 		// params.append('transactionId', transactionId);
 		// params.append('transactionToken', transactionToken);
 		// params.append('paymentSum', paymentSum);
 
-		// let response = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/approveTransaction/', params);
+		let response = await axios.post('https://sandbox.meshulam.co.il/api/light/server/1.0/approveTransaction/', params);
 		// console.log(response.data);
 
 		Order.findOneAndUpdate({ _id: order_id }, {
