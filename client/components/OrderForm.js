@@ -21,7 +21,7 @@ const OrderForm = ({ setOrderFormTog }) => {
         }
     }, [ paymentUrl ]);
 
-    const handleSubmit = () => {
+    const handleSubmit = (method) => {
         if (termsAgreed) {
             if (fullname && email && phone && city && street && apartment) {
                 axios.post(`${process.env.API_URL}/orders`, {
@@ -32,7 +32,8 @@ const OrderForm = ({ setOrderFormTog }) => {
                     street: street,
                     apartment: apartment,
                     notes: notes,
-                    cart: localStorage.getItem('cart')
+                    cart: localStorage.getItem('cart'),
+                    method
                 }).then((res) => {
                     console.log(res.data);
 
@@ -87,8 +88,9 @@ const OrderForm = ({ setOrderFormTog }) => {
 
                 { feedback && <p id="order-form-feedback">{ feedback }</p> }
 
-                <div className="input-group">
-                    <input type="submit" onClick={ handleSubmit } className="cute-btn" value="ביצוע הזמנה" disabled={ !termsAgreed } />
+                <div className="input-group" id="order-form-submits">
+                    <input type="submit" onClick={ () => handleSubmit('credit') } className="cute-btn" value="תשלום באשראי" disabled={ !termsAgreed } />
+                    <input type="submit" onClick={ () => handleSubmit('bit') } className="cute-btn bit" value="תשלום בביט" disabled={ !termsAgreed } />
                 </div>
             </div>
 

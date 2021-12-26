@@ -665,6 +665,15 @@ a {
   margin-bottom: 10px;
 }
 
+#order-form-submits {
+  display: flex;
+  flex-direction: row;
+}
+
+#order-form-submits .bit {
+  background-color: #35a1ab;
+}
+
 #order-form input, #order-form textarea {
   padding: 10px;
   border-radius: 4px;
