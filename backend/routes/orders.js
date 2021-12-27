@@ -36,12 +36,13 @@ router.post("/", async function (req, res, next) {
 
 		for (var i = 0; i < cart.length; i++) {
 			let productId = cart[i].id;
+			let amount = cart[i].amount;
 			
 			let product = await Product.findOne({ _id: productId });
 
 			if (product) {
 				let price = product.salePrice ? product.salePrice : product.price;
-				final_price += price;
+				final_price += price * amount;
 				// console.log('price: ' + product.price);
 			}
 		}
@@ -50,7 +51,19 @@ router.post("/", async function (req, res, next) {
 		await newOrder.save();
 
 		const params = new URLSearchParams();
-		params.append('pageCode', process.env.PAGE_CODE_CREDIT);
+
+		let method = req.body.method;
+		if (!method) {
+			method = 'credit';
+		}
+
+		var pageCode = process.env.PAGE_CODE_CREDIT;
+		if (method == 'bit') {
+			pageCode = process.env.PAGE_CODE_BIT;
+			console.log('paying with bittttt');
+		}
+		
+		params.append('pageCode', pageCode);
 		params.append('userId', process.env.MESHULAM_USERID);
 		params.append('sum', final_price);
 		params.append('successUrl', 'https://pryerek.co.il/thanks?order=true');
@@ -60,8 +73,13 @@ router.post("/", async function (req, res, next) {
 		params.append('pageField[phone]', req.body.phone);
 		params.append('pageField[email]', req.body.email);
 		params.append('cField1', newOrder._id);
+		params.append('cField2', pageCode);
+
+		console.log('userid: ' + process.env.MESHULAM_USERID);
 		
 		let result = await axios.post('https://secure.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
+
+		console.log(result);
 
 		res.status(200).json(result.data);
 	} catch (e) {
@@ -88,6 +106,7 @@ router.delete('/:id', (req, res, next) => {
 
 router.post('/pay', async (req, res, next) => {
 	let order_id = req.body.data.customFields.cField1;
+	let pageCode = req.body.data.customFields.cField2;
 	let paymentSum = req.body.sum;
 	let transactionId = req.body.transactionId;
 	let transactionToken = req.body.transactionToken;
@@ -95,7 +114,7 @@ router.post('/pay', async (req, res, next) => {
 	try {
 		// Approve transaction with Meshulam API
 		const data = new FormData(req.body);
-		data.append('pageCode', process.env.PAGE_CODE_CREDIT);
+		data.append('pageCode', pageCode);
 
 		let response = await axios.post(`https://secure.meshulam.co.il/api/light/server/1.0/approveTransaction/`, data);
 

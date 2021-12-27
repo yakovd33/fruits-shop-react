@@ -14,6 +14,10 @@ const Layout = ({ children, cartItems, setCartItems }) => {
             <Cart cartTog={ cartTog } setCartTog={ setCartTog } cartItems={ cartItems } setCartItems={ setCartItems }/>
 
                 { children }
+
+                <div>
+                    טלפון ליצירת קשר: <a href="tel:0528629030">0528629030</a>
+                </div>
                 
             <Footer/>
 
