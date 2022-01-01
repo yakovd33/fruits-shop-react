@@ -15,7 +15,7 @@ const Layout = ({ children, cartItems, setCartItems }) => {
 
                 { children }
 
-                <div>
+                <div id="bottom-contact">
                     טלפון ליצירת קשר: <a href="tel:0528629030">0528629030</a>
                 </div>
                 

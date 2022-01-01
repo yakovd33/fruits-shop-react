@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import OrderListItem from "./OrderListItem";
 import axios from "axios";
 
-const OrdersList = () => {
+const OrdersList = ({ tab }) => {
 	const [orders, setOrders] = useState([]);
     const [ total, setTotal ] = useState(0);
     const [ curPage, setCurPage ] = useState(1);
@@ -13,7 +13,7 @@ const OrdersList = () => {
             setOrders(res.data.orders);
             setTotalPages(Math.ceil(res.data.total / 20));
         });
-	}, [ curPage ]);
+	}, [ curPage, tab ]);
 
 	return (
 		<div id="orders-list">

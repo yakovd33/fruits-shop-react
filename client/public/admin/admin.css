@@ -191,3 +191,31 @@ input[type="submit"] {
 .order-cart-item {
     margin-bottom: 5px;
 }
+
+#bottom-contact {
+    display: none;
+}
+
+.discount-list-item {
+    background-color: #fff;
+    box-shadow: 0 0 10px #c3c3c378;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.discount-list-item .discount-delete-btn {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: tomato;
+    color: #fff;
+    top: -10px;
+    left: -10px;
+    box-shadow: 0 0 10px #4444443b;
+    cursor: pointer;
+}

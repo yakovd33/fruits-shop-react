@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const NewProduct = () => {
+const NewProduct = ({ tab }) => {
     const [ categories, setCategoreis ] = useState([
         {
             id: 1,

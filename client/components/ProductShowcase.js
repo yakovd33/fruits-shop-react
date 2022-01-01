@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+import CartHelper from '../helpers/CartHelper';
 
 const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, image, unit, cartItems, setCartItems }) => {
     const [ amount, setAmount ] = useState(minAmount);
@@ -34,6 +35,9 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, i
     
             setCartItems(newCart);
         }
+
+        // Update discounts
+        CartHelper.updateDiscounts(cartItems, setCartItems);
     }
 
     return (

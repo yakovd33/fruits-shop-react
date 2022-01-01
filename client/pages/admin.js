@@ -25,19 +25,19 @@ const Admin = () => {
 
                 <div id="tabs">
                     <div className={ `tab ${tab == 'products' ? 'active' : ''}`}>
-                        <ProductsList/>
+                        <ProductsList tab={ tab }/>
                     </div>
 
                     <div className={ `tab ${tab == 'orders' ? 'active' : ''}`}>
-                        <OrdersList/>
+                        <OrdersList tab={ tab }/>
                     </div>
 
                     <div className={ `tab ${tab == 'new-product' ? 'active' : ''}`}>
-                        <NewProduct/>
+                        <NewProduct tab={ tab }/>
                     </div>
 
                     <div className={ `tab ${tab == 'discounts' ? 'active' : ''}`}>
-                        <Discounts/>
+                        <Discounts tab={ tab }/>
                     </div>
                 </div>
             </div>
