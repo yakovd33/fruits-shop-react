@@ -650,6 +650,13 @@ a {
   overflow-y: auto;
 }
 
+#arrival-msg-order {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
 #payment-form {
   height: 90%;
   max-height: 90%;
@@ -750,4 +757,19 @@ a {
 #thanks-page {
   text-align: center;
   padding-top: 30px;
+}
+
+/* Discount tab */
+#new-discount-form {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+#new-discount-form input, #new-discount-form select {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  margin-top: 10px;
+  box-sizing: border-box;
 }

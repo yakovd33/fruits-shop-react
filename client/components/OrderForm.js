@@ -88,6 +88,10 @@ const OrderForm = ({ setOrderFormTog }) => {
 
                 { feedback && <p id="order-form-feedback">{ feedback }</p> }
 
+                <div id="arrival-msg-order">
+                    המשלוח  אמור להגיע אליכם בין 1 יום עסקים לשלושה ימי עסקים עקב קטיפים  רבים  שמתבצעים ומשתנים כול העת  כך שאין יום הגעה קבוע,לאחר ההזמנה נצור אתכם קשר לתיאום הגעה  ,בנוסף ניתן לצור קשר בוואטספ או מס' נייד המצורף בבועות שבצדדים
+                </div>
+
                 <div className="input-group" id="order-form-submits">
                     <input type="submit" onClick={ () => handleSubmit('credit') } className="cute-btn" value="תשלום באשראי" disabled={ !termsAgreed } />
                     <input type="submit" onClick={ () => handleSubmit('bit') } className="cute-btn bit" value="תשלום בביט" disabled={ !termsAgreed } />
