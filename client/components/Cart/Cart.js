@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import CartItem from "./CartItem";
 import { AiOutlineClose } from 'react-icons/ai';
 import OrderForm from '../OrderForm';
+import CartHelper from '../../helpers/CartHelper';
+import axios from 'axios';
 
 const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ orderFormTog, setOrderFormTog ] = useState(false);
     const [ cartSum, setCartSum ] = useState(0);
     const [ cartSumBeforeDiscounts, setCartSumBeforeDiscounts ] = useState(0);
+    const [ discount, setDiscount ] = useState(0);
 
     useEffect(() => {
         let sum = 0;
@@ -17,9 +20,28 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
             sum2 += (item.originalPrice * item.amount);
         });
 
-        setCartSum(sum);
-        setCartSumBeforeDiscounts(sum2);
+        // Update discounts
+        setDiscount(0);
+
+        cartItems.map((item) => {
+            axios.get(`${process.env.API_URL}/discounts/product_discount/${ item.id }/${ item.amount }`).then(discount => {
+                setDiscount((prevDis) => prevDis + parseInt(discount.data))
+            })
+        });
+
+        // Get discounts
+        setTimeout(() => {
+            let discount = window.localStorage.getItem('discount') ? window.localStorage.getItem('discount') : 0;
+
+            setCartSum(sum - discount);
+            setCartSumBeforeDiscounts(sum2);
+            // CartHelper.getCartDiscount(cartItems, setDiscount);
+        }, 1000);
     }, [ cartItems ]);
+
+    useEffect(() => {
+        localStorage.setItem('discount', discount);
+    }, [ discount ]);
 
     return ( 
         <div id="cart-wrap">

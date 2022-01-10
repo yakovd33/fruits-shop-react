@@ -5,6 +5,7 @@ const Order = require("../models/orderModel");
 const Product = require('../models/productModel');
 const axios = require('axios').default;
 var FormData = require('form-data');
+const discountModel = require('../models/discountModel');
 
 // Get all orders
 router.get("/", async (req, res, next) => {
@@ -27,6 +28,29 @@ router.get("/", async (req, res, next) => {
 	res.status(200).json(result);
 });
 
+// Get product discount
+const getProductDiscount = async (product_id, amount) => {
+    try {
+        let discounts = await discountModel.find({ product: product_id }).sort({ amount: 'descending' });
+
+        if (discounts.length == 1) {
+            // Only one discount for product
+            if (amount >= discounts[0].amount) {
+                return discounts[0].discount;
+            }
+        } else if (discounts.length) {
+            // More than one discount for product
+            for (var i = 0; i < discounts.length; i++) {
+                if (amount >= discounts[i].amount) {
+                    return discounts[i].discount;
+                }
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 // Add new order
 router.post("/", async function (req, res, next) {
 	try {
@@ -42,7 +66,11 @@ router.post("/", async function (req, res, next) {
 
 			if (product) {
 				let price = product.salePrice ? product.salePrice : product.price;
-				final_price += price * amount;
+
+				// Get discounts
+				let discount = await getProductDiscount(productId, amount);
+				
+				final_price += price * amount - discount;
 				// console.log('price: ' + product.price);
 			}
 		}

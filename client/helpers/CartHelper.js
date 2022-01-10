@@ -1,9 +1,15 @@
+import axios from 'axios';
+
 export default class CartHelper {
-    static updateDiscounts (cartItems, setCartItems) {
+    static getCartDiscount (cartItems, setDiscount) {
+        setDiscount(0);
+
         cartItems.map((item) => {
-            console.log(item);
+            axios.get(`${process.env.API_URL}/discounts/product_discount/${ item.id }/${ item.amount }`).then(discount => {
+                setDiscount((prevDis) => prevDis + parseInt(discount.data))
+            })
         });
 
-        return true;
+        return;
     }
 }

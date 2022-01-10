@@ -47,4 +47,34 @@ router.delete('/:discount_id', async (req, res, next) => {
     res.send('');
 });
 
+router.get('/product_discount/:product_id/:amount', async (req, res, next) => {
+    let product_id = req.params.product_id;
+    let amount = req.params.amount;
+    let discount = 0;
+
+    // Find discount
+    try {
+        let discounts = await discountModel.find({ product: product_id }).sort({ amount: 'descending' });
+
+        if (discounts.length == 1) {
+            // Only one discount for product
+            if (amount >= discounts[0].amount) {
+                discount = discounts[0].discount;
+            }
+        } else if (discounts.length) {
+            // More than one discount for product
+            for (var i = 0; i < discounts.length; i++) {
+                if (amount >= discounts[i].amount) {
+                    discount = discounts[i].discount;
+                    break;
+                }
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
+
+    res.status(200).send(discount.toString())
+})
+
 module.exports = router;

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import CartHelper from '../helpers/CartHelper';
+import axios from 'axios';
 
 const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, image, unit, cartItems, setCartItems }) => {
     const [ amount, setAmount ] = useState(minAmount);
+    const [ discount, setDiscount ] = useState(0);
 
     useEffect(() => {
         setAmount(minAmount);
@@ -37,8 +39,19 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, i
         }
 
         // Update discounts
-        CartHelper.updateDiscounts(cartItems, setCartItems);
+        setDiscount(0);
+
+        cartItems.map((item) => {
+            axios.get(`${process.env.API_URL}/discounts/product_discount/${ item.id }/${ item.amount }`).then(discount => {
+                setDiscount((prevDis) => prevDis + parseInt(discount.data))
+            })
+        });
+        // CartHelper.getCartDiscount(cartItems, setDiscount);
     }
+
+    useEffect(() => {
+        localStorage.setItem('discount', discount);
+    }, [ discount ]);
 
     return (
         <div className="product-showcase">

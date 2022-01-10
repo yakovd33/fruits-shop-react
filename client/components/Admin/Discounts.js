@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BiTrash } from 'react-icons/bi';
+import Select from 'react-select'
 
 const Discounts = ({ tab }) => {
     const [ products, setProducts ] = useState([]);
@@ -25,7 +26,9 @@ const Discounts = ({ tab }) => {
         axios.post(`${process.env.API_URL}/discounts`, {
             product, amount, discount
         }).then((res) => {
-            console.log(res)
+            console.log(res);
+            setAmount(null);
+            setDiscount(null);
         })
     }
 
@@ -42,12 +45,10 @@ const Discounts = ({ tab }) => {
             <form action="" id="new-discount-form" onSubmit={ (e) => handleSubmit(e) }>
                 <h3>הוסף מבצע חדש</h3>
                 <div>
-                    <select htmlFor="" onChange={ (e) => setProduct(e.target.value) }>
-                        <option value="">בחר מוצר</option>
-                        { products.map(product => (
-                            <option value={ product._id }>{ product.name }</option>
-                        )) }
-                    </select>
+                    <Select placeholder="חיפוש מוצר" onChange={(selection, action) => setProduct(selection.value)} options={ products.map((product) => ({
+                        value: product._id,
+                        label: product.name
+                    }))}  />
                 </div>
 
                 <div>
