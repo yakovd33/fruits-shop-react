@@ -35,6 +35,7 @@ const Discounts = ({ tab }) => {
     const deleteDiscount = (discount_id) => {
         if (prompt("הזן סיסמא") == '123123') {
             axios.delete(`${process.env.API_URL}/discounts/${ discount_id }`).then(res => {
+                console.log(res)
                 setDiscounts(discounts.filter((dis) => dis._id !== discount_id))
             });
         }
