@@ -55,7 +55,7 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
 
     return (
         <div className="product-showcase">
-            { badge && <span class="discount-badge">{ badge }</span> }
+            { badge && <span className="discount-badge">{ badge }</span> }
             
             { <span className={ `sale-badge ${salePrice && salePrice != 0 ? 'vis' : ''}` }>במבצע</span> }
             <div className="product-showcase-image">
