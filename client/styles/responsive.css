@@ -63,6 +63,7 @@
     #header-logo {
         position: fixed;
         left: 50%;
+        top: 25px;
         transform: translateX(-50%);
     }
 
