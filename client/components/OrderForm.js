@@ -77,7 +77,7 @@ const OrderForm = ({ setOrderFormTog }) => {
             <div id="order-form" className={ `${ paymentUrl ? 'hidden' : '' }` }>
                 {/* Show gift selection if amount is more than 250 */}
                 { cartAmount >= 250 && <div>
-                    <div><strong>מאחר וקנית מעל 250 ש"ח מגיעה לך לבחור מתנה:</strong></div>
+                    <div><strong>מאחר וקנית מעל 250 ש"ח מגיע לך לבחור מתנה:</strong></div>
 
                     <div id="order-choices">
                         { gifts.map((item) => (
