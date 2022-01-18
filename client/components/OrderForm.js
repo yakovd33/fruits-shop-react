@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import CartHelper from '../helpers/CartHelper';
+import OrderGiftItem from './OrderGiftItem';
 
 const OrderForm = ({ setOrderFormTog }) => {
     const [ fullname, setFullname ] = useState('');
@@ -15,11 +17,29 @@ const OrderForm = ({ setOrderFormTog }) => {
     const [ paymentUrl, setPaymentUrl ] = useState(null);
     const [ termsAgreed, setTermsAgreed ] = useState(false);
 
+    const [ cartAmount, setCartAmount ] = useState(0);
+    const [ gifts, setGifts ] = useState([]);
+    const [ chosenGift, setChosenGift ] = useState(null);
+
     useEffect(() => {
         if (paymentUrl) {
             window.location.href = paymentUrl;
         }
     }, [ paymentUrl ]);
+
+    useEffect(() => {
+        setCartAmount(CartHelper.getAmountFromLocalStorage(localStorage.getItem('cart')));
+    }, []);
+
+    useEffect(() => {
+        // Get all gifts
+
+        if (cartAmount >= 200) {
+            axios.get(`${process.env.API_URL}/gifts`).then(res => {
+                setGifts(res.data)
+            })
+        }
+    }, [ cartAmount ])
 
     const handleSubmit = (method) => {
         if (termsAgreed) {
@@ -33,6 +53,7 @@ const OrderForm = ({ setOrderFormTog }) => {
                     apartment: apartment,
                     notes: notes,
                     cart: localStorage.getItem('cart'),
+                    gift: chosenGift,
                     method
                 }).then((res) => {
                     console.log(res.data);
@@ -54,6 +75,17 @@ const OrderForm = ({ setOrderFormTog }) => {
     return (
         <div>
             <div id="order-form" className={ `${ paymentUrl ? 'hidden' : '' }` }>
+                {/* Show gift selection if amount is more than 200 */}
+                { cartAmount >= 200 && <div>
+                    <div><strong>מאחר וקנית מעל 200 ש"ח מגיעה לך לבחור מתנה:</strong></div>
+
+                    <div id="order-choices">
+                        { gifts.map((item) => (
+                            <OrderGiftItem item={ item } chosenGift={ chosenGift } setChosenGift={ setChosenGift }/>
+                        )) }
+                    </div>
+                </div>}
+                
                 <div className="input-group">
                     <input type="text" className={ `${ isEmptyFields && !fullname ? 'empty' : '' }` } value={ fullname } onChange={ (e) => setFullname(e.target.value) } placeholder="שם מלא" name="fullname" />
                 </div>

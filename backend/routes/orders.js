@@ -49,6 +49,8 @@ const getProductDiscount = async (product_id, amount) => {
     } catch (e) {
         console.log(e);
     }
+
+	return 0;
 }
 
 // Add new order
@@ -73,6 +75,11 @@ router.post("/", async function (req, res, next) {
 				final_price += price * amount - discount;
 				// console.log('price: ' + product.price);
 			}
+		}
+
+		// Get gift if price is over 200
+		if (!final_price >= 200) {
+			req.body.gift = null;
 		}
 		
 		const newOrder = new Order(req.body);

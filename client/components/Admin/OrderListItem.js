@@ -5,6 +5,7 @@ import axios from 'axios';
 const OrderListItem = ({ order, orders, setOrders }) => {
 	const [ cart, setCart ] = useState(JSON.parse(order.cart));
 	const [ finalPrice, setFinalPrice ] = useState(0);
+	const [ gift, setGift ] = useState(null);
 
 	useEffect(() => {
 		let sum = 0;
@@ -15,6 +16,15 @@ const OrderListItem = ({ order, orders, setOrders }) => {
 
 		setFinalPrice(sum);
 	}, [ cart ]);
+
+	// Get the gift
+	useEffect(() => {
+		if (order.gift) {
+			axios.get(`${process.env.API_URL}/products/${ order.gift }`).then((res) => {
+				setGift(res.data);
+			});
+		}
+	}, [ order ]);
 
     const format_time = (s) => {
         var date = new Date(+s);
@@ -71,6 +81,13 @@ const OrderListItem = ({ order, orders, setOrders }) => {
 				<div className="title">מחיר סופי:</div>
 				<div className="det">{ finalPrice }₪</div>
 			</div>
+
+			{ gift && 
+				<div className="order-list-item-line">
+					<div className="title">מתנה:</div>
+					<div className="det">{ gift.name }</div>
+				</div>
+			}
 
 			<div className="order-list-item-line">
 				<div className="title">בוצע תשלום:</div>

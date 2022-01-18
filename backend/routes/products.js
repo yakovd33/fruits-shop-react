@@ -148,4 +148,13 @@ router.post('/update/:id', async (req, res, next) => {
 	}
 });
 
+// Get product details
+router.get('/:id', async (req, res, next) => {
+	let productId = req.params.id;
+	let product = null;
+
+	product = await productModel.findOne({ id: productId });
+	res.status(200).json(product);
+});
+
 module.exports = router;

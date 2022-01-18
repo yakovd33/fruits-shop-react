@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const orderSchema = new mongoose.Schema({
     fullname: { type: String, required: true },
@@ -10,7 +11,8 @@ const orderSchema = new mongoose.Schema({
     cart: { type: String },
     price: { type: String },
     date: { type: Number, default: Date.now() },
-    payed: { type: Boolean, default: false }
+    payed: { type: Boolean, default: false },
+    gift: { type: String, default: null, required: false },
 });
 
 module.exports = mongoose.model('Order', orderSchema);

@@ -12,4 +12,15 @@ export default class CartHelper {
 
         return;
     }
+
+    static getAmountFromLocalStorage (lsCart) {
+        let amount = 0;
+        let cartItems = JSON.parse(lsCart);
+        
+        cartItems.map((item) => {
+            amount += (item.originalPrice * item.amount);
+        });
+        
+        return amount;
+    }
 }
