@@ -176,8 +176,8 @@ input[type="submit"] {
 }
 
 #edit-product-form {
-    height: 360px;
-    width: 300px;
+    height: auto;
+    width: 350px;
     background-color: #fff;
     position: fixed;
     z-index: 999999999;

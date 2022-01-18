@@ -655,6 +655,10 @@ a {
   flex-wrap: wrap;
 }
 
+#order-choices > div {
+  width: 33%;
+}
+
 .gift-choice {
   text-align: center;
   border-radius: 4px;

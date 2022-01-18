@@ -9,7 +9,8 @@ const ProductSchema = new mongoose.Schema({
     unitType: { type: String },
     price: { type: Number },
     salePrice: { type: Number },
-    description: { type: String }
+    description: { type: String },
+    badge: { type: String, required: false, default: null }
 });
 
 module.exports = mongoose.model('Product', ProductSchema);
