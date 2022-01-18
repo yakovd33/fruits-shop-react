@@ -3,7 +3,7 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import CartHelper from '../helpers/CartHelper';
 import axios from 'axios';
 
-const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, image, unit, cartItems, setCartItems }) => {
+const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, image, unit, cartItems, setCartItems }) => {
     const [ amount, setAmount ] = useState(minAmount);
     const [ discount, setDiscount ] = useState(0);
 
@@ -55,6 +55,8 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, i
 
     return (
         <div className="product-showcase">
+            { badge && <span class="discount-badge">{ badge }</span> }
+            
             { <span className={ `sale-badge ${salePrice && salePrice != 0 ? 'vis' : ''}` }>במבצע</span> }
             <div className="product-showcase-image">
                 <img src={ image } alt=""/>

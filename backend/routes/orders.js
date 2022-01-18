@@ -78,7 +78,7 @@ router.post("/", async function (req, res, next) {
 		}
 
 		// Get gift if price is over 200
-		if (!final_price >= 200) {
+		if (!final_price >= 250) {
 			req.body.gift = null;
 		}
 		

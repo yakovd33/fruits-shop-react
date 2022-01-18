@@ -56,7 +56,8 @@ const EditProduct = ({ id, product, setShowEdit }) => {
             unitType: unit,
             price: price,
             description: description,
-            salePrice: salePrice
+            salePrice: salePrice,
+            badge: badge
         }).then((res) => {
             console.log(res);
             setFeedback(res.data);

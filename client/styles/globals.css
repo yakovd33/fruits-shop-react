@@ -526,6 +526,20 @@ a {
   object-fit: contain;
 }
 
+.discount-badge {
+  position: absolute;
+  top: -10px;
+  left: 39px;
+  z-index: 999;
+  background: #e24161;
+  padding: 12px 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+}
+
 .product-showcase .cart-item-amount-wrap .cart-item-amount {
   width: 40%;
 }

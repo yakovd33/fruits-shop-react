@@ -178,6 +178,7 @@ input[type="submit"] {
 #edit-product-form {
     height: auto;
     width: 350px;
+    max-width: 90%;
     background-color: #fff;
     position: fixed;
     z-index: 999999999;
@@ -186,6 +187,12 @@ input[type="submit"] {
     transform: translate(-50%, -50%);
     padding: 30px;
     border-radius: 4px;
+}
+
+#edit-product-form input[type="submit"] {
+    width: 100%;
+    padding: 11px;
+    font-weight: bold;
 }
 
 .order-cart-item {

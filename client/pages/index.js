@@ -229,6 +229,7 @@ export default function Home({ cartItems, setCartItems }) {
 									price={product.price}
 									salePrice={product.salePrice}
 									unit={product.unitType}
+									badge={ product.badge }
 									image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
 								/>
 							))}

@@ -34,7 +34,7 @@ const OrderForm = ({ setOrderFormTog }) => {
     useEffect(() => {
         // Get all gifts
 
-        if (cartAmount >= 200) {
+        if (cartAmount >= 250) {
             axios.get(`${process.env.API_URL}/gifts`).then(res => {
                 setGifts(res.data)
             })
@@ -76,7 +76,7 @@ const OrderForm = ({ setOrderFormTog }) => {
         <div>
             <div id="order-form" className={ `${ paymentUrl ? 'hidden' : '' }` }>
                 {/* Show gift selection if amount is more than 200 */}
-                { cartAmount >= 200 && <div>
+                { cartAmount >= 250 && <div>
                     <div><strong>מאחר וקנית מעל 200 ש"ח מגיעה לך לבחור מתנה:</strong></div>
 
                     <div id="order-choices">
