@@ -87,7 +87,7 @@ const OrderForm = ({ setOrderFormTog }) => {
                     </div>
                 </div>}
                 
-                <div id="order-fields-msg"><strong>חובה להזין שם ושם משפחה ומספר טלפון בפורמט תקין (לדוגמא 050-987-6543)</strong></div>
+                <div id="order-fields-msg"><strong>חובה להזין שם ושם משפחה ומספר טלפון בפורמט תקין (לדוגמא 0509876543)</strong></div>
                 <div className="input-group">
                     <input type="text" className={ `${ isEmptyFields && !fullname ? 'empty' : '' }` } value={ fullname } onChange={ (e) => setFullname(e.target.value) } placeholder="שם מלא" name="fullname" />
                 </div>
