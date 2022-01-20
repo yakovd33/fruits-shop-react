@@ -81,6 +81,8 @@ router.post("/", async function (req, res, next) {
 		if (!final_price >= 250) {
 			req.body.gift = null;
 		}
+
+		req.body.price = final_price;
 		
 		const newOrder = new Order(req.body);
 		await newOrder.save();

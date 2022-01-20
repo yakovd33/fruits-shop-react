@@ -726,6 +726,11 @@ a {
   margin-bottom: 10px;
 }
 
+#order-fields-msg {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
 #order-form-submits {
   display: flex;
   flex-direction: row;

@@ -28,7 +28,8 @@ const OrderForm = ({ setOrderFormTog }) => {
     }, [ paymentUrl ]);
 
     useEffect(() => {
-        setCartAmount(CartHelper.getAmountFromLocalStorage(localStorage.getItem('cart')));
+        // setCartAmount(CartHelper.getAmountFromLocalStorage(localStorage.getItem('cart')));
+        setCartAmount(localStorage.getItem('cart-price'));
     }, []);
 
     useEffect(() => {
@@ -86,6 +87,7 @@ const OrderForm = ({ setOrderFormTog }) => {
                     </div>
                 </div>}
                 
+                <div id="order-fields-msg"><strong>חובה להזין שם ושם משפחה ומספר טלפון בפורמט תקין (לדוגמא 050-987-6543)</strong></div>
                 <div className="input-group">
                     <input type="text" className={ `${ isEmptyFields && !fullname ? 'empty' : '' }` } value={ fullname } onChange={ (e) => setFullname(e.target.value) } placeholder="שם מלא" name="fullname" />
                 </div>

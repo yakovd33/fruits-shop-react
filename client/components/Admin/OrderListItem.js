@@ -79,7 +79,7 @@ const OrderListItem = ({ order, orders, setOrders }) => {
 
 			<div className="order-list-item-line">
 				<div className="title">מחיר סופי:</div>
-				<div className="det">{ finalPrice }₪</div>
+				<div className="det">{ order.price }₪</div>
 			</div>
 
 			{ gift && 

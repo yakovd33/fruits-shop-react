@@ -43,6 +43,11 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
         localStorage.setItem('discount', discount);
     }, [ discount ]);
 
+    useEffect(() => {
+        // Localize cart final price
+        localStorage.setItem('cart-price', cartSum);
+    }, [ cartSum ]);
+
     return ( 
         <div id="cart-wrap">
             <div id="cart-bg" className={ `${ (cartTog || orderFormTog) ? 'active' : '' }` } onClick={ () => { setCartTog(!cartTog); setOrderFormTog(false) } }></div>
