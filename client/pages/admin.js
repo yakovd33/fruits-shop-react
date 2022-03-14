@@ -5,6 +5,7 @@ import NewProduct from '../components/Admin/NewProduct';
 import OrdersList from '../components/Admin/OrdersList';
 import Discounts from '../components/Admin/Discounts';
 import Gifts from '../components/Admin/Gifts';
+import Cities from '../components/Admin/Cities';
 
 const Admin = () => {
     const [ tab, setTab ] = useState('products');
@@ -23,6 +24,7 @@ const Admin = () => {
                     <div className={ `tab-trigger ${tab == 'new-product' ? 'active' : ''}` } onClick={ () => setTab('new-product') }>מוצר חדש</div>
                     <div className={ `tab-trigger ${tab == 'discounts' ? 'active' : ''}` } onClick={ () => setTab('discounts') }>מבצעים</div>
                     <div className={ `tab-trigger ${tab == 'gifts' ? 'active' : ''}` } onClick={ () => setTab('gifts') }>מתנות</div>
+                    <div className={ `tab-trigger ${tab == 'cities' ? 'active' : ''}` } onClick={ () => setTab('cities') }>ערים</div>
                 </div>
 
                 <div id="tabs">
@@ -44,6 +46,10 @@ const Admin = () => {
 
                     <div className={ `tab ${tab == 'gifts' ? 'active' : ''}`}>
                         <Gifts tab={ tab }/>
+                    </div>
+
+                    <div className={ `tab ${tab == 'cities' ? 'active' : ''}`}>
+                        <Cities tab={ tab }/>
                     </div>
                 </div>
             </div>

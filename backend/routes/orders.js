@@ -6,6 +6,7 @@ const Product = require('../models/productModel');
 const axios = require('axios').default;
 var FormData = require('form-data');
 const discountModel = require('../models/discountModel');
+const citiesModel = require('../models/cityModel');
 
 // Get all orders
 router.get("/", async (req, res, next) => {
@@ -71,6 +72,7 @@ router.post("/", async function (req, res, next) {
 
 				// Get discounts
 				let discount = await getProductDiscount(productId, amount);
+
 				
 				final_price += price * amount - discount;
 				// console.log('price: ' + product.price);
@@ -83,6 +85,11 @@ router.post("/", async function (req, res, next) {
 		}
 
 		req.body.price = final_price;
+
+		// Get shipping price
+		let city = await citiesModel.findOne({ _id: req.body.city });
+		let shipping_price = city.price;
+		final_price += shipping_price;
 		
 		const newOrder = new Order(req.body);
 		await newOrder.save();

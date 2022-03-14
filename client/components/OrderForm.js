@@ -9,6 +9,7 @@ const OrderForm = ({ setOrderFormTog }) => {
     const [ email, setEmail ] = useState('');
     const [ phone, setPhone ] = useState('');
     const [ city, setCity ] = useState('');
+    const [ cityObject, setCityObject    ] = useState(0);
     const [ street, setStreet ] = useState('');
     const [ apartment, setApartment ] = useState('');
     const [ notes, setNotes ] = useState('');
@@ -20,11 +21,17 @@ const OrderForm = ({ setOrderFormTog }) => {
     const [ cartAmount, setCartAmount ] = useState(0);
     const [ gifts, setGifts ] = useState([]);
     const [ chosenGift, setChosenGift ] = useState(null);
+    const [ cities, setCities ] = useState([]);
 
     useEffect(() => {
         if (paymentUrl) {
             window.location.href = paymentUrl;
         }
+
+        // Get city list
+        axios.get(`${process.env.API_URL}/cities`).then((res) => {
+            setCities(res.data);
+        });
     }, [ paymentUrl ]);
 
     useEffect(() => {
@@ -73,6 +80,18 @@ const OrderForm = ({ setOrderFormTog }) => {
         }
     }
 
+    const handleCityChange = (e) => {
+        let city_id = e.target.value;
+
+        cities.map((item) => {
+            if (item._id == city_id) {
+                setCityObject(item);
+            }
+        });
+
+        setCity(city_id);
+    }
+
     return (
         <div>
             <div id="order-form" className={ `${ paymentUrl ? 'hidden' : '' }` }>
@@ -100,8 +119,17 @@ const OrderForm = ({ setOrderFormTog }) => {
                     <input type="text" className={ `${ isEmptyFields && !phone ? 'empty' : '' }` } value={ phone } onChange={ (e) => setPhone(e.target.value) } placeholder="מספר טלפון" name="phone" />
                 </div>
 
-                <div className="input-group">
+                {/* <div className="input-group">
                     <input type="text" className={ `${ isEmptyFields && !city ? 'empty' : '' }` } value={ city } onChange={ (e) => setCity(e.target.value) } placeholder="עיר" name="city" />
+                </div> */}
+
+                <div className="input-group">
+                    <select className="order-select" onChange={ (e) => handleCityChange(e) } id="">
+                        <option value="">בחר/י עיר עבור משלוח</option>
+                        { cities.map((item) => (
+                            <option value={ item._id }>{ item.name }</option>
+                        )) }
+                    </select>
                 </div>
 
                 <div className="input-group">
@@ -124,6 +152,10 @@ const OrderForm = ({ setOrderFormTog }) => {
 
                 <div id="arrival-msg-order">
                     המשלוח  אמור להגיע אליכם בין 1 יום עסקים לשלושה ימי עסקים עקב קטיפים  רבים  שמתבצעים ומשתנים כול העת  כך שאין יום הגעה קבוע,לאחר ההזמנה נצור אתכם קשר לתיאום הגעה  ,בנוסף ניתן לצור קשר בוואטספ או מס' נייד המצורף בבועות שבצדדים
+                </div>
+
+                <div id="shipping-msg">
+                    { city && <p>עלות משלוח עבור { cityObject.name } היא { cityObject.price }₪</p> } 
                 </div>
 
                 <div className="input-group" id="order-form-submits">
