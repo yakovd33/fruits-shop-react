@@ -3,6 +3,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import CartHelper from '../helpers/CartHelper';
 import OrderGiftItem from './OrderGiftItem';
+import Select from 'react-select';
 
 const OrderForm = ({ setOrderFormTog }) => {
     const [ fullname, setFullname ] = useState('');
@@ -80,9 +81,7 @@ const OrderForm = ({ setOrderFormTog }) => {
         }
     }
 
-    const handleCityChange = (e) => {
-        let city_id = e.target.value;
-
+    const handleCityChange = (city_id) => {
         cities.map((item) => {
             if (item._id == city_id) {
                 setCityObject(item);
@@ -124,12 +123,10 @@ const OrderForm = ({ setOrderFormTog }) => {
                 </div> */}
 
                 <div className="input-group">
-                    <select className="order-select" onChange={ (e) => handleCityChange(e) } id="">
-                        <option value="">בחר/י עיר עבור משלוח</option>
-                        { cities.map((item) => (
-                            <option value={ item._id }>{ item.name }</option>
-                        )) }
-                    </select>
+                    <Select placeholder="בחר/י עיר עבור משלוח" onChange={(selection, action) => handleCityChange(selection.value)} options={ cities.map((city) => ({
+                        value: city._id,
+                        label: city.name
+                    }))}  />
                 </div>
 
                 <div className="input-group">
