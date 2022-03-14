@@ -22,10 +22,22 @@ router.get("/", async (req, res, next) => {
 		result.total = res.length;
 	});
 
-	result.orders = await Order.find()
+	let tmpOrders = [];
+	let ordersWithCities = [];
+
+	tmpOrders = await Order.find()
 		.sort("date")
 		.limit(20)
 		.skip(20 * (page - 1));
+
+	for (let i = 0; i < tmpOrders.length; i++) {
+		let city = await citiesModel.findOne({ _id: tmpOrders[i].city });
+		tmpOrders[i].city = city.name;
+		ordersWithCities.push(tmpOrders[i]);
+	}
+	
+	result.orders = ordersWithCities;
+
 	res.status(200).json(result);
 });
 
