@@ -4,6 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import OrderForm from '../OrderForm';
 import CartHelper from '../../helpers/CartHelper';
 import axios from 'axios';
+import CartSuggestions from './CartSuggestions';
 
 const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ orderFormTog, setOrderFormTog ] = useState(false);
@@ -71,9 +72,7 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                 <div id="cart-link-to-checkout" onClick={ () => setOrderFormTog(!orderFormTog) }>להמשך הזמנה</div>
             </div>
 
-            <div id="cart-suggestions">
-                
-            </div>
+            <CartSuggestions cartTog={ cartTog } cartItems={ cartItems } setCartItems={ setCartItems }/>
 
             { orderFormTog && <OrderForm setOrderFormTog={ setOrderFormTog }/> }
         </div>

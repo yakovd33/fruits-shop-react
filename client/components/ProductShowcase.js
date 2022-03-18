@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineMinus, AiOutlinePlus, AiOutlineShoppingCart } from 'react-icons/ai';
 import CartHelper from '../helpers/CartHelper';
 import axios from 'axios';
 
-const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, image, unit, cartItems, setCartItems }) => {
+const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, image, unit, cartItems, setCartItems, bottomAddToCart }) => {
     const [ amount, setAmount ] = useState(minAmount);
     const [ discount, setDiscount ] = useState(0);
 
@@ -90,6 +90,8 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
                 </div>
 
                 <div className="cute-btn product-showcase-add-to-cart" onClick={ handleAddToCart }>הוספה לעגלה</div>
+
+                { bottomAddToCart &&  <div className="cute-btn product-showcase-add-to-cart bottom" onClick={ handleAddToCart }><AiOutlineShoppingCart/></div> }
             </div>
         </div>
     );

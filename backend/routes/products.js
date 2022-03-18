@@ -12,6 +12,8 @@ router.get("/", async (req, res, next) => {
 	let category_id = req.query.category;
 	let search = req.query.search;
 	let all = req.query.all;
+	let limit = req.query.limit;
+	let rand = req.query.rand;
 
 	if (!page) {
 		page = 1;
@@ -41,7 +43,9 @@ router.get("/", async (req, res, next) => {
 		if (all) {
 			limit = 999;
 		} else {
-			limit = 20;
+			if (!limit) {
+				limit = 20;
+			}
 		}
 
 		await productModel.find(filter).then(async (results) => {
@@ -49,11 +53,18 @@ router.get("/", async (req, res, next) => {
 			result.length = results.length;
 
 			// Get products
-			result.products = await productModel
-				.find(filter)
-				.sort({ id: "asc" })
-				.limit(limit)
-				.skip(limit * (page - 1));
+			if (!rand) {
+				result.products = await productModel
+					.find(filter)
+					.sort({ id: "asc" })
+					.limit(parseInt(limit))
+					.skip(limit * (page - 1));
+			} else {
+				// Get random products
+				result.products = await productModel.aggregate(
+					[ { $sample: { size: parseInt(limit) } } ]
+				)
+			}
 		});
 	} catch (err) {
 		res.status(500).send(err._message);
