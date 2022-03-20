@@ -97,4 +97,8 @@
     .website-content {
         padding-top: 80px;
     }
+
+    #cart-suggestions {
+        display: none;
+    }
 }

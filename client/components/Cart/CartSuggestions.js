@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductShowcase from '../ProductShowcase';
 
-const CartSuggestions = ({ cartItems, setCartItems, cartTog }) => {
+const CartSuggestions = ({ cartItems, setCartItems, cartTog, orderFormTog }) => {
     const [ products, setProducts ] = useState([]);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ const CartSuggestions = ({ cartItems, setCartItems, cartTog }) => {
     }, []);
 
 	return (
-		<div id="cart-suggestions" className={ `${ (cartTog) ? 'active' : '' }` }>
+		<div id="cart-suggestions" className={ `${ (cartTog && !orderFormTog) ? 'active' : '' }` }>
 			<div id="cart-suggestions-textuals">
 				<h4>לפני שאתם מסיימים רכישה</h4>
 				<h3>אנחנו ממליצים לכם להוסיף לעגלה גם</h3>

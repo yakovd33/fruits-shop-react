@@ -72,7 +72,7 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                 <div id="cart-link-to-checkout" onClick={ () => setOrderFormTog(!orderFormTog) }>להמשך הזמנה</div>
             </div>
 
-            <CartSuggestions cartTog={ cartTog } cartItems={ cartItems } setCartItems={ setCartItems }/>
+            <CartSuggestions cartTog={ cartTog } orderFormTog={ orderFormTog } cartItems={ cartItems } setCartItems={ setCartItems }/>
 
             { orderFormTog && <OrderForm setOrderFormTog={ setOrderFormTog }/> }
         </div>
