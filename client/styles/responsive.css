@@ -11,7 +11,7 @@
     }
 
     #main-products-list .product-showcase {
-        width: calc(50% - 60px);
+        width: calc(50% - 55px);
     }
 
     .product-showcase-add-to-cart-form {
@@ -19,7 +19,7 @@
     }
 
     .product-showcase .product-showcase-add-to-cart {
-        width: 100%;
+        /* width: 100%; */
         max-width: 100%;
     }
 
@@ -100,5 +100,9 @@
 
     #cart-suggestions {
         display: none;
+    }
+
+    #main-products-list .product-showcase:not(:nth-child(4n)) {
+        margin-left: 0;
     }
 }

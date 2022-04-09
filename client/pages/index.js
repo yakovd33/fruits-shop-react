@@ -3,6 +3,7 @@ import axios from "axios";
 import Slider from "../components/Home/Slider";
 import ProductShowcase from "../components/ProductShowcase";
 
+
 export default function Home({ cartItems, setCartItems }) {
 	const [products, setProducts] = useState([
 		{
@@ -99,7 +100,7 @@ export default function Home({ cartItems, setCartItems }) {
 		}
 
 		if (searchKeywords.length) {
-			query += `&search=${searchKeywords}`;
+		query += `&search=${searchKeywords}`;
 		}
 
 		axios

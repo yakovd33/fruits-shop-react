@@ -3,6 +3,16 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import ProductShowcase from "../../components/ProductShowcase";
 
+const categoriesTitles = [
+    'ירקות',
+    'פירות',
+    'מעדנייה',
+    'ירק ופטריות',
+    'מזווה',
+    'יבשים',
+    'מבצעים',
+]
+
 const Category = ({ cartItems, setCartItems }) => {
     const router = useRouter();
     const { cid } = router.query;
@@ -48,6 +58,11 @@ const Category = ({ cartItems, setCartItems }) => {
     }, [ curPage ])
 
     return ( <>
+        <div id="category-hero-wrap">
+            <div id="category-hero-title">{ categoriesTitles[cid - 1] }</div>
+            <img src={ `/images/categories/${ cid }.jpeg` }/>
+        </div>
+
         <div className="container">
             <div id="home-main-content">
                 <form action="" id="products-search-form">
