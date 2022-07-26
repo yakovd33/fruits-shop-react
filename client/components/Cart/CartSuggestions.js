@@ -6,7 +6,7 @@ const CartSuggestions = ({ cartItems, setCartItems, cartTog, orderFormTog }) => 
     const [ products, setProducts ] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/products/?limit=6&rand=true`).then((res) => {
+        axios.get(`${process.env.API_URL}/products/?limit=9&rand=true`).then((res) => {
             setProducts(res.data.products);
         });
     }, []);

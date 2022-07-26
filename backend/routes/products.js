@@ -8,12 +8,7 @@ const path = require("path");
 router.get("/", async (req, res, next) => {
 	res.set("content-type", "application/json");
 
-	let page = req.query.page;
-	let category_id = req.query.category;
-	let search = req.query.search;
-	let all = req.query.all;
-	let limit = req.query.limit;
-	let rand = req.query.rand;
+	let { page, category_id, search, all, limit, rand, isRecommended, isHomepage } = req.query;
 
 	if (!page) {
 		page = 1;
@@ -40,12 +35,20 @@ router.get("/", async (req, res, next) => {
 			filter.name = { "$regex": search, "$options": "i" };
 		}
 
-		if (all) {
-			limit = 999;
+		if (all && !limit) {
+			limit = 9999;
 		} else {
 			if (!limit) {
 				limit = 20;
 			}
+		}
+
+		if (isRecommended) {
+			filter.isRecommended = isRecommended;
+		}
+
+		if (isHomepage) {
+			filter.isHomepage = isHomepage;
 		}
 
 		await productModel.find(filter).then(async (results) => {
@@ -150,9 +153,11 @@ router.post('/update/:id', async (req, res, next) => {
 				'availability': req.body.availability,
 				'unitType': req.body.unitType,
 				'description': req.body.description,
-				'badge': req.body.badge
+				'badge': req.body.badge,
+				'isHomepage': req.body.isHomepage,
+				'isRecommended': req.body.isRecommended,
 		 	}
-		}, (err, docs) => {
+		}, { upsert: true, new: true }, (err, docs) => {
 			if (!err) res.send('שינוי בוצע בהצלחה.')
 		})
 	} catch (e) {

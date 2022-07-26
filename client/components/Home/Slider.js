@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import Link from 'next/link';
+import LazyLoad from 'react-lazyload';
 
 const Slider = () => {
     const [ slides, setSlides ] = useState([{
@@ -31,8 +31,10 @@ const Slider = () => {
 
                 <div id="slider-items">
                     { slides && slides.map(item =>
-                        <div className="slider-item" style={{ background: `url('${item.image}')`, transform: `translateX(${current * 100}vw)` }}>
-                        </div>
+                        <LazyLoad height={500} once>
+                            <div className="slider-item" style={{ background: `url('${item.image}')`, transform: `translateX(${current * 100}vw)` }}>
+                            </div>
+                        </LazyLoad>
                     ) }
                 </div>
             </div>

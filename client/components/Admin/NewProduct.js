@@ -30,6 +30,10 @@ const NewProduct = ({ tab }) => {
         {
             id: 7,
             name: 'מבצעים'
+        },
+        {
+            id: 8,
+            name: 'דף הבית'
         }
     ]);
 
@@ -43,6 +47,8 @@ const NewProduct = ({ tab }) => {
     const [ salePrice, setSalePrice ] = useState('');
     const [ description, setDescription ] = useState('');
     const [ image, setImage ] = useState(null);
+    const [ isRecommended, setIsRecommended ] = useState(false);
+    const [ isHomepage, setIsHomepage ] = useState(false);
 
     const random = (length = 8) => {
         return Math.random().toString(16).substr(2, length);
@@ -61,6 +67,8 @@ const NewProduct = ({ tab }) => {
         fd.append('price', price);
         fd.append('salePrice', salePrice);
         fd.append('description', description);
+        fd.append('isRecommended', isRecommended);
+        fd.append('isHomepage', isHomepage);
         // fd.append('file', image);
 
         axios.post(`${process.env.API_URL}/products/`, fd, {
@@ -140,6 +148,19 @@ const NewProduct = ({ tab }) => {
                 <div className="cute-file-select">
                     <input type="file" id="file-select-product" onChange={ (e) => setImage(e.target.files[0]) }/>
                     <button className="cute-btn" onClick={ (e) => handleCuteSelect(e) }>בחר תמונה</button>
+                </div>
+            </div>
+
+
+            <div className="input-group">
+                <div className="checkbox-wrap">
+                    <input type="checkbox" checked={isRecommended} onChange={(e) => setIsRecommended(e.target.checked)}/> מומלצי השבוע
+                </div>
+            </div>
+
+            <div className="input-group">
+                <div className="checkbox-wrap">
+                    <input type="checkbox" checked={isHomepage} onChange={(e) => setIsHomepage(e.target.checked)}/> דף הבית
                 </div>
             </div>
 

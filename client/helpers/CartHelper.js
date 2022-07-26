@@ -24,3 +24,17 @@ export default class CartHelper {
         return amount;
     }
 }
+
+export const addToCartAnimation = (imageTag, top, left) => {
+    let id = 'add-to-cart-animation-item-' + Math.floor(Math.random() * 1000).toString();
+    const element = document.createElement('div');
+    element.setAttribute('id', id);
+    element.setAttribute('class', 'add-to-cart-animation-item');
+    element.setAttribute('style', `top: ${top}px; left: ${left}px`);
+    element.innerHTML = imageTag;
+    document.body.appendChild(element);
+
+    setTimeout(() => {
+        document?.getElementById(id)?.remove();
+    }, 3000, id);
+}

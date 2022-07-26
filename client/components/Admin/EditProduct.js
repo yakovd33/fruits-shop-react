@@ -44,6 +44,10 @@ const EditProduct = ({ id, product, setShowEdit }) => {
     const [ description, setDescription ] = useState(product.description);
     const [ badge, setBadge ] = useState(product.badge);
     const [ image, setImage ] = useState(null);
+    const [ isRecommended, setIsRecommended ] = useState(product.isRecommended);
+    const [ isHomepage, setIsHomepage ] = useState(product.isHomepage);
+
+    console.log(product);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -57,7 +61,9 @@ const EditProduct = ({ id, product, setShowEdit }) => {
             price: price,
             description: description,
             salePrice: salePrice,
-            badge: badge
+            badge: badge,
+            isRecommended,
+            isHomepage
         }).then((res) => {
             console.log(res);
             setFeedback(res.data);
@@ -137,6 +143,18 @@ const EditProduct = ({ id, product, setShowEdit }) => {
                     <div className="cute-file-select">
                         <input type="file" id="file-select-product" onChange={ (e) => setImage(e.target.files[0]) }/>
                         <button className="cute-btn" onClick={ (e) => handleCuteSelect(e) }>בחר תמונה</button>
+                    </div>
+                </div>
+
+                <div className="input-group">
+                    <div className="checkbox-wrap">
+                        <input type="checkbox" defaultChecked={isRecommended} onChange={(e) => setIsRecommended(e.target.checked)}/> מומלצי השבוע
+                    </div>
+                </div>
+
+                <div className="input-group">
+                    <div className="checkbox-wrap">
+                        <input type="checkbox" defaultChecked={isHomepage} onChange={(e) => setIsHomepage(e.target.checked)}/> דף הבית
                     </div>
                 </div>
 
