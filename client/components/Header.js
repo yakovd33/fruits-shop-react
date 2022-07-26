@@ -10,6 +10,11 @@ const Header = ({ cartTog, setCartTog, cartItems }) => {
     const [ catsTog, setCatsTog ] = useState(false);
 
     const [ keywords, setKeywords ] = useSearchDebounce(500);
+    const [ searchResults, setSearchResults ] = useState([]);
+
+    useEffect(() => {
+        
+    }, [keywords])
 
     return (
         <>
