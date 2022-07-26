@@ -4,7 +4,6 @@ import Slider from "../components/Home/Slider";
 import ProductShowcase from "../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-
 export default function Home({ cartItems, setCartItems, weeklyProducts, hotProducts, allProducts }) {
 	const [products, setProducts] = useState(allProducts || []);
 
