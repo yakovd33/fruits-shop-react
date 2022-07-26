@@ -4,8 +4,9 @@ import { BsWhatsapp, BsFillTelephoneFill } from 'react-icons/bs';
 import Link from 'next/link';
 import HeaderBottom from './HeaderBottom';
 import HeaderSearch from './HeaderSearch';
+import { FaAngleDown } from 'react-icons/fa'
 
-const Header = ({ cartTog, setCartTog, cartItems }) => {
+const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ mobileNavTog, setMobileNavTog ] = useState(false);
     const [ catsTog, setCatsTog ] = useState(false);
 
@@ -18,12 +19,26 @@ const Header = ({ cartTog, setCartTog, cartItems }) => {
                         <div id="header-links" className={ `${ mobileNavTog ? 'active' : '' }` }>
                             <Link href="/"><a className="header-link active">דף הבית</a></Link>
                             <Link href="/about"><a className="header-link">אודות</a></Link>
+
+                            <a className="header-link dropdown-link" onClick={ () => setCatsTog(!catsTog) }>
+                                <span>קטגוריות <FaAngleDown/></span>          
+                                { catsTog && <div className="dropdown">
+                                    <Link href="/category/1"><a>ירקות</a></Link>
+                                    <Link href="/category/2"><a>פירות</a></Link>
+                                    <Link href="/category/3"><a>מעדנייה</a></Link>
+                                    <Link href="/category/4"><a>ירק ופטריות</a></Link>
+                                    <Link href="/category/5"><a>מזווה</a></Link>
+                                    <Link href="/category/6"><a>יבשים</a></Link>
+                                    <Link href="/category/7"><a>מבצעים</a></Link>
+                                </div> }
+                            </a>
+                        
                             <Link href="/legal"><a className="header-link">תקנון</a></Link>
                         </div>
                     </div>
 
                     <div id="header-left">
-                       <HeaderSearch/>
+                       <HeaderSearch cartItems={cartItems} setCartItems={setCartItems}/>
 
                         <div id="header-cart-icon" onClick={ () => setCartTog(!cartTog) }>
                             <div className="icon"><AiOutlineShoppingCart/></div>

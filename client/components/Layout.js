@@ -10,7 +10,7 @@ const Layout = ({ children, cartItems, setCartItems }) => {
 
     return ( 
         <div className="website-content">
-            <Header cartTog={ cartTog } setCartTog={ setCartTog } cartItems={ cartItems }/>
+            <Header cartTog={ cartTog } setCartTog={ setCartTog } cartItems={ cartItems } setCartItems={ setCartItems }/>
             <Cart cartTog={ cartTog } setCartTog={ setCartTog } cartItems={ cartItems } setCartItems={ setCartItems }/>
 
                 { children }

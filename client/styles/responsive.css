@@ -23,7 +23,7 @@
     }
 
     .cart-item-form-amount-content {
-        width: 9    0px
+        width: 90px
     }
 
     .cart-item-form-amount input {
@@ -135,14 +135,34 @@
     }
 
     #header-search-wrap {
-        display: none;
+        /* display: none; */
+        top: 85px;
+        padding: 10px;
+        left: 0;
+        right: 0;
+        position: fixed;
+        margin-left: 0;
+        background-color: #fff;
+        z-index: 999999;
     }
 
-    #header-logo {
-        top: 10px;
+    #header-search-wrap input[type="text"] {
+        width: 100%
+    }
+
+    #header-search-results {
+        top: 70px;
+        left: 10px;
+        width: auto;
+        right: 10px;
     }
     
     #header-logo img {
         height: 90px;
+        position: fixed;
+        z-index: 99999999;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

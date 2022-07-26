@@ -7,7 +7,7 @@ import { BsInfoCircleFill } from 'react-icons/bs'
 import LazyLoad from 'react-lazyload';
 import { addToCartAnimation } from '../helpers/CartHelper';
 
-const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, image, unit, cartItems, setCartItems, bottomAddToCart }) => {
+const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, image, unit, cartItems, setCartItems, bottomAddToCart, type="product" }) => {
     const [ amount, setAmount ] = useState(minAmount);
     const [ discount, setDiscount ] = useState(0);
 
@@ -18,6 +18,10 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
     const handleAddToCart = (e) => {
         let left = e.clientX + 80;
         let top = e.clientY - 170;
+        if (type == 'search') {
+            left = e.clientX + 100;
+            top = e.clientY - 5;
+        }
         let imageTag = `<img src="${image}" alt="">`;
         addToCartAnimation(imageTag, top, left);
 
@@ -87,18 +91,20 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
             </div>
             </LazyLoad>
 
+            <div>
             <div className="product-showcase-name">{ name }</div>
-            <div className="product-showcase-price">
-                <span className={ `showcase-price ${!salePrice ? 'db' : 'dn'} `}>
-                    {`${!salePrice ? `${price}₪` : ''}`}
-                </span>
-                
-                <span className={ `showcase-price ${salePrice ? 'db' : 'dn'} `}>
-                    <span className="new-price">{salePrice}₪</span>
-                    <span className="old-price">{price}₪</span>
-                </span>
+                <div className="product-showcase-price">
+                    <span className={ `showcase-price ${!salePrice ? 'db' : 'dn'} `}>
+                        {`${!salePrice ? `${price}₪` : ''}`}
+                    </span>
+                    
+                    <span className={ `showcase-price ${salePrice ? 'db' : 'dn'} `}>
+                        <span className="new-price">{salePrice}₪</span>
+                        <span className="old-price">{price}₪</span>
+                    </span>
 
-                / { unit }
+                    / { unit }
+                </div>
             </div>
 
             <div className="product-showcase-add-to-cart-form">
