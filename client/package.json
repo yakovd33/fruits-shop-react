@@ -20,6 +20,7 @@
     "react-tooltip": "^4.2.21"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs-experimental": "0.0.6",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.3"
   }
