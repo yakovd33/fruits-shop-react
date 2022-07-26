@@ -11,7 +11,7 @@ const HeaderSearch = ({ cartItems, setCartItems }) => {
 
     useEffect(() => {
         if (keywords) {
-            axios.get(`${process.env.API_URL}/products?limit=5&search=${keywords}`).then((res) => {
+            axios.get(`${process.env.API_URL}/products?limit=20&search=${keywords}`).then((res) => {
                 setSearchResults(res.data.products);
             });
         } else {
@@ -32,22 +32,24 @@ const HeaderSearch = ({ cartItems, setCartItems }) => {
 
         { searchOpen &&
             <div id="header-search-results">
-                { (searchResults || []).map((product) => (
-                    <ProductShowcase
-                        id={ product._id }
-                        cartItems={cartItems}
-                        minAmount={ product.minAmount }
-                        setCartItems={setCartItems}
-                        description={ product.description }
-                        name={product.name}
-                        price={product.price}
-                        salePrice={product.salePrice}
-                        unit={product.unitType}
-                        badge={ product.badge }
-                        image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
-                        type="search"
-                    />
-                )) }
+                <div id="header-search-results-wrap">
+                    { (searchResults || []).map((product) => (
+                        <ProductShowcase
+                            id={ product._id }
+                            cartItems={cartItems}
+                            minAmount={ product.minAmount }
+                            setCartItems={setCartItems}
+                            description={ product.description }
+                            name={product.name}
+                            price={product.price}
+                            salePrice={product.salePrice}
+                            unit={product.unitType}
+                            badge={ product.badge }
+                            image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
+                            type="search"
+                        />
+                    )) }
+                </div>
             </div>
         }
     </div>

@@ -1242,7 +1242,8 @@ a {
 	top: 40px;
 	border-radius: 8px;
 	overflow: hidden;
-	box-shadow: 0 0 15px #12121244
+	box-shadow: 0 0 15px #12121244;
+	background-color: #fff;
 }
 
 #header-search-results .sale-badge {
@@ -1286,4 +1287,9 @@ a {
 	color: #121212;
 	text-align: right;
 	margin-right: 5px;
+}
+
+#header-search-results-wrap {
+	max-height: 410px;
+	overflow-y: auto;
 }
