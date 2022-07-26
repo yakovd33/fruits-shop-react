@@ -7,6 +7,7 @@ import ProductShowcase from './ProductShowcase';
 const HeaderSearch = ({ cartItems, setCartItems }) => {
     const [ keywords, setKeywords ] = useSearchDebounce(100);
     const [ searchResults, setSearchResults ] = useState([]);
+    const [ searchOpen, setSearchOpen ] = useState(false);
 
     useEffect(() => {
         if (keywords) {
@@ -20,29 +21,35 @@ const HeaderSearch = ({ cartItems, setCartItems }) => {
 
   return (
     <div id="header-search-wrap">
-        <input type="text" placeholder="מה אתם מחפשים?" onChange={(e) => setKeywords(e.target.value)} value={keywords}/>
+        <input type="text" placeholder="מה אתם מחפשים?" onFocus={() => setSearchOpen(true)} onChange={(e) => setKeywords(e.target.value)} value={keywords}/>
         <div className="icon">
             <BiSearch/>
         </div>
 
-        <div id="header-search-results">
-            { (searchResults || []).map((product) => (
-                <ProductShowcase
-                    id={ product._id }
-                    cartItems={cartItems}
-                    minAmount={ product.minAmount }
-                    setCartItems={setCartItems}
-                    description={ product.description }
-                    name={product.name}
-                    price={product.price}
-                    salePrice={product.salePrice}
-                    unit={product.unitType}
-                    badge={ product.badge }
-                    image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
-                    type="search"
-                />
-            )) }
-        </div>
+        { searchOpen &&
+            <div id="search-closer" onClick={() => setSearchOpen(false)}></div>
+        }
+
+        { searchOpen &&
+            <div id="header-search-results">
+                { (searchResults || []).map((product) => (
+                    <ProductShowcase
+                        id={ product._id }
+                        cartItems={cartItems}
+                        minAmount={ product.minAmount }
+                        setCartItems={setCartItems}
+                        description={ product.description }
+                        name={product.name}
+                        price={product.price}
+                        salePrice={product.salePrice}
+                        unit={product.unitType}
+                        badge={ product.badge }
+                        image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
+                        type="search"
+                    />
+                )) }
+            </div>
+        }
     </div>
   )
 }
