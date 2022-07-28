@@ -21,6 +21,11 @@ body {
 	direction: rtl;
 }
 
+.__react_component_tooltip {
+	width: 250px;
+	white-space : normal;
+}
+
 .hide {
 	display: none;
 }
