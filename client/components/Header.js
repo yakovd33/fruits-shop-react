@@ -14,6 +14,8 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
 
     const goToLink = (link) => {
         router.push(link);
+        setMobileNavTog(false);
+        setCatsTog(false)
     }
 
     return (
@@ -23,8 +25,8 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                     <div id="header-right">
                         <Link href="/"><a><div id="header-logo"><img src="/images/logo.png" alt="" /></div></a></Link>
                         <div id="header-links" className={ `${ mobileNavTog ? 'active' : '' }` }>
-                            <Link href="/"><a className="header-link active">דף הבית</a></Link>
-                            <Link href="/about"><a className="header-link">אודות</a></Link>
+                            <Link href="/" onClick={() => setMobileNavTog(false)}><a className="header-link active">דף הבית</a></Link>
+                            <Link href="/about" onClick={() => setMobileNavTog(false)}><a className="header-link">אודות</a></Link>
 
                             <a className="header-link dropdown-link" onClick={ () => setCatsTog(!catsTog) }>
                                 <span>קטגוריות <FaAngleDown/></span>          
@@ -39,7 +41,7 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                                 </div> }
                             </a>
                         
-                            <Link href="/legal"><a className="header-link">תקנון</a></Link>
+                            <Link href="/legal" onClick={() => setMobileNavTog(false)}><a className="header-link">תקנון</a></Link>
                         </div>
                     </div>
 
