@@ -20,10 +20,17 @@
 
     .cart-item-form-amount {
         background-color: transparent;
+        flex-direction: column;
     }
 
     .cart-item-form-amount-content {
-        width: 90px
+        width: 90px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .main-products-list .product-showcase-price {
+        margin-bottom: 75px;
     }
 
     .cart-item-form-amount input {
@@ -31,7 +38,7 @@
     }
 
     .product-showcase .product-showcase-add-to-cart {
-        font-size: 11px;
+        font-size: 15px;
     }
 
     .main-products-list .product-showcase {
