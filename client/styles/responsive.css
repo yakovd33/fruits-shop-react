@@ -173,3 +173,9 @@
         transform: translateX(-50%);
     }
 }
+
+@media screen and (min-width: 768px) {
+    #header-links .dropdown-link {
+        display: none;
+    }
+}

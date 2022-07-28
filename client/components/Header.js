@@ -5,10 +5,16 @@ import Link from 'next/link';
 import HeaderBottom from './HeaderBottom';
 import HeaderSearch from './HeaderSearch';
 import { FaAngleDown } from 'react-icons/fa'
+import { useRouter } from 'next/router'
 
 const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ mobileNavTog, setMobileNavTog ] = useState(false);
     const [ catsTog, setCatsTog ] = useState(false);
+    const router = useRouter()
+
+    const goToLink = (link) => {
+        router.push(link);
+    }
 
     return (
         <>
@@ -23,13 +29,13 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                             <a className="header-link dropdown-link" onClick={ () => setCatsTog(!catsTog) }>
                                 <span>קטגוריות <FaAngleDown/></span>          
                                 { catsTog && <div className="dropdown">
-                                    <Link href="/category/1"><a>ירקות</a></Link>
-                                    <Link href="/category/2"><a>פירות</a></Link>
-                                    <Link href="/category/3"><a>מעדנייה</a></Link>
-                                    <Link href="/category/4"><a>ירק ופטריות</a></Link>
-                                    <Link href="/category/5"><a>מזווה</a></Link>
-                                    <Link href="/category/6"><a>יבשים</a></Link>
-                                    <Link href="/category/7"><a>מבצעים</a></Link>
+                                    <div onClick={() => goToLink("/category/1")}><a>ירקות</a></div>
+                                    <div onClick={() => goToLink("/category/2")}><a>פירות</a></div>
+                                    <div onClick={() => goToLink("/category/3")}><a>מעדנייה</a></div>
+                                    <div onClick={() => goToLink("/category/4")}><a>ירק ופטריות</a></div>
+                                    <div onClick={() => goToLink("/category/5")}><a>מזווה</a></div>
+                                    <div onClick={() => goToLink("/category/6")}><a>יבשים</a></div>
+                                    <div onClick={() => goToLink("/category/7")}><a>מבצעים</a></div>
                                 </div> }
                             </a>
                         
