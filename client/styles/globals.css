@@ -340,10 +340,12 @@ a {
 	justify-content: space-between;
 	width: 330px;
 	opacity: 0;
+	display: none;
 	transition: opacity 0.2s ease-in-out
 }
 
 .subcategories-menu.show {
+	display: block;
 	opacity: 1;
 }
 

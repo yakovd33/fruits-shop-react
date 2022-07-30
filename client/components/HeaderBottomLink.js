@@ -39,6 +39,8 @@ const HeaderBottomLink = ({ categoryId, href, title, subCategories }) => {
                 src={`/images/categories/${ categoryId }.jpeg`}
                 height={300}
                 width={200}
+                placeholder="blur"
+                blurDataURL="URL"
             />
         </div>
     </div>
