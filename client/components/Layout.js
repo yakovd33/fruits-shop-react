@@ -21,7 +21,7 @@ const Layout = ({ children, cartItems, setCartItems }) => {
                 
             <Footer/>
 
-            <Script src="https://cdn.enable.co.il/licenses/enable-L804575kdnhulif-0221-25262/init.js" />
+            <Script src="https://cdn.enable.co.il/licenses/enable-L804575kdnhulif-0221-25262/init.js" strategy="lazyOnload"/>
         </div>
     );
 }

@@ -16,7 +16,7 @@ const categoriesTitles = [
 
 const Category = ({ cartItems, setCartItems }) => {
     const router = useRouter();
-    const { cid } = router.query;
+    const { cid, subcategory } = router.query;
 
     const [ products, setProducts ] = useState([]);
 	const [ curPage, setCurPage ] = useState(1);
@@ -31,6 +31,10 @@ const Category = ({ cartItems, setCartItems }) => {
 			if (searchKeywords.length) {
 				query += `&search=${searchKeywords}`;
 			}
+
+            if (subcategory) {
+                query += `&subcategory=${subcategory}`
+            }
 
             axios.get(process.env.API_URL + "/products/?page=" + curPage + query).then((res) => {
             	if (curPage == 1) {
@@ -73,7 +77,7 @@ const Category = ({ cartItems, setCartItems }) => {
 
     return ( <>
         <div id="category-hero-wrap">
-            <div id="category-hero-title">{ categoriesTitles[cid - 1] }</div>
+            <div id="category-hero-title">{ subcategory || categoriesTitles[cid - 1] }</div>
             <img src={ `/images/categories/${ cid }.jpeg` }/>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const EditProduct = ({ id, product, setShowEdit }) => {
@@ -46,8 +46,17 @@ const EditProduct = ({ id, product, setShowEdit }) => {
     const [ image, setImage ] = useState(null);
     const [ isRecommended, setIsRecommended ] = useState(product.isRecommended);
     const [ isHomepage, setIsHomepage ] = useState(product.isHomepage);
+    const [ subCategories, setSubCategories ] = useState([]);
+    const [ subCategory, setSubCategory ] = useState(product.subCategory);
 
-    console.log(product);
+    useEffect(() => {
+        // Get subcategories
+        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
+            setSubCategories(res.data)
+        }).catch((e) => {
+            console.log(e);
+        });
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -63,7 +72,8 @@ const EditProduct = ({ id, product, setShowEdit }) => {
             salePrice: salePrice,
             badge: badge,
             isRecommended,
-            isHomepage
+            isHomepage,
+            subCategory
         }).then((res) => {
             console.log(res);
             setFeedback(res.data);
@@ -110,6 +120,17 @@ const EditProduct = ({ id, product, setShowEdit }) => {
                     <select value={ cat } onChange={ (e) => setCat(e.target.value) }>
                         { categories.map((cat) => (
                             <option value={ cat.id }>{ cat.name }</option>
+                        )) }
+                    </select>
+                </div>
+
+                <div className="input-group">
+                    <label htmlFor="">תת קטגוריה</label>
+                    <select value={ subCategory } onChange={ (e) => setSubCategory(e.target.value) }>
+                        { subCategories.map((sub) => (
+                            sub.category == cat ?
+                                <option value={ sub.name }>{ sub.name }</option>
+                            : null
                         )) }
                     </select>
                 </div>

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const subcategoryModel = require('../models/subcategory')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

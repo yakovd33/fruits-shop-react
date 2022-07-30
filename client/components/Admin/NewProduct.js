@@ -49,10 +49,17 @@ const NewProduct = ({ tab }) => {
     const [ image, setImage ] = useState(null);
     const [ isRecommended, setIsRecommended ] = useState(false);
     const [ isHomepage, setIsHomepage ] = useState(false);
+    const [ subCategories, setSubCategories ] = useState([]);
+    const [ subCategory, setSubCategory ] = useState(null);
 
-    const random = (length = 8) => {
-        return Math.random().toString(16).substr(2, length);
-    };
+    useEffect(() => {
+        // Get subcategories
+        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
+            setSubCategories(res.data)
+        }).catch((e) => {
+            console.log(e);
+        });
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -69,6 +76,7 @@ const NewProduct = ({ tab }) => {
         fd.append('description', description);
         fd.append('isRecommended', isRecommended);
         fd.append('isHomepage', isHomepage);
+        fd.append('subCategory', subCategory);
         // fd.append('file', image);
 
         axios.post(`${process.env.API_URL}/products/`, fd, {
@@ -119,6 +127,17 @@ const NewProduct = ({ tab }) => {
                 <select value={ cat } onChange={ (e) => setCat(e.target.value) }>
                     { categories.map((cat) => (
                         <option value={ cat.id }>{ cat.name }</option>
+                    )) }
+                </select>
+            </div>
+
+            <div className="input-group">
+                <label htmlFor="">תת קטגוריה</label>
+                <select value={ subCategory } onChange={ (e) => setSubCategory(e.target.value) }>
+                    { subCategories.map((sub) => (
+                        sub.category == cat ?
+                            <option value={ sub.name }>{ sub.name }</option>
+                        : null
                     )) }
                 </select>
             </div>

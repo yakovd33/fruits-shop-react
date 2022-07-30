@@ -13,6 +13,7 @@ const ProductSchema = new mongoose.Schema({
     badge: { type: String, required: false, default: null },
     isHomepage: { type: Boolean, default: false },
     isRecommended: { type: Boolean, default: false },
+    subCategory: { type: String }
 });
 
 module.exports = mongoose.model('Product', ProductSchema);

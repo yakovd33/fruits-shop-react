@@ -22,7 +22,7 @@ body {
 }
 
 .__react_component_tooltip {
-	width: 250px;
+	max-width: 250px;
 	white-space : normal;
 }
 
@@ -296,7 +296,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 20px;
+	padding: 0 20px;
 }
 
 #header-bottom .header-bottom-link {
@@ -304,6 +304,7 @@ a {
 	font-weight: 500;
 	color: #121212;
 	position: relative;
+	padding: 20px 0;
 }
 
 #header-bottom-center {
@@ -317,13 +318,59 @@ a {
 }
 
 #header-bottom .header-bottom-link:not(:last-child):after {
+	height: 23px;
 	position: absolute;
 	content: "";
-	top: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	bottom: 0;
 	left: -50px;
 	background-color: #dbdbdb;
 	width: 1px;
+}
+
+.subcategories-menu {
+	position: fixed;
+	padding: 20px;
+	border-radius: 0 0 8px 8px;
+	top: 149px;
+	box-shadow: 0 0 30px rgba(162, 162, 162, 0.359);
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	width: 330px;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out
+}
+
+.subcategories-menu.show {
+	opacity: 1;
+}
+
+.subcategories-menu-image img {
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 0 30px rgba(162, 162, 162, 0.359);
+}
+
+.subcategories-menu-links {
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	font-size: 1.2rem;
+}
+
+.subcategories-menu-links a {
+	transition: 0.3s ease-in-out;
+	border-radius: 30px;
+	display: inline-block;
+	padding: 4px 10px;
+}
+
+.subcategories-menu-links a:hover {
+	background-color: #59cb59;
+	color: #fff;
+	
 }
 
 /* Footer */

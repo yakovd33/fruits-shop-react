@@ -8,7 +8,7 @@ const path = require("path");
 router.get("/", async (req, res, next) => {
 	res.set("content-type", "application/json");
 
-	let { page, category_id, search, all, limit, rand, isRecommended, isHomepage } = req.query;
+	let { page, category_id, search, all, limit, rand, isRecommended, isHomepage, subcategory } = req.query;
 
 	if (!page) {
 		page = 1;
@@ -23,6 +23,10 @@ router.get("/", async (req, res, next) => {
 		if (category_id) {
 			if (category_id != 7) {
 				filter = { category: category_id };
+
+				if (subcategory) {
+					filter['subCategory'] = subcategory;
+				}
 			} else {
 				// Get all products on sale
 				filter = { salePrice: { $ne: 0 } }
@@ -156,6 +160,7 @@ router.post('/update/:id', async (req, res, next) => {
 				'badge': req.body.badge,
 				'isHomepage': req.body.isHomepage,
 				'isRecommended': req.body.isRecommended,
+				'subCategory': req.body.subCategory,
 		 	}
 		}, { upsert: true, new: true }, (err, docs) => {
 			if (!err) res.send('שינוי בוצע בהצלחה.')

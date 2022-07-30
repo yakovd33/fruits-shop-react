@@ -29,7 +29,7 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                             <Link href="/about" onClick={() => setMobileNavTog(false)}><a className="header-link">אודות</a></Link>
 
                             <a className="header-link dropdown-link" onClick={ () => setCatsTog(!catsTog) }>
-                                <span>קטגוריות <FaAngleDown/></span>          
+                                <span>קטגוריות <FaAngleDown/></span>
                                 { catsTog && <div className="dropdown">
                                     <div onClick={() => goToLink("/category/1")}><a>ירקות</a></div>
                                     <div onClick={() => goToLink("/category/2")}><a>פירות</a></div>

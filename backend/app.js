@@ -19,6 +19,7 @@ const ordersRouter = require('./routes/orders');
 const discountsRouter = require('./routes/discounts');
 const giftsRouter = require('./routes/gifts');
 const citiesRouter = require('./routes/cities');
+const subcategoriesRouter = require('./routes/subcategories');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
@@ -47,6 +48,7 @@ app.use('/orders', ordersRouter);
 app.use('/discounts', discountsRouter);
 app.use('/gifts', giftsRouter);
 app.use('/cities', citiesRouter);
+app.use('/subcategories', subcategoriesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

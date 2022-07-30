@@ -1,50 +1,37 @@
-import React from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react'
+import HeaderBottomLink from './HeaderBottomLink'
+import axios from 'axios'
 
 const HeaderBottom = () => {
+    const [ subCategories, setSubCategories ] = useState([]);
+
+    useEffect(() => {
+        // Get subcategories
+        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
+            setSubCategories(res.data)
+        }).catch((e) => {
+            console.log(e);
+        });
+    }, []);
+
   return (
     <div id="header-bottom">
-        <div className="container">
+        <div className="container" id="header-bottom-container">
             <div className="right">
-                <Link href="/category/1">
-                    <a className="header-bottom-link">ירקות</a>
-                </Link>
-
-                <Link href="/category/2">
-                    <a className="header-bottom-link">פירות</a>
-                </Link>
-
-                <Link href="/category/3">
-                    <a className="header-bottom-link">מעדנייה</a>
-                </Link>
-
-                <Link href="/category/4">
-                    <a className="header-bottom-link">ירק ופטריות</a>
-                </Link>
-
-                <Link href="/category/5">
-                    <a className="header-bottom-link">מזווה</a>
-                </Link>
+                <HeaderBottomLink href="/category/1" categoryId={1} title="ירקות" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/2" categoryId={2} title="פירות" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/3" categoryId={3} title="מעדנייה" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/4" categoryId={4} title="ירק ופטריות" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/5" categoryId={5} title="מזווה" subCategories={subCategories}/>
             </div>
 
             <span id="header-bottom-center"></span>
 
             <div className="left">
-                <Link href="/category/6">
-                    <a className="header-bottom-link">יבשים</a>
-                </Link>
-
-                <Link href="/category/7">
-                    <a className="header-bottom-link">מבצעים</a>
-                </Link>
-
-                <Link href="/category/8">
-                    <a className="header-bottom-link">ירקות</a>
-                </Link>
-
-                <Link href="/category/9">
-                    <a className="header-bottom-link">ירקות</a>
-                </Link>
+                <HeaderBottomLink href="/category/6" categoryId={6} title="יבשים" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/7" title="מבצעים" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/6/subcategory=תבלינים" title="תבלינים" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/6/?subcategory=פיצוחים" title="פיצוחים" subCategories={subCategories}/>
             </div>
         </div>
     </div>
