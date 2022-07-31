@@ -127,6 +127,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
                 <div className="input-group">
                     <label htmlFor="">תת קטגוריה</label>
                     <select value={ subCategory } onChange={ (e) => setSubCategory(e.target.value) }>
+                        <option>בחר תת קטגוריה</option>
                         { subCategories.map((sub) => (
                             sub.category == cat ?
                                 <option value={ sub.name }>{ sub.name }</option>
