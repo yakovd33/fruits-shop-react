@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
             let product_id = discount.product;
             
             let product = await productModel.findOne({ _id: product_id });
-            discountsWithNames.push({ _id: discount._id, product_name: product.name, amount: discount.amount, discount: discount.discount })
+            discountsWithNames.push({ _id: discount._id, product_name: (product?.name || ''), amount: discount.amount, discount: discount.discount })
         }
 
         res.status(200).json(discountsWithNames);
