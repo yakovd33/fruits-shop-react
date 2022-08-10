@@ -31,6 +31,8 @@ function MyApp({ Component, pageProps }) {
 			<Layout cartItems={ cartItems } setCartItems={ setCartItems }>
 				<Component { ...pageProps } cartItems={ cartItems } setCartItems={ setCartItems } />
 			</Layout>
+
+			<Script src="https://cdn.enable.co.il/licenses/enable-L804575kdnhulif-0221-25262/init.js" strategy="lazyOnload" />
 		</>
 	);
 }
