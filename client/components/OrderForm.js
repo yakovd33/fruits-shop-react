@@ -152,7 +152,7 @@ const OrderForm = ({ setOrderFormTog }) => {
                 </div>
 
                 <div id="shipping-msg">
-                    { city && <p>עלות משלוח עבור { cityObject.name } היא { cityObject.price }₪</p> } 
+                    { city && cartAmount < 250 && <p>עלות משלוח עבור { cityObject.name } היא { cityObject.price }₪</p> } 
                 </div>
 
                 <div className="input-group" id="order-form-submits">

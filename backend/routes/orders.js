@@ -91,17 +91,17 @@ router.post("/", async function (req, res, next) {
 			}
 		}
 
-		// Get gift if price is over 200
-		if (!final_price >= 250) {
-			req.body.gift = null;
-		}
-
 		req.body.price = final_price;
 
-		// Get shipping price
-		let city = await citiesModel.findOne({ _id: req.body.city });
-		let shipping_price = city.price;
-		final_price += shipping_price;
+		if (!final_price >= 250) {
+			// Get gift if price is over 200
+			req.body.gift = null;
+		} else {
+			// Get shipping price
+			let city = await citiesModel.findOne({ _id: req.body.city });
+			let shipping_price = city.price;
+			final_price += shipping_price;
+		}
 		
 		const newOrder = new Order(req.body);
 		await newOrder.save();

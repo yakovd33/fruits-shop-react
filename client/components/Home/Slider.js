@@ -5,13 +5,13 @@ import LazyLoad from 'react-lazyload';
 const Slider = () => {
     const [ slides, setSlides ] = useState([{
         id: 1,
-        image: '/images/slides/2.jpg',
+        image: '/images/slides/4.jpg',
     }, {
         id: 2,
-        image: '/images/slides/farming.jpg',
+        image: '/images/slides/2.jpg',
     }, {
         id: 3,
-        image: '/images/slides/3.jpg',
+        image: '/images/slides/farming.jpg',
     }]);
 
     const [ current, setCurrent ] = useState(0);

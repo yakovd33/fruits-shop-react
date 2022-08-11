@@ -697,7 +697,8 @@ a {
 	padding: 110px 180px;
 	box-sizing: border-box;
 	transition: 0.2s ease-in-out;
-	min-height: 500px;
+	height: 600px;
+	max-height: 65vh;
 	background-size: cover !important;
 	background-position: center !important;
 }
