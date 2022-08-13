@@ -32,7 +32,7 @@ router.get("/", async (req, res, next) => {
 
 	for (let i = 0; i < tmpOrders.length; i++) {
 		let city = await citiesModel.findOne({ _id: tmpOrders[i].city });
-		tmpOrders[i].city = city.name;
+		tmpOrders[i].city = city?.name || "deleted city";
 		ordersWithCities.push(tmpOrders[i]);
 	}
 	
