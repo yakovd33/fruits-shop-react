@@ -14,7 +14,7 @@ const HeaderBottomLink = ({ categoryId, href, title, subCategories }) => {
 
     const handleLeave = (e) => {
         console.log(e.relatedTarget.className);
-        if (!e.relatedTarget.className.includes('subcategories-menu')) {
+        if (!e.relatedTarget?.className?.includes('subcategories-menu')) {
             setShowSubCategories(false);
         }
     }

@@ -87,16 +87,14 @@ router.post("/", async function (req, res, next) {
 
 				
 				final_price += price * amount - discount;
-				// console.log('price: ' + product.price);
 			}
 		}
 
 		req.body.price = final_price;
 
-		if (!final_price >= 250) {
-			// Get gift if price is over 200
+		if (final_price <= 250) {
 			req.body.gift = null;
-		} else {
+
 			// Get shipping price
 			let city = await citiesModel.findOne({ _id: req.body.city });
 			let shipping_price = city.price;
@@ -108,15 +106,11 @@ router.post("/", async function (req, res, next) {
 
 		const params = new URLSearchParams();
 
-		let method = req.body.method;
-		if (!method) {
-			method = 'credit';
-		}
+		let method = req.body.method || 'credit';
 
 		var pageCode = process.env.PAGE_CODE_CREDIT;
 		if (method == 'bit') {
 			pageCode = process.env.PAGE_CODE_BIT;
-			console.log('paying with bittttt');
 		}
 		
 		params.append('pageCode', pageCode);
@@ -130,13 +124,8 @@ router.post("/", async function (req, res, next) {
 		params.append('pageField[email]', req.body.email);
 		params.append('cField1', newOrder._id);
 		params.append('cField2', pageCode);
-
-		console.log('userid: ' + process.env.MESHULAM_USERID);
 		
 		let result = await axios.post('https://secure.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
-
-		console.log(result);
-
 		res.status(200).json(result.data);
 	} catch (e) {
 		console.log(e);

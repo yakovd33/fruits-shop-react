@@ -574,6 +574,7 @@ a {
 	padding: 10px;
 	border-radius: 5px;
 	box-shadow: 0 0 30px #9a9a9a3b;
+	cursor: pointer;
 }
 
 /* Cart suggetions */
