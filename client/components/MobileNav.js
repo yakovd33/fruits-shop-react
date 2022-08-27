@@ -27,19 +27,19 @@ const MobileNav = ({ mobileNavTog, setMobileNavTog }) => {
 
 			<div id="mobile-nav-links">
 				<Link href="/">
-					<a href="/" className="mobile-nav-link">
+					<a className="mobile-nav-link">
 						דף הבית
 					</a>
 				</Link>
 				
 				<Link href="/about">
-					<a href="/about" className="mobile-nav-link">
+					<a className="mobile-nav-link">
 						אודות
 					</a>
 				</Link>
 
 				<Link href="/legal">
-					<a href="/legal" className="mobile-nav-link">
+					<a className="mobile-nav-link">
 						תקנון
 					</a>
 				</Link>
