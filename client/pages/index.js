@@ -18,7 +18,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 		if (pageLoaded) {
 			let query = "";
 			if (category != "all") {
-				query = "&category=" + category;
+				query = "&category_id=" + category;
 			}
 
 			if (searchKeywords.length) {

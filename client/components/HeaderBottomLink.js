@@ -25,25 +25,27 @@ const HeaderBottomLink = ({ categoryId, href, title, subCategories }) => {
             <a className="header-bottom-link" id={`category-link-${categoryId}`} onMouseOver={handleOver} onMouseLeave={(e) => handleLeave(e)}>{ title }</a>
         </Link>
 
-    <div className={`subcategories-menu ${showSubcategories && categoryId ? 'show' : ''}`} style={{left: menuLeft - 330}} onMouseLeave={(e) => setShowSubCategories(false)}>
-        <div className="subcategories-menu-links">
-            { subCategories.map((sub) => (
-                sub.category == categoryId ?
-                    <Link href={`${href}/?subcategory=${sub.name}`}><a>{ sub.name }</a></Link>
-                : null
-            )) }
+        <div className={`subcategories-menu ${showSubcategories && categoryId ? 'show' : ''}`} style={{left: menuLeft - 330}} onMouseLeave={(e) => setShowSubCategories(false)}>
+            <div className="subcategories-menu-links">
+                { subCategories.map((sub) => (
+                    sub.category == categoryId ?
+                        <Link href={`${href}/?subcategory=${sub.name}`}><a>{ sub.name }</a></Link>
+                    : null
+                )) }
+            </div>
+            
+            { categoryId < 6 &&
+                <div className="subcategories-menu-image">
+                    <Image
+                        src={`/images/header-categories/${ categoryId }.jpeg`}
+                        height={300}
+                        width={200}
+                        placeholder="blur"
+                        blurDataURL="URL"
+                    />
+                </div>
+            }
         </div>
-        
-        <div className="subcategories-menu-image">
-            <Image
-                src={`/images/categories/${ categoryId }.jpeg`}
-                height={300}
-                width={200}
-                placeholder="blur"
-                blurDataURL="URL"
-            />
-        </div>
-    </div>
     </>
   )
 }

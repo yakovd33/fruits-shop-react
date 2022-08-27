@@ -172,6 +172,100 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
+    #mobile-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -80vw;
+        width: 80vw;
+        background-color: #fff;
+        z-index: 99999999;
+        transition: 0.3s ease-in-out;
+    }
+
+    #mobile-nav.active {
+        right: 0
+    }
+
+    #mobile-nav #mobile-nav-header {
+        background-color: #4caf51;
+        display: flex;
+        padding: 15px;
+        color: #fff;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    #mobile-nav #mobile-nav-header svg {
+        margin-top: 3px;
+    }
+
+    #mobile-nav-bg.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999999;
+        transition: 0.3s ease-in-out;
+    }
+
+    #mobile-nav-footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: #4caf51;
+        padding: 15px;
+        text-align: center
+    }
+
+    #mobile-nav-links {
+        margin-top: 10px;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+
+    #mobile-nav-links .mobile-nav-link {
+        display: block;
+        padding: 10px;
+        position: relative;
+    }
+
+    #mobile-nav-links .mobile-nav-link:not(:last-child) {
+        border-bottom: 1px solid #ebebeb
+    }
+
+    #mobile-nav-links .mobile-nav-link.category .icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        padding: 10px;
+        transform: translateY(-50%)
+    }
+
+    #mobile-nav-links .category-dropdown {
+        display: none;
+    }
+
+    #mobile-nav-links .category-dropdown.active {
+        display: block;
+    }
+
+    #mobile-nav-links .category-dropdown a {
+        display: block;
+        padding: 10px;
+    }
+
+    #mobile-nav-links .category-dropdown a:not(:last-child) {
+        border-bottom: 1px solid #ebebeb
+    }
 }
 
 @media screen and (min-width: 768px) {

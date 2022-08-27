@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BiTrash } from 'react-icons/bi';
 import axios from 'axios';
+import OrderItemProductItem from './OrderItemProductItem';
 
 const OrderListItem = ({ order, orders, setOrders }) => {
 	const [ cart, setCart ] = useState(JSON.parse(order.cart));
@@ -100,10 +101,7 @@ const OrderListItem = ({ order, orders, setOrders }) => {
 
 			<div className="order-list-item-cart">
 				{ cart.map((item) => (
-					<div className="order-cart-item">
-						{ item.name } * { item.amount }
-						<br/>
-					</div>
+					<OrderItemProductItem item={item}/>
 				)) }
 			</div>
 		</div>

@@ -345,7 +345,7 @@ a {
 }
 
 .subcategories-menu.show {
-	display: block;
+	display: flex;
 	opacity: 1;
 }
 
@@ -1351,4 +1351,8 @@ a {
 #header-search-results-wrap {
 	max-height: 410px;
 	overflow-y: auto;
+}
+
+#mobile-nav, #mobile-nav-bg {
+	display: none;
 }

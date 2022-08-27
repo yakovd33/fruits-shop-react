@@ -6,6 +6,7 @@ import HeaderBottom from './HeaderBottom';
 import HeaderSearch from './HeaderSearch';
 import { FaAngleDown } from 'react-icons/fa'
 import { useRouter } from 'next/router'
+import MobileNav from './MobileNav';
 
 const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ mobileNavTog, setMobileNavTog ] = useState(false);
@@ -24,7 +25,7 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                 <div className="container">
                     <div id="header-right">
                         <Link href="/"><a><div id="header-logo"><img src="/images/logo.png" alt="" /></div></a></Link>
-                        <div id="header-links" className={ `${ mobileNavTog ? 'active' : '' }` }>
+                        <div id="header-links">
                             <Link href="/" onClick={() => setMobileNavTog(false)}><a className="header-link active">דף הבית</a></Link>
                             <Link href="/about" onClick={() => setMobileNavTog(false)}><a className="header-link">אודות</a></Link>
 
@@ -61,6 +62,8 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                     </div>
                 </div>
             </div>
+
+            <MobileNav mobileNavTog={mobileNavTog} setMobileNavTog={setMobileNavTog}/>
 
             <HeaderBottom/>
 

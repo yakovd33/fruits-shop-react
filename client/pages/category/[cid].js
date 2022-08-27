@@ -66,6 +66,7 @@ const Category = ({ cartItems, setCartItems }) => {
 	}, [searchKeywords, router.query]);
 
 	useEffect(() => {
+        loadProducts();
 		setPageLoaded(true)
 	}, [])
 

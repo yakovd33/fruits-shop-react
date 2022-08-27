@@ -92,7 +92,7 @@ router.post("/", async function (req, res, next) {
 
 		req.body.price = final_price;
 
-		if (final_price <= 250) {
+		if (final_price < 250) {
 			req.body.gift = null;
 
 			// Get shipping price
@@ -178,5 +178,17 @@ router.post('/pay', async (req, res, next) => {
 	// axios.get('http://eropa.co.il/log.php?log=' + JSON.stringify(req));
 	res.send('lalala');
 });
+
+router.get('/product_discount', async (req, res, next) => {
+	let { productId, amount } = req.query;
+
+	try {
+		const discount = await getProductDiscount(productId, amount);
+		res.send(discount.toString() || '0')
+	} catch (e) {
+		console.log(e);
+		res.send('0')
+	}
+})
 
 module.exports = router;
