@@ -235,3 +235,7 @@ input[type="submit"] {
     width: 400px;
     margin-bottom: 15px;
 }
+
+#mobile-nav-bg, #mobile-nav {
+    display: none !important;
+}

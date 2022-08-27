@@ -178,7 +178,7 @@
         position: fixed;
         top: 0;
         bottom: 0;
-        right: -80vw;
+        left: 100%;
         width: 80vw;
         background-color: #fff;
         z-index: 99999999;
@@ -186,7 +186,8 @@
     }
 
     #mobile-nav.active {
-        right: 0
+        right: 0;
+        left: auto
     }
 
     #mobile-nav #mobile-nav-header {
