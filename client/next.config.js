@@ -5,7 +5,7 @@ module.exports = {
 		domains: ['eropa.co.il'],
 	},
 	env: {
-		// API_URL: "http://localhost:4000",
-		API_URL: 'https://api.pryerek.co.il',
+		API_URL: "http://localhost:4000",
+		// API_URL: 'https://api.pryerek.co.il',
 	},
 };

@@ -6,6 +6,7 @@ import OrdersList from '../components/Admin/OrdersList';
 import Discounts from '../components/Admin/Discounts';
 import Gifts from '../components/Admin/Gifts';
 import Cities from '../components/Admin/Cities';
+import MainSlider from '../components/Admin/MainSlider';
 
 const Admin = () => {
     const [ tab, setTab ] = useState('products');
@@ -25,31 +26,18 @@ const Admin = () => {
                     <div className={ `tab-trigger ${tab == 'discounts' ? 'active' : ''}` } onClick={ () => setTab('discounts') }>מבצעים</div>
                     <div className={ `tab-trigger ${tab == 'gifts' ? 'active' : ''}` } onClick={ () => setTab('gifts') }>מתנות</div>
                     <div className={ `tab-trigger ${tab == 'cities' ? 'active' : ''}` } onClick={ () => setTab('cities') }>ערים</div>
+                    <div className={ `tab-trigger ${tab == 'slider' ? 'active' : ''}` } onClick={ () => setTab('slider') }>סליידר ראשי</div>
                 </div>
 
                 <div id="tabs">
-                    <div className={ `tab ${tab == 'products' ? 'active' : ''}`}>
-                        <ProductsList tab={ tab }/>
-                    </div>
-
-                    <div className={ `tab ${tab == 'orders' ? 'active' : ''}`}>
-                        <OrdersList tab={ tab }/>
-                    </div>
-
-                    <div className={ `tab ${tab == 'new-product' ? 'active' : ''}`}>
-                        <NewProduct tab={ tab }/>
-                    </div>
-
-                    <div className={ `tab ${tab == 'discounts' ? 'active' : ''}`}>
-                        <Discounts tab={ tab }/>
-                    </div>
-
-                    <div className={ `tab ${tab == 'gifts' ? 'active' : ''}`}>
-                        <Gifts tab={ tab }/>
-                    </div>
-
-                    <div className={ `tab ${tab == 'cities' ? 'active' : ''}`}>
-                        <Cities tab={ tab }/>
+                    <div className={ `tab active`}>
+                        { tab == 'products' && <ProductsList tab={ tab }/> }
+                        { tab == 'orders' && <OrdersList tab={ tab }/> }
+                        { tab == 'new-product' && <NewProduct tab={ tab }/> }
+                        { tab == 'discounts' && <Discounts tab={ tab }/> }
+                        { tab == 'gifts' && <Gifts tab={ tab }/> }
+                        { tab == 'cities' && <Cities tab={ tab }/> }
+                        { tab == 'slider' && <MainSlider tab={ tab }/> }
                     </div>
                 </div>
             </div>

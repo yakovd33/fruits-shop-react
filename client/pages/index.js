@@ -4,7 +4,7 @@ import Slider from "../components/Home/Slider";
 import ProductShowcase from "../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-export default function Home({ cartItems, setCartItems, weeklyProducts, hotProducts, allProducts }) {
+export default function Home({ cartItems, setCartItems, weeklyProducts, hotProducts, allProducts, slides }) {
 	const [products, setProducts] = useState(allProducts || []);
 
 	const [ hasMore, setHasMore ] = useState(true);
@@ -77,7 +77,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 
 	return (
 		<>
-			<Slider />
+			<Slider slides={slides}/>
 
 			<div className="container">
 				<div id="home-main-content">
@@ -237,12 +237,14 @@ export async function getStaticProps(context) {
 	const { data: weeklyData } = await axios.get(process.env.API_URL + "/products/?isRecommended=true");
 	const { data: hotData } = await axios.get(process.env.API_URL + "/products/?isHomepage=true");
 	const { data: allData } = await axios.get(process.env.API_URL + "/products/?page=1");
+	const { data: slidesData } = await axios.get(process.env.API_URL + "/slides");
 
 	return {
 	  props: {
 		weeklyProducts: weeklyData?.products,
 		hotProducts: hotData?.products,
-		allProducts: allData?.products
+		allProducts: allData?.products,
+		slides: slidesData,
 	  },
 	  revalidate: 10
 	}

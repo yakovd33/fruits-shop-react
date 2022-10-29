@@ -19,6 +19,7 @@ router.post('/', async (req, res, next) => {
     } catch (e) {
         console.log(e)
     }
+    res.send('')
 });
 
 router.delete('/:city_id', async (req, res, next) => {

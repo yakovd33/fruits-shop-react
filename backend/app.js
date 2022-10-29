@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
 
 mongoose.connect(process.env.MONGODB_URL, (err) => {
   if (err) console.log(err);
@@ -19,6 +20,7 @@ const ordersRouter = require('./routes/orders');
 const discountsRouter = require('./routes/discounts');
 const giftsRouter = require('./routes/gifts');
 const citiesRouter = require('./routes/cities');
+const slidesRouter = require('./routes/slides');
 const subcategoriesRouter = require('./routes/subcategories');
 
 var app = express();
@@ -34,6 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/image', express.static('uploads'));
+app.use(fileUpload());
 
 // CORS
 app.use(cors());
@@ -48,6 +51,7 @@ app.use('/orders', ordersRouter);
 app.use('/discounts', discountsRouter);
 app.use('/gifts', giftsRouter);
 app.use('/cities', citiesRouter);
+app.use('/slides', slidesRouter);
 app.use('/subcategories', subcategoriesRouter);
 
 // catch 404 and forward to error handler
