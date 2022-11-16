@@ -21,8 +21,8 @@ const MainSlider = ({ tab }) => {
         formData.append('file', file);
         formData.append('order', order);
 
-        axios.post(`${process.env.API_URL}/slides`, formData,).then((res) => {
-            // console.log(res);
+        axios.post(`${process.env.API_URL}/slides`, formData).then((res) => {
+            console.log(res);
             // setFile(null)
         })
     }
