@@ -237,18 +237,18 @@ export async function getStaticProps(context) {
 	const { data: weeklyData } = await axios.get(process.env.API_URL + "/products/?isRecommended=true");
 	const { data: hotData } = await axios.get(process.env.API_URL + "/products/?isHomepage=true");
 	const { data: allData } = await axios.get(process.env.API_URL + "/products/?page=1");
-	// const { data: slidesData } = await axios.get(process.env.API_URL + "/slides");
+	const { data: slidesData } = await axios.get(process.env.API_URL + "/slides");
 
-	const slidesData = [{
-        id: 1,
-        url: '/images/slides/4.jpg',
-    }, {
-        id: 2,
-        url: '/images/slides/2.jpg',
-    }, {
-        id: 3,
-        url: '/images/slides/farming.jpg',
-    }];
+	// const slidesData = [{
+    //     id: 1,
+    //     url: '/images/slides/4.jpg',
+    // }, {
+    //     id: 2,
+    //     url: '/images/slides/2.jpg',
+    // }, {
+    //     id: 3,
+    //     url: '/images/slides/farming.jpg',
+    // }];
 
 	return {
 	  props: {
