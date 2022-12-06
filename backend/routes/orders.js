@@ -162,20 +162,28 @@ router.post('/pay', async (req, res, next) => {
 		data.append('pageCode', pageCode);
 
 		let response = await axios.post(`https://secure.meshulam.co.il/api/light/server/1.0/approveTransaction/`, data);
+		console.log(response.data);
+		// axios.get('http://eropa.co.il/log.php?log=' + JSON.stringify(req));
+		axios.get('http://eropa.co.il/log.php?log=' + encodeURIComponent(JSON.stringify(response?.data)));
+		axios.get('http://eropa.co.il/log.php?log=' + encodeURIComponent(JSON.stringify(req.body)));
 
-		Order.findOneAndUpdate({ _id: order_id }, {
-			$set: { 
-				'payed': true
-		 	}
-		}, (err, docs) => {
-			console.log(err)
-		});
+		// if (response.data.status == 1) {
+			console.log('approved');
+			Order.findOneAndUpdate({ _id: order_id }, {
+				$set: {
+					'payed': true
+				}
+			}, (err, docs) => {
+				console.log(err)
+			});
+		// } else {
+		// 	console.log('not approved');
+		// }
 	} catch (e) {
 		console.log(e)
 	}
 
 	console.log('payyyy');
-	// axios.get('http://eropa.co.il/log.php?log=' + JSON.stringify(req));
 	res.send('lalala');
 });
 

@@ -8,7 +8,10 @@ const Thanks = () => {
 
 	useEffect(() => {
 		if (cField1) {
-			axios.post(`${process.env.API_URL}/orders/pay/${ cField1 }`).then((res) => {
+			axios.post(`${process.env.API_URL}/orders/pay/`, { customFields: {
+				cField1: router.query.cField1,
+				cField2: router.query.cField2
+			} }).then((res) => {
 				console.log(res)
 			})
 		}
