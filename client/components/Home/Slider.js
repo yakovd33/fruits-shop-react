@@ -1,31 +1,21 @@
-import React, { useState } from 'react';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import LazyLoad from 'react-lazyload';
+import React, { useRef } from 'react';
+import { Carousel } from '@mantine/carousel';
+import { Image } from '@mantine/core';
+import Autoplay from 'embla-carousel-autoplay';
 
 const Slider = ({ slides }) => {
-    const [ current, setCurrent ] = useState(0);
+    const autoplay = useRef(Autoplay({ delay: 3000 }));
 
     return (
         <>
             <div id="slider-wrap">
-                <div id="slider-arrows">
-                    <div className="slider-arrow left" onClick={() => setCurrent((current - 1) % slides.length)}>
-                        <AiOutlineRight/>
-                    </div>
-
-                    <div className="slider-arrow right" onClick={() => setCurrent((current + 1) % slides.length)}>
-                        <AiOutlineLeft/>
-                    </div>
-                </div>
-
-                <div id="slider-items">
+                <Carousel sx={{  }} mx="auto" withIndicators height={500} plugins={[autoplay.current]} onMouseEnter={autoplay.current.stop} onMouseLeave={autoplay.current.reset} dir="ltr">
                     { slides && slides.map(item =>
-                        <LazyLoad height={500} once>
-                            <div className="slider-item" style={{ background: `url('${item.url}')`, transform: `translateX(${current * 100}vw)` }}>
-                            </div>
-                        </LazyLoad>
+                        <Carousel.Slide>
+                            <Image src={item.url} height={500}/>
+                        </Carousel.Slide>
                     ) }
-                </div>
+                </Carousel>
             </div>
         </>
      );

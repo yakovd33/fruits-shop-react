@@ -22,7 +22,7 @@ const ProductListItem = ({ id, product, products, setProducts }) => {
             { showEdit && <EditProduct id={ id } product={ product } setShowEdit={ setShowEdit }/> }
 
             <div className="img">
-                <img src={ `https://eropa.co.il/fruits/uploads/${id}.jpg` } alt="" />
+                <img src={ `https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${id}.jpg` } alt="" />
             </div>
 
             <div className="name">{ product.name }</div>

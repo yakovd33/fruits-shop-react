@@ -30,7 +30,7 @@ const CartSuggestions = ({ cartItems, setCartItems, cartTog, orderFormTog }) => 
 									unit={product.unitType}
 									badge={ product.badge }
                                     bottomAddToCart={ true }
-									image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}/>)) }
+									image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}/>)) }
             </div>
 		</div>
 	);

@@ -8,7 +8,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/carousel": "^5.9.5",
+    "@mantine/core": "^5.9.5",
+    "@mantine/hooks": "^5.9.5",
     "axios": "^0.24.0",
+    "embla-carousel-autoplay": "^7.0.5",
+    "embla-carousel-react": "^7.0.5",
     "next": "^12.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

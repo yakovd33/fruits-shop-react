@@ -45,7 +45,7 @@ const HeaderSearch = ({ cartItems, setCartItems }) => {
                             salePrice={product.salePrice}
                             unit={product.unitType}
                             badge={ product.badge }
-                            image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
+                            image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
                             type="search"
                         />
                     )) }

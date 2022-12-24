@@ -25,7 +25,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        const fileContent  = Buffer.from(req.files.file.data, 'binary');
+        const fileContent = Buffer.from(req.files.file.data, 'binary');
         const params = {
             Bucket: 'main-slides',
             Key: `main-slide-item-${Math.floor(Math.random() * 9999).toString()}.jpg`, // File name you want to save as in S3
@@ -34,7 +34,6 @@ router.post('/', async (req, res, next) => {
     
         // Uploading files to the bucket
         s3.upload(params, function(err, data) {
-            console.log(data);
             if (err) {
                 throw err;
             }

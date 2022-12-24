@@ -15,7 +15,7 @@ const OrderGiftItem = ({ item, chosenGift, setChosenGift }) => {
         <div>
             { product && 
                 <div className={ `gift-choice ${ item.productId == chosenGift ? 'selected' : '' }` } onClick={ () => setChosenGift(item.productId) }>
-                    <img src={ `https://eropa.co.il/fruits/uploads/${ item.productId }.jpg` } alt="" />
+                    <img src={ `https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${ item.productId }.jpg` } alt="" />
                     <p>{ product.name }</p>
                 </div>
             }

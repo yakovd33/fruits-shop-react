@@ -1,8 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const productModel = require("../models/productModel");
-const multer = require("multer");
-const path = require("path");
+const s3 = require('../s3')
 
 // Get all products
 router.get("/", async (req, res, next) => {
@@ -96,40 +95,30 @@ router.delete("/:id", async (req, res, next) => {
 	}
 });
 
-const MIME_TYPE_MAP = {
-	'image/png': 'png',
-	'image/jpeg': 'jpg',
-	'image/jpg': 'jpg'
-};  
-
-var storage = multer.diskStorage({
-	destination: function (req, file, cb) {
-	  cb(null, 'uploads')
-	},
-	filename: function (req, file, cb) {
-		const ext = MIME_TYPE_MAP[file.mimetype];
-		cb(null, Date.now() + '.' + ext);
-	  	// cb(null, Date.now())
-	}
-  })
-   
-var upload = multer({ storage: storage });
-
-router.post('/', upload.single('file'), async (req, res, next) => {
-	let file = req.file;
-	
-	// Uncomment when uploading files to the server
-	// if (file) {
+// Upload a product
+router.post('/', async (req, res, next) => {	
+	if (req.files.file) {
 		try {
-			// let file_id = file.filename.split('.')[0];
-			// req.body.id = file_id;
-
 			var product_id = Date.now();
 			req.body.id = product_id;
 
-			let newProduct = new productModel(req.body);
-			await newProduct.save();
-			
+			const fileContent = Buffer.from(req.files.file.data, 'binary');
+			const params = {
+				Bucket: 'pryerek-product-thumbs',
+				Key: `${product_id}.jpg`, // File name you want to save as in S3
+				Body: fileContent 
+			};
+		
+			// Uploading files to the bucket
+			s3.upload(params, (err, data) => {
+				if (err) {
+					throw err;
+				}
+
+				let newProduct = new productModel(req.body);
+				newProduct.save();
+			});
+
 			res.json({
 				msg: 'מוצר נוסף בהצלחה',
 				id: product_id
@@ -137,46 +126,54 @@ router.post('/', upload.single('file'), async (req, res, next) => {
 		} catch (e) {
 			console.log(e);
 		}
-	// }
+	} else {
+		res.send('');
+	}
 });
 
 // Edit product
 router.post('/update/:id', async (req, res, next) => {
 	let id = req.params.id;
 
-	console.log(req.body)
-
 	try {
 		productModel.findOneAndUpdate({ id: id }, {
-			$set: { 
-				'price': req.body.price,
-				'salePrice': req.body.salePrice,
-				'minAmount': req.body.minAmount,
-				'name': req.body.name,
-				'category': req.body.category,
-				'availability': req.body.availability,
-				'unitType': req.body.unitType,
-				'description': req.body.description,
-				'badge': req.body.badge,
-				'isHomepage': req.body.isHomepage,
-				'isRecommended': req.body.isRecommended,
-				'subCategory': req.body.subCategory,
-		 	}
+			$set: req.body
 		}, { upsert: true, new: true }, (err, docs) => {
 			if (!err) res.send('שינוי בוצע בהצלחה.')
-		})
+		});
+	} catch (e) {
+		console.log(e);
+		res.send('')
+	}
+});
+
+
+// Update thumb
+router.post('/update_thumb/:id', async (req, res, next) => {
+	let id = req.params.id;
+
+	try {
+		if (req.files?.file) {
+			const fileContent = Buffer.from(req.files.file.data, 'binary');
+			const params = {
+				Bucket: 'pryerek-product-thumbs',
+				Key: `${id}.jpg`,
+				Body: fileContent 
+			};
+			s3.upload(params, (err, data) => {});
+		}
 	} catch (e) {
 		console.log(e);
 	}
+
+	res.send('')
 });
 
 // Get product details
 router.get('/:id', async (req, res, next) => {
-	let productId = req.params.id;
-	let product = null;
-
-	product = await productModel.findOne({ id: productId });
-	res.status(200).json(product);
+	const productId = req.params.id;
+	const product = await productModel.findOne({ id: productId });
+	res.status(200).json(product || null);
 });
 
 module.exports = router;

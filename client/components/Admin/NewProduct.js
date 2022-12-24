@@ -77,7 +77,7 @@ const NewProduct = ({ tab }) => {
         fd.append('isRecommended', isRecommended);
         fd.append('isHomepage', isHomepage);
         fd.append('subCategory', subCategory);
-        // fd.append('file', image);
+        fd.append('file', image);
 
         axios.post(`${process.env.API_URL}/products/`, fd, {
             headers: {
@@ -85,16 +85,6 @@ const NewProduct = ({ tab }) => {
             }
         }).then((res) => {
             setFeedback(res.data.msg);
-
-            let product_id = res.data.id;
-
-            let file_fd = new FormData();
-            file_fd.append('file', image);
-            file_fd.append('product_id', product_id);
-
-            axios.post(`https://eropa.co.il/fruits/upload.php`, file_fd).then((res) => {
-                console.log(res);
-            })
         });
     }
 

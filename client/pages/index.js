@@ -95,7 +95,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 								salePrice={product.salePrice}
 								unit={product.unitType}
 								badge={ product.badge }
-								image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
+								image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
 							/>
 						))}
 					</div>
@@ -114,7 +114,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 								salePrice={product.salePrice}
 								unit={product.unitType}
 								badge={ product.badge }
-								image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
+								image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
 							/>
 						))}
 					</div>
@@ -222,7 +222,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 										salePrice={product.salePrice}
 										unit={product.unitType}
 										badge={ product.badge }
-										image={`https://eropa.co.il/fruits/uploads/${product.id}.jpg `}
+										image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
 									/>
 								))}
 							</div>
@@ -238,17 +238,6 @@ export async function getStaticProps(context) {
 	const { data: hotData } = await axios.get(process.env.API_URL + "/products/?isHomepage=true");
 	const { data: allData } = await axios.get(process.env.API_URL + "/products/?page=1");
 	const { data: slidesData } = await axios.get(process.env.API_URL + "/slides");
-
-	// const slidesData = [{
-    //     id: 1,
-    //     url: '/images/slides/4.jpg',
-    // }, {
-    //     id: 2,
-    //     url: '/images/slides/2.jpg',
-    // }, {
-    //     id: 3,
-    //     url: '/images/slides/farming.jpg',
-    // }];
 
 	return {
 	  props: {

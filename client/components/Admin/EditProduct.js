@@ -83,7 +83,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
             file_fd.append('file', image);
             file_fd.append('product_id', id);
 
-            axios.post(`https://eropa.co.il/fruits/upload.php`, file_fd).then((res) => {
+            axios.post(`${process.env.API_URL}/products/update_thumb/${id}`, file_fd).then((res) => {
                 console.log(res);
             })
         })
