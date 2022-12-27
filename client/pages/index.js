@@ -83,7 +83,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 			<div className="container">
 				<div id="home-main-content">
 					<h2 className="homepage-section-title">מומלצי השבוע</h2>
-					<div className="main-products-list sec">
+					{/* <div className="main-products-list sec">
 						{ (weeklyProducts || []).map((product) => (
 							<ProductShowcase
 								id={ product._id }
@@ -118,7 +118,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 								image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
 							/>
 						))}
-					</div>
+					</div> */}
 
 					<h2 id="our-products-title">המוצרים שלנו</h2>
 
