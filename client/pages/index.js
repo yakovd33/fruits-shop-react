@@ -3,6 +3,7 @@ import axios from "axios";
 import Slider from "../components/Home/Slider";
 import ProductShowcase from "../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
+const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
 export default function Home({ cartItems, setCartItems, weeklyProducts, hotProducts, allProducts, slides }) {
 	const [products, setProducts] = useState(allProducts || []);
@@ -95,7 +96,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 								salePrice={product.salePrice}
 								unit={product.unitType}
 								badge={ product.badge }
-								image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
+								image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
 							/>
 						))}
 					</div>
@@ -114,7 +115,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 								salePrice={product.salePrice}
 								unit={product.unitType}
 								badge={ product.badge }
-								image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
+								image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
 							/>
 						))}
 					</div>
@@ -222,7 +223,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 										salePrice={product.salePrice}
 										unit={product.unitType}
 										badge={ product.badge }
-										image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
+										image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
 									/>
 								))}
 							</div>

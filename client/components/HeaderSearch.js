@@ -3,6 +3,7 @@ import { useSearchDebounce } from '../hooks/useSearchDebounce';
 import { BiSearch } from 'react-icons/bi'
 import axios from 'axios';
 import ProductShowcase from './ProductShowcase';
+const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
 const HeaderSearch = ({ cartItems, setCartItems }) => {
     const [ keywords, setKeywords ] = useSearchDebounce(100);
@@ -45,7 +46,7 @@ const HeaderSearch = ({ cartItems, setCartItems }) => {
                             salePrice={product.salePrice}
                             unit={product.unitType}
                             badge={ product.badge }
-                            image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}
+                            image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
                             type="search"
                         />
                     )) }

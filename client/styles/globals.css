@@ -96,7 +96,7 @@ a {
 }
 /* Header */
 #header {
-	background-color: #4caf51;
+	background-color: #0b9148;
 	padding: 20px 25px;
 	position: fixed;
 	top: 0;
@@ -164,7 +164,7 @@ a {
 .header-link {
 	margin-left: 25px;
 	position: relative;
-	color: #121212;
+	color: #fff;
 	display: inline-block;
 	cursor: pointer;
 	user-select: none;

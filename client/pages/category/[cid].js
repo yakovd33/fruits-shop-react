@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import ProductShowcase from "../../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
+const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
 const categoriesTitles = [
     'ירקות',
@@ -110,7 +111,7 @@ const Category = ({ cartItems, setCartItems }) => {
 
                                 <div className="main-products-list">
                                     { products && products.map((product) => (
-                                        <ProductShowcase id={ product._id } description={ product.description } badge={ product.badge } cartItems={ cartItems } minAmount={ product.minAmount } setCartItems={ setCartItems } name={ product.name } salePrice={ product.salePrice } price={ product.price } unit={ product.unitType } image={ `https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${ product.id }.jpg ` }/>
+                                        <ProductShowcase id={ product._id } description={ product.description } badge={ product.badge } cartItems={ cartItems } minAmount={ product.minAmount } setCartItems={ setCartItems } name={ product.name } salePrice={ product.salePrice } price={ product.price } unit={ product.unitType } image={ `https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${ product.id }.jpg ` }/>
                                     )) }
                                 </div>
                     </InfiniteScroll>

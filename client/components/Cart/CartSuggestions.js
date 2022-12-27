@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductShowcase from '../ProductShowcase';
+const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
 const CartSuggestions = ({ cartItems, setCartItems, cartTog, orderFormTog }) => {
     const [ products, setProducts ] = useState([]);
@@ -30,7 +31,7 @@ const CartSuggestions = ({ cartItems, setCartItems, cartTog, orderFormTog }) => 
 									unit={product.unitType}
 									badge={ product.badge }
                                     bottomAddToCart={ true }
-									image={`https://pryerek-product-thumbs.s3.eu-central-1.amazonaws.com/${product.id}.jpg `}/>)) }
+									image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}/>)) }
             </div>
 		</div>
 	);

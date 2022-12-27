@@ -2,10 +2,11 @@ module.exports = {
 	reactStrictMode: true,
 	future: { webpack5: true },
 	images: {
-		domains: ['eropa.co.il', 'pryerek-product-thumbs.s3.eu-central-1.amazonaws.com', 'main-slides.s3.amazonaws.com'],
+		domains: [process.env.PRODUCT_THUMBS_PUBLIC_BUCKET, process.env.MAIN_SLIDER_PUBLIC_BUCKET],
 	},
 	env: {
-		// API_URL: "http://localhost:4000",
-		API_URL: 'https://api.pryerek.co.il',
+		API_URL: process.env.API_URL,
+		PRODUCT_THUMBS_PUBLIC_BUCKET: process.env.PRODUCT_THUMBS_PUBLIC_BUCKET,
+		MAIN_SLIDER_PUBLIC_BUCKET: process.env.MAIN_SLIDER_PUBLIC_BUCKET
 	},
 };
