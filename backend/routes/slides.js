@@ -29,7 +29,9 @@ router.post('/', async (req, res, next) => {
         const params = {
             Bucket: 'main-slides',
             Key: `main-slide-item-${Math.floor(Math.random() * 9999).toString()}.jpg`, // File name you want to save as in S3
-            Body: fileContent 
+            Body: fileContent,
+            ACL: 'public-read',
+            ContentType: 'image/png'
         };
     
         // Uploading files to the bucket

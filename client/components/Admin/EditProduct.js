@@ -75,7 +75,6 @@ const EditProduct = ({ id, product, setShowEdit }) => {
             isHomepage,
             subCategory
         }).then((res) => {
-            console.log(res);
             setFeedback(res.data);
 
             // Upload image

@@ -96,8 +96,8 @@ router.delete("/:id", async (req, res, next) => {
 });
 
 // Upload a product
-router.post('/', async (req, res, next) => {	
-	if (req.files.file) {
+router.post('/', async (req, res, next) => {
+	if (req?.files?.file) {
 		try {
 			var product_id = Date.now();
 			req.body.id = product_id;
@@ -106,7 +106,9 @@ router.post('/', async (req, res, next) => {
 			const params = {
 				Bucket: 'pryerek-product-thumbs',
 				Key: `${product_id}.jpg`, // File name you want to save as in S3
-				Body: fileContent 
+				Body: fileContent,
+				ACL: 'public-read',
+				ContentType: 'image/png'
 			};
 		
 			// Uploading files to the bucket
@@ -158,9 +160,17 @@ router.post('/update_thumb/:id', async (req, res, next) => {
 			const params = {
 				Bucket: 'pryerek-product-thumbs',
 				Key: `${id}.jpg`,
-				Body: fileContent 
+				Body: fileContent,
+				ACL: 'public-read',
+				ContentType: 'image/png'
 			};
-			s3.upload(params, (err, data) => {});
+			console.log('rrrrr');
+
+			s3.upload(params, (err, data) => {
+				console.log('asdasd');
+				console.log(data);
+				console.log(err);
+			});
 		}
 	} catch (e) {
 		console.log(e);
