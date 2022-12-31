@@ -4,7 +4,6 @@ import ReactTooltip from 'react-tooltip';
 import axios from 'axios';
 import Image from 'next/image';
 import { BsInfoCircleFill } from 'react-icons/bs'
-import LazyLoad from 'react-lazyload';
 import { addToCartAnimation } from '../helpers/CartHelper';
 
 const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, image, unit, cartItems, setCartItems, bottomAddToCart, type="product" }) => {
@@ -77,7 +76,6 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
             
             { <span className={ `sale-badge ${salePrice && salePrice != 0 ? 'vis' : ''}` }>במבצע</span> }
 
-            <LazyLoad once>
             <div className="product-showcase-image">
                 <Image
                     src={image}
@@ -87,9 +85,9 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
                     blurDataURL="URL"
                     placeholder="blur"
                     layout="responsive"
+                    loading="lazy"
                 />
             </div>
-            </LazyLoad>
 
             <div>
             <div className="product-showcase-name">{ name }</div>
