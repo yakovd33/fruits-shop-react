@@ -3,7 +3,10 @@ import axios from "axios";
 import Slider from "../components/Home/Slider";
 import ProductShowcase from "../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
+import ProductStrip from "../components/ProductStrip";
 const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
+import "react-multi-carousel/lib/styles.css";
+import "react-multi-carousel/lib/styles.css";
 
 export default function Home({ cartItems, setCartItems, weeklyProducts, hotProducts, allProducts, slides }) {
 	const [products, setProducts] = useState(allProducts || []);
@@ -82,43 +85,19 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 
 			<div className="container">
 				<div id="home-main-content">
-					<h2 className="homepage-section-title">מומלצי השבוע</h2>
-					<div className="main-products-list sec">
-						{ (weeklyProducts || []).map((product) => (
-							<ProductShowcase
-								id={ product._id }
-								cartItems={cartItems}
-								minAmount={ product.minAmount }
-								setCartItems={setCartItems}
-								description={ product.description }
-								name={product.name}
-								price={product.price}
-								salePrice={product.salePrice}
-								unit={product.unitType}
-								badge={ product.badge }
-								image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
-							/>
-						))}
-					</div>
+					<ProductStrip
+						cartItems={cartItems}
+						setCartItems={setCartItems}
+						title="מבצעי השבוע"
+						products={weeklyProducts}
+					/>
 
-					<h2 className="homepage-section-title">מוצרים חמים</h2>
-					<div className="main-products-list sec">
-						{ (hotProducts || []).map((product) => (
-							<ProductShowcase
-								id={ product._id }
-								cartItems={cartItems}
-								minAmount={ product.minAmount }
-								setCartItems={setCartItems}
-								description={ product.description }
-								name={product.name}
-								price={product.price}
-								salePrice={product.salePrice}
-								unit={product.unitType}
-								badge={ product.badge }
-								image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
-							/>
-						))}
-					</div>
+					<ProductStrip
+						cartItems={cartItems}
+						setCartItems={setCartItems}
+						title="מוצרים חמים"
+						products={hotProducts}
+					/>
 
 					<h2 id="our-products-title">המוצרים שלנו</h2>
 

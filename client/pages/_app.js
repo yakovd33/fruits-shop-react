@@ -7,10 +7,12 @@ import Script from 'next/script';
 
 function MyApp({ Component, pageProps }) {
 	const [ cartItems, setCartItems ] = useState([]);
+	const [ didCartLoad, setDidCartLoad ] = useState(false);
 
     useEffect(() => {
         if (localStorage.getItem('cart')) {
             setCartItems(JSON.parse(localStorage.getItem('cart')));
+			setDidCartLoad(true);
         }
     }, []);
 
@@ -19,7 +21,9 @@ function MyApp({ Component, pageProps }) {
 	}
 
 	useEffect(() => {
-		localizeCart();
+		if (didCartLoad) {
+			localizeCart();
+		}
 	}, [ cartItems ]);
 
 	return (
