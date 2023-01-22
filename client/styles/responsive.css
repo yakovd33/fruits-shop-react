@@ -33,6 +33,7 @@
         flex-direction: row;
         padding: 15px !important;
         align-items: center;
+        margin-bottom: 15px;
     }
 
     .product-showcase-textuals {
