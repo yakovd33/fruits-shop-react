@@ -7,9 +7,10 @@ import Discounts from '../components/Admin/Discounts';
 import Gifts from '../components/Admin/Gifts';
 import Cities from '../components/Admin/Cities';
 import MainSlider from '../components/Admin/MainSlider';
+import CategoriesList from '../components/Admin/CategoriesList';
 
 const Admin = () => {
-    const [ tab, setTab ] = useState('products');
+    const [ tab, setTab ] = useState('categories');
     const [ showNewProductForm, setShowNewProductForm ] = useState(false);
 
     return ( <>
@@ -21,6 +22,7 @@ const Admin = () => {
             <div>
                 <div className="tab-triggers">
                     <div className={ `tab-trigger ${tab == 'products' ? 'active' : ''}` } onClick={ () => setTab('products') }>מוצרים</div>
+                    <div className={ `tab-trigger ${tab == 'categories' ? 'active' : ''}` } onClick={ () => setTab('categories') }>קטגוריות</div>
                     <div className={ `tab-trigger ${tab == 'orders' ? 'active' : ''}` } onClick={ () => setTab('orders') }>הזמנות</div>
                     <div className={ `tab-trigger ${tab == 'new-product' ? 'active' : ''}` } onClick={ () => setTab('new-product') }>מוצר חדש</div>
                     <div className={ `tab-trigger ${tab == 'discounts' ? 'active' : ''}` } onClick={ () => setTab('discounts') }>מבצעים</div>
@@ -32,6 +34,7 @@ const Admin = () => {
                 <div id="tabs">
                     <div className={ `tab active`}>
                         { tab == 'products' && <ProductsList tab={ tab }/> }
+                        { tab == 'categories' && <CategoriesList tab={ tab }/> }
                         { tab == 'orders' && <OrdersList tab={ tab }/> }
                         { tab == 'new-product' && <NewProduct tab={ tab }/> }
                         { tab == 'discounts' && <Discounts tab={ tab }/> }

@@ -19,6 +19,8 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongoose": "^6.0.12",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-sequence": "^5.3.1",
     "morgan": "~1.9.1"
   }
 }

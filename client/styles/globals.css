@@ -688,7 +688,8 @@ a {
 	justify-content: center;
 	transition: 0.3s ease-in-out;
 	box-shadow: 0 0 20px #bebebea3;
-	height: 23px
+	height: 23px;
+	cursor: pointer;
 }
 
 .add-to-cart-btn:hover {
@@ -752,7 +753,8 @@ a {
 }
 
 .mobile-card-amount .cart-item-amount-btn, .desktop-card-amount .cart-item-amount-btn {
-	color: #444
+	color: #444;
+	cursor: pointer;
 }
 
 .mobile-card-amount .cart-item-amount-btn:first-child {

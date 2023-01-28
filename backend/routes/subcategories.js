@@ -12,4 +12,15 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+router.get('/:category_id', async (req, res, next) => {
+    try {
+        const category = req.params.category_id;
+
+        let subcategories = await subcategoriesModel.find({ category });
+        res.status(200).json(subcategories);
+    } catch (e) {
+        console.log(e);
+    }
+});
+
 module.exports = router;

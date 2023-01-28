@@ -227,6 +227,11 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+.category-item-subcategory {
+    margin-right: 40px;
+    max-width: 50%;
+}
+
 #product-search-admin {
     padding: 10px;
     border-radius: 4px;
