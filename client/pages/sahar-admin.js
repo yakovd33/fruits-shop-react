@@ -10,7 +10,7 @@ import MainSlider from '../components/Admin/MainSlider';
 import CategoriesList from '../components/Admin/CategoriesList';
 
 const Admin = () => {
-    const [ tab, setTab ] = useState('categories');
+    const [ tab, setTab ] = useState('products');
     const [ showNewProductForm, setShowNewProductForm ] = useState(false);
 
     return ( <>
