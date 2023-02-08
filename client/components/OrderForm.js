@@ -70,6 +70,8 @@ const OrderForm = ({ setOrderFormTog }) => {
                     if (res.data.data.url) {
                         setPaymentUrl(res.data.data.url);
                     }
+                }).catch((res) => {
+                    setFeedback(res?.data?.msg || 'אירעה שגיאה')
                 });
 
                 setFeedback('הנך מועבר/ת לתשלום.');

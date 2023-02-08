@@ -39,7 +39,7 @@ const MainSlider = ({ tab }) => {
     return (
         <div>
             <form action="" id="new-discount-form" onSubmit={ (e) => handleSubmit(e) }>
-                <h3>הוסף עיר חדשה</h3>
+                <h3>הוסף סליידר חדש</h3>
                 <div>
                     <input type="number" placeholder="סדר" value={ order } onChange={ (e) => setOrder(e.target.value) }/>
                 </div>

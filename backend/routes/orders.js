@@ -73,6 +73,10 @@ router.post("/", async function (req, res, next) {
 		let cart = JSON.parse(req.body.cart);
 		let final_price = 0;
 
+		if (!cart) {
+			res.status(500).json({msg: 'עגלה לא תקינה. צרו עמנו קשר'})
+		}
+
 		for (var i = 0; i < cart.length; i++) {
 			let productId = cart[i].id;
 			let amount = cart[i].amount;
@@ -128,6 +132,7 @@ router.post("/", async function (req, res, next) {
 		let result = await axios.post('https://secure.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
 		res.status(200).json(result.data);
 	} catch (e) {
+		res.status(500).json({msg: e.toString()})
 		console.log(e);
 	}
 });
