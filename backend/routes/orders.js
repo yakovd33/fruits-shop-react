@@ -144,9 +144,9 @@ router.delete('/:id', (req, res, next) => {
 	console.log(order_id);
 
 	try {
-		Order.findOneAndDelete({ _id: new mongoose.Types.ObjectId(order_id) }).then((re) => {
-			console.log(re)
-		}).error((err) => console.log(err));
+		Order.findOneAndDelete({ _id: new mongoose.Types.ObjectId(order_id) }, (err, re) => {
+			console.log(err)
+		});
 	} catch (e) {
 		console.log(e);
 	}
