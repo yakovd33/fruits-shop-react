@@ -142,13 +142,25 @@ const NewProduct = ({ tab }) => {
                 </select>
             </div>
 
-            <div className="input-group">
-                <input type="number" placeholder="מחיר" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
-            </div>
+            <>
+                <div className="input-group">
+                    <input type="number" placeholder="מחיר" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
+                </div>
 
-            <div className="input-group">
-                <input type="number" placeholder="מחיר מבצע" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
-            </div>
+                <div className="input-group">
+                    <input type="number" placeholder="מחיר מבצע" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
+                </div>
+            </>
+
+            <>
+                <div className="input-group">
+                    <input type="number" placeholder="מחיר לקילו" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
+                </div>
+
+                <div className="input-group">
+                    <input type="number" placeholder="מחיר מבצע לקילו" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
+                </div>
+            </>
 
             <div className="input-group">
                 <input type="text" placeholder="תיאור" value={ description } onChange={ (e) => setDescription(e.target.value) } className="input-box" />

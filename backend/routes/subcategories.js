@@ -23,4 +23,35 @@ router.get('/:category_id', async (req, res, next) => {
     }
 });
 
+router.post('/', async (req, res, next) => {
+    try {
+        let response = {};
+        const { name, category } = req.body;
+
+        if (name) {
+            let subcategory = new subcategoriesModel({ name, category });
+            await subcategory.save();
+            response = subcategory;
+        }
+
+        res.status(200).json(response);
+    } catch (e) {
+        console.log(e);
+    }
+});
+
+router.delete('/:id', (req, res, next) => {
+    let subCategoryId = req.params.id;
+    
+    try {
+        subcategoriesModel.findOneAndDelete({ _id: subCategoryId }).then((re) => {
+            console.log(re)
+        });
+    } catch (e) {
+        console.log(e);
+    }
+
+    res.send('');
+});
+
 module.exports = router;

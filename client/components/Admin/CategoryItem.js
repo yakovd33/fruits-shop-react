@@ -3,7 +3,7 @@ import axios from 'axios';
 import { BiTrash } from 'react-icons/bi';
 import SubcategoryItem from './SubCategoryItem';
 
-const CategoryItem = ({ category, categories, setCategories }) => {
+const CategoryItem = ({ category, categories, setCategories, deleteCallback }) => {
     const [subcategories, setSubcategories] = useState([]);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const CategoryItem = ({ category, categories, setCategories }) => {
             </div>
 
             { (subcategories || []).map((item) => (
-                <SubcategoryItem subcategory={item} subcategories={subcategories} setSubCategories={setSubcategories}/>
+                <SubcategoryItem subcategory={item} subcategories={subcategories} setSubCategories={setSubcategories} deleteCallback={deleteCallback}/>
             )) }
         </>
     )
