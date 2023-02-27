@@ -191,12 +191,12 @@ const MobileNav = ({ mobileNavTog, setMobileNavTog }) => {
 						חטיפים
 					</Link>
 
-					<Link href="/category/6/?subcategory=פיצוחים" className="mobile-nav-link">
-						פיצוחים
+					<Link href="/category/28/?subcategory=מארזים" className="mobile-nav-link">
+						מארזים
 					</Link>
 
-					<Link href="/category/6/?subcategory=תבלינים" className="mobile-nav-link">
-						תבלינים
+					<Link href="/category/25" className="mobile-nav-link">
+						המיוחדים
 					</Link>
 				</div>
 			</div>

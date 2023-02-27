@@ -161,6 +161,22 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 						</div>
 						<div
 							className={`main-product-category-filter ${
+								category == 28 ? "active" : ""
+							}`}
+							onClick={() => setCategory(28)}
+						>
+							מארזים
+						</div>
+						<div
+							className={`main-product-category-filter ${
+								category == 25 ? "active" : ""
+							}`}
+							onClick={() => setCategory(25)}
+						>
+							המיוחדים
+						</div>
+						<div
+							className={`main-product-category-filter ${
 								category == 7 ? "active" : ""
 							}`}
 							onClick={() => setCategory(7)}

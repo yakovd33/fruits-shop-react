@@ -5,15 +5,17 @@ import ProductShowcase from "../../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
 const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
-const categoriesTitles = [
-    'ירקות',
-    'פירות',
-    'מעדנייה',
-    'ירק ופטריות',
-    'מזווה',
-    'יבשים',
-    'מבצעים',
-]
+const categoriesTitles = {
+    1: 'ירקות',
+    2: 'פירות',
+    3: 'מעדנייה',
+    4: 'ירק ופטריות',
+    5: 'מזווה',
+    6: 'יבשים',
+    7: 'מבצעים',
+    25: 'המיוחדים',
+    28: 'מארזים'
+}
 
 const Category = ({ cartItems, setCartItems }) => {
     const router = useRouter();
@@ -79,7 +81,7 @@ const Category = ({ cartItems, setCartItems }) => {
 
     return ( <>
         <div id="category-hero-wrap">
-            <div id="category-hero-title">{ subcategory || categoriesTitles[cid - 1] }</div>
+            <div id="category-hero-title">{ subcategory || categoriesTitles[cid] }</div>
             <img src={ `/images/categories/${ cid }.jpeg` }/>
         </div>
 

@@ -30,8 +30,8 @@ const HeaderBottom = () => {
             <div className="left">
                 <HeaderBottomLink href="/category/6" categoryId={6} title="יבשים" subCategories={subCategories}/>
                 <HeaderBottomLink href="/category/7" title="מבצעים" subCategories={subCategories}/>
-                <HeaderBottomLink href="/category/6/?subcategory=תבלינים" title="תבלינים" subCategories={subCategories}/>
-                <HeaderBottomLink href="/category/6/?subcategory=פיצוחים" title="פיצוחים" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/28" title="מארזים" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/25" title="המיוחדים" subCategories={subCategories}/>
             </div>
         </div>
     </div>
