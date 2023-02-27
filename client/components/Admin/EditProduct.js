@@ -30,6 +30,14 @@ const EditProduct = ({ id, product, setShowEdit }) => {
         {
             id: 7,
             name: 'מבצעים'
+        },
+        {
+            id: 25,
+            name: 'המיוחדים'
+        },
+        {
+            id: 28,
+            name: 'מארזים'
         }
     ]);
 

@@ -34,6 +34,14 @@ const NewProduct = ({ tab }) => {
         {
             id: 8,
             name: 'דף הבית'
+        },
+        {
+            id: 25,
+            name: 'המיוחדים'
+        },
+        {
+            id: 28,
+            name: 'מארזים'
         }
     ]);
 
