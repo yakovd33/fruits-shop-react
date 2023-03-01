@@ -62,7 +62,7 @@ router.get("/", async (req, res, next) => {
 			if (!rand) {
 				result.products = await productModel
 					.find(filter)
-					.sort({ id: "asc" })
+					.sort({ name: "asc" })
 					.limit(parseInt(limit))
 					.skip(limit * (page - 1));
 			} else {
