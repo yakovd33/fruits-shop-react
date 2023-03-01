@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BsWhatsapp, BsFillTelephoneFill } from 'react-icons/bs';
 import Link from 'next/link';
@@ -7,6 +7,7 @@ import HeaderSearch from './HeaderSearch';
 import { FaAngleDown } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import MobileNav from './MobileNav';
+import axios from 'axios';
 
 const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
     const [ mobileNavTog, setMobileNavTog ] = useState(false);
@@ -18,6 +19,17 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
         setMobileNavTog(false);
         setCatsTog(false)
     }
+
+    const [ subCategories, setSubCategories ] = useState([]);
+
+    useEffect(() => {
+        // Get subcategories
+        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
+            setSubCategories(res.data)
+        }).catch((e) => {
+            console.log(e);
+        });
+    }, []);
 
     return (
         <>
@@ -63,9 +75,9 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                 </div>
             </div>
 
-            <MobileNav mobileNavTog={mobileNavTog} setMobileNavTog={setMobileNavTog}/>
+            <MobileNav mobileNavTog={mobileNavTog} setMobileNavTog={setMobileNavTog} subCategories={subCategories}/>
 
-            <HeaderBottom/>
+            <HeaderBottom subCategories={subCategories}/>
 
             <a href="https://api.whatsapp.com/send?phone=972528629030&amp;text=שלום פרי וירק ארצנו." className="float" target="_blank" rel="noreferrer">
                 <BsWhatsapp/>

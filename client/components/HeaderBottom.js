@@ -2,18 +2,7 @@ import React, { useState, useEffect } from 'react'
 import HeaderBottomLink from './HeaderBottomLink'
 import axios from 'axios'
 
-const HeaderBottom = () => {
-    const [ subCategories, setSubCategories ] = useState([]);
-
-    useEffect(() => {
-        // Get subcategories
-        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
-            setSubCategories(res.data)
-        }).catch((e) => {
-            console.log(e);
-        });
-    }, []);
-
+const HeaderBottom = ({ subCategories }) => {
   return (
     <div id="header-bottom">
         <div className="container" id="header-bottom-container">
