@@ -199,6 +199,16 @@ const MobileNav = ({ mobileNavTog, setMobileNavTog }) => {
 						המיוחדים
 					</Link>
 				</div>
+
+				<div className="mobile-nav-link category">
+					<Link href="/category/28">מארזים</Link>
+					<span className="icon" onClick={() => handleDropdown(28)}><FaAngleDown/></span>
+				</div>
+
+				<div className="mobile-nav-link category">
+					<Link href="/category/25">המיוחדים</Link>
+					<span className="icon" onClick={() => handleDropdown(25)}><FaAngleDown/></span>
+				</div>
 			</div>
 
 			<div id="mobile-nav-footer">
