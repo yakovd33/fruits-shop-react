@@ -5,7 +5,7 @@ const OrderItemProductItem = ({ item }) => {
     const [ finalPrice, setFinalPrice ] = useState(item.price * item.amount);
 
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/orders/product_discount/?productId=${ item.id }&amount=${item.amount}`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders/product_discount/?productId=${ item.id }&amount=${item.amount}`).then((res) => {
             setFinalPrice(finalPrice - parseInt(res.data));
         });
     }, [item])

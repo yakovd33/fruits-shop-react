@@ -62,7 +62,7 @@ const NewProduct = ({ tab }) => {
 
     useEffect(() => {
         // Get subcategories
-        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/subcategories`).then((res) => {
             setSubCategories(res.data)
         }).catch((e) => {
             console.log(e);
@@ -87,7 +87,7 @@ const NewProduct = ({ tab }) => {
         fd.append('subCategory', subCategory);
         fd.append('file', image);
 
-        axios.post(`${process.env.API_URL}/products/`, fd, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/products/`, fd, {
             headers: {
                 'content-type': 'multipart/form-data'
             }

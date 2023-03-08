@@ -11,11 +11,11 @@ const Discounts = ({ tab }) => {
     const [ discounts, setDiscounts ] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/products?all=true`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products?all=true`).then((res) => {
             setProducts(res.data.products);
         });
 
-        axios.get(`${process.env.API_URL}/discounts`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/discounts`).then((res) => {
             setDiscounts(res.data);
         });
     }, [ tab ]);
@@ -23,7 +23,7 @@ const Discounts = ({ tab }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post(`${process.env.API_URL}/discounts`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/discounts`, {
             product, amount, discount
         }).then((res) => {
             console.log(res);
@@ -34,7 +34,7 @@ const Discounts = ({ tab }) => {
 
     const deleteDiscount = (discount_id) => {
         if (prompt("הזן סיסמא") == '123123') {
-            axios.delete(`${process.env.API_URL}/discounts/${ discount_id }`).then(res => {
+            axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/discounts/${ discount_id }`).then(res => {
                 console.log(res)
                 setDiscounts(discounts.filter((dis) => dis._id !== discount_id))
             });

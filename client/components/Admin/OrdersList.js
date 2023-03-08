@@ -9,7 +9,7 @@ const OrdersList = ({ tab }) => {
     const [ totalPages, setTotalPages ] = useState(1);
 
 	useEffect(() => {
-		axios.get(`${process.env.API_URL}/orders/?page=${ curPage }`).then((res) => {
+		axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders/?page=${ curPage }`).then((res) => {
             setOrders(res.data.orders);
             setTotalPages(Math.ceil(res.data.total / 20));
         });

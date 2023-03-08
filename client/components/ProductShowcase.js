@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { BsInfoCircleFill } from 'react-icons/bs'
 import { addToCartAnimation, handleRemoveFromCart, productHandleMinus, productHandlePlus } from '../helpers/CartHelper';
 
-const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, image, unit, cartItems, setCartItems, bottomAddToCart, type="product" }) => {
+const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, unit, cartItems, setCartItems, bottomAddToCart, type="product", numberId }) => {
     const [ amount, setAmount ] = useState(minAmount);
     const [ discount, setDiscount ] = useState(0);
     const [ cartAmount, setCartAmount ] = useState(0);
@@ -74,7 +74,7 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
             setDiscount(0);
 
             cartItems.map((item) => {
-                axios.get(`${process.env.API_URL}/discounts/product_discount/${ item.id }/${ item.amount }`).then(discount => {
+                axios.get(`${process.env.NEXT_PUBLIC_API_URL}/discounts/product_discount/${ item.id }/${ item.amount }`).then(discount => {
                     setDiscount((prevDis) => prevDis + parseInt(discount.data))
                 })
             });
@@ -84,6 +84,8 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
     useEffect(() => {
         localStorage.setItem('discount', discount);
     }, [ discount ]);
+
+    const image = `https://${process.env.NEXT_PUBLIC_PRODUCT_THUMBS_PUBLIC_BUCKET}/${numberId}.jpg` || '';
 
     return (
         <div className="product-showcase">
@@ -98,12 +100,15 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
                 <Image
                     src={image}
                     alt="פרי וירק ארצנו"
-                    height="100%"
-                    width="100%"
+                    height="200"
+                    width="200"
                     blurDataURL="URL"
                     placeholder="blur"
-                    layout="responsive"
                     loading="lazy"
+                    style={{
+                        width: 'auto',
+                        height: 'auto',
+                    }}
                 />
             </div>
 
@@ -123,10 +128,6 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
                 </div>
 
                 { badge && <span className="discount-badge-mobile">{ badge }</span> }
-            </div>
-
-            <div className="product-showcase-add-to-cart-form">
-                { bottomAddToCart &&  <div className="cute-btn product-showcase-add-to-cart bottom" onClick={ (e) => handleAddToCart(e) }><AiOutlineShoppingCart/> הוספה לעגלה</div> }
             </div>
 
             { cartAmount == 0 &&

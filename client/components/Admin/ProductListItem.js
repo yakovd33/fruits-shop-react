@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa'; 
 import EditProduct from './EditProduct';
-const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
 const ProductListItem = ({ id, product, products, setProducts }) => {
     const [ showEdit, setShowEdit ] = useState(false);
 
     const handleDelete = () => {
         if (prompt("על מנת למחוק מוצר זה, הזן סיסמא") == '123123') {
-            axios.delete(`${process.env.API_URL}/products/${id}`).then((res) => {
+            axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`).then((res) => {
                 console.log(res);
 
                 // Delete from the state
@@ -23,7 +22,7 @@ const ProductListItem = ({ id, product, products, setProducts }) => {
             { showEdit && <EditProduct id={ id } product={ product } setShowEdit={ setShowEdit }/> }
 
             <div className="img">
-                <img src={ `https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${id}.jpg` } alt="" />
+                <img src={ `https://${process.env.NEXT_PUBLIC_PRODUCT_THUMBS_PUBLIC_BUCKET}/${id}.jpg` } alt="" />
             </div>
 
             <div className="name">{ product.name }</div>

@@ -24,7 +24,7 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
 
     useEffect(() => {
         // Get subcategories
-        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/subcategories`).then((res) => {
             setSubCategories(res.data)
         }).catch((e) => {
             console.log(e);
@@ -36,25 +36,25 @@ const Header = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
             <div id="header">
                 <div className="container">
                     <div id="header-right">
-                        <Link href="/"><a><div id="header-logo"><img src="/images/logo.png" alt="" /></div></a></Link>
+                        <Link href="/"><div id="header-logo"><img src="/images/logo.png" alt="" /></div></Link>
                         <div id="header-links">
-                            <Link href="/" onClick={() => setMobileNavTog(false)}><a className="header-link active">דף הבית</a></Link>
-                            <Link href="/about" onClick={() => setMobileNavTog(false)}><a className="header-link">אודות</a></Link>
+                            <Link href="/" onClick={() => setMobileNavTog(false)} className="header-link active">דף הבית</Link>
+                            <Link href="/about" onClick={() => setMobileNavTog(false)} className="header-link">אודות</Link>
 
                             <a className="header-link dropdown-link" onClick={ () => setCatsTog(!catsTog) }>
                                 <span>קטגוריות <FaAngleDown/></span>
                                 { catsTog && <div className="dropdown">
-                                    <div onClick={() => goToLink("/category/1")}><a>ירקות</a></div>
-                                    <div onClick={() => goToLink("/category/2")}><a>פירות</a></div>
-                                    <div onClick={() => goToLink("/category/3")}><a>מעדנייה</a></div>
-                                    <div onClick={() => goToLink("/category/4")}><a>ירק ופטריות</a></div>
-                                    <div onClick={() => goToLink("/category/5")}><a>מזווה</a></div>
-                                    <div onClick={() => goToLink("/category/6")}><a>יבשים</a></div>
-                                    <div onClick={() => goToLink("/category/7")}><a>מבצעים</a></div>
+                                    <div onClick={() => goToLink("/category/1")}>ירקות</div>
+                                    <div onClick={() => goToLink("/category/2")}>פירות</div>
+                                    <div onClick={() => goToLink("/category/3")}>מעדנייה</div>
+                                    <div onClick={() => goToLink("/category/4")}>ירק ופטריות</div>
+                                    <div onClick={() => goToLink("/category/5")}>מזווה</div>
+                                    <div onClick={() => goToLink("/category/6")}>יבשים</div>
+                                    <div onClick={() => goToLink("/category/7")}>מבצעים</div>
                                 </div> }
                             </a>
                         
-                            <Link href="/legal" onClick={() => setMobileNavTog(false)}><a className="header-link">תקנון</a></Link>
+                            <Link href="/legal" onClick={() => setMobileNavTog(false)} className="header-link">תקנון</Link>
                         </div>
                     </div>
 

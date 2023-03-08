@@ -10,12 +10,12 @@ const Gifts = ({ tab }) => {
 
     useEffect(() => {
         // Get all products
-        axios.get(`${process.env.API_URL}/products?all=true`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products?all=true`).then((res) => {
             setProducts(res.data.products);
         });
 
         // Get all gifts from DB
-        axios.get(`${process.env.API_URL}/gifts`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/gifts`).then((res) => {
             setGifts(res.data);
         });
     }, [ tab ]);
@@ -23,7 +23,7 @@ const Gifts = ({ tab }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post(`${process.env.API_URL}/gifts`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/gifts`, {
             productId
         }).then((res) => {
             console.log(res);

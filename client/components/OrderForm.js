@@ -4,6 +4,7 @@ import Link from 'next/link';
 import CartHelper from '../helpers/CartHelper';
 import OrderGiftItem from './OrderGiftItem';
 import Select from 'react-select';
+import { SiVisa } from 'react-icons/si'
 
 const OrderForm = ({ setOrderFormTog }) => {
     const [ fullname, setFullname ] = useState('');
@@ -30,7 +31,7 @@ const OrderForm = ({ setOrderFormTog }) => {
         }
 
         // Get city list
-        axios.get(`${process.env.API_URL}/cities`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/cities`).then((res) => {
             setCities(res.data);
         });
     }, [ paymentUrl ]);
@@ -44,7 +45,7 @@ const OrderForm = ({ setOrderFormTog }) => {
         // Get all gifts
 
         if (cartAmount >= 250) {
-            axios.get(`${process.env.API_URL}/gifts`).then(res => {
+            axios.get(`${process.env.NEXT_PUBLIC_API_URL}/gifts`).then(res => {
                 setGifts(res.data)
             })
         }
@@ -53,7 +54,7 @@ const OrderForm = ({ setOrderFormTog }) => {
     const handleSubmit = (method) => {
         if (termsAgreed) {
             if (fullname && email && phone && city && street && apartment) {
-                axios.post(`${process.env.API_URL}/orders`, {
+                axios.post(`${process.env.NEXT_PUBLIC_API_URL}/orders`, {
                     fullname: fullname,
                     email: email,
                     phone: phone,
@@ -158,6 +159,10 @@ const OrderForm = ({ setOrderFormTog }) => {
                 </div>
 
                 <div className="input-group" id="order-form-submits">
+                    {/* <div className="payment-btn">
+                        <span className="icon"><SiVisa/></span>
+                        <span className="text">כרטיס אשראי</span>
+                    </div> */}
                     <input type="submit" onClick={ () => handleSubmit('credit') } className="cute-btn" value="תשלום באשראי" disabled={ !termsAgreed } />
                     <input type="submit" onClick={ () => handleSubmit('bit') } className="cute-btn bit" value="תשלום בביט" disabled={ !termsAgreed } />
                 </div>

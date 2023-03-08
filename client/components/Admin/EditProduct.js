@@ -59,7 +59,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
 
     useEffect(() => {
         // Get subcategories
-        axios.get(`${process.env.API_URL}/subcategories`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/subcategories`).then((res) => {
             setSubCategories(res.data)
         }).catch((e) => {
             console.log(e);
@@ -69,7 +69,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post(`${process.env.API_URL}/products/update/${id}`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/products/update/${id}`, {
             name: name,
             minAmount: min,
             availability: stock,
@@ -90,7 +90,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
             file_fd.append('file', image);
             file_fd.append('product_id', id);
 
-            axios.post(`${process.env.API_URL}/products/update_thumb/${id}`, file_fd).then((res) => {
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/products/update_thumb/${id}`, file_fd).then((res) => {
                 console.log(res);
             })
         })

@@ -11,12 +11,12 @@ const CategoriesList = ({ tab }) => {
         e.preventDefault();
         
         if (mainCategory == null) {
-            axios.post(`${process.env.API_URL}/categories`, { name: newCategoryName }).then((newCategory) => {
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/categories`, { name: newCategoryName }).then((newCategory) => {
                 setCategories([...categories, newCategory.data]);
                 setNewCategoryName('');
             });
         } else {
-            axios.post(`${process.env.API_URL}/subcategories`, { name: newCategoryName, category: mainCategory }).then((newCategory) => {
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/subcategories`, { name: newCategoryName, category: mainCategory }).then((newCategory) => {
                 getCategories();
                 setNewCategoryName('');
             });
@@ -29,7 +29,7 @@ const CategoriesList = ({ tab }) => {
     }, [ tab ]);
 
     const getCategories = () => {
-        axios.get(`${process.env.API_URL}/categories`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/categories`).then((res) => {
             setCategories(res.data || []);
         });
     }

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import HeaderBottomLink from './HeaderBottomLink'
-import axios from 'axios'
 
 const HeaderBottom = ({ subCategories }) => {
   return (

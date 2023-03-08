@@ -3,7 +3,6 @@ import Carousel from "react-multi-carousel";
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import Link from "next/link";
 import ProductShowcase from "./ProductShowcase";
-const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
 const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = false }) => {
     const defaultResponsive = {
@@ -47,7 +46,7 @@ const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = f
             salePrice={product.salePrice}
             unit={product.unitType}
             badge={ product.badge }
-            image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
+            numberId={ product.id }
         />
     ));
 
@@ -58,9 +57,7 @@ const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = f
             <div className="products-strip-arrows">
                 { seeAllLink &&
                     <Link href={seeAllLink}>
-                        <a>
-                            <button className="products-strip-see-all-link">כל המוצרים <FaAngleLeft/></button>
-                        </a>
+                        <button className="products-strip-see-all-link">כל המוצרים <FaAngleLeft/></button>
                     </Link>
                 }
                 

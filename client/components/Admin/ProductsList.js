@@ -12,7 +12,7 @@ const ProductsList = ({ tab }) => {
             query += `&search=${keywords}`;
         }
 
-        axios.get(`${process.env.API_URL}/products?limit=100${query}`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products?limit=100${query}`).then((res) => {
             setProducts(res.data.products);
         });
     }, [ keywords ]);

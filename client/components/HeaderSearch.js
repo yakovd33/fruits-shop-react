@@ -3,16 +3,15 @@ import { useSearchDebounce } from '../hooks/useSearchDebounce';
 import { BiSearch } from 'react-icons/bi'
 import axios from 'axios';
 import ProductShowcase from './ProductShowcase';
-const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 
 const HeaderSearch = ({ cartItems, setCartItems }) => {
     const [ keywords, setKeywords ] = useSearchDebounce(100);
     const [ searchResults, setSearchResults ] = useState([]);
     const [ searchOpen, setSearchOpen ] = useState(false);
 
-    useEffect(() => {
+    useEffect(() => {   
         if (keywords) {
-            axios.get(`${process.env.API_URL}/products?limit=20&search=${keywords}`).then((res) => {
+            axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products?limit=20&search=${keywords}`).then((res) => {
                 setSearchResults(res.data.products);
             });
         } else {
@@ -46,8 +45,8 @@ const HeaderSearch = ({ cartItems, setCartItems }) => {
                             salePrice={product.salePrice}
                             unit={product.unitType}
                             badge={ product.badge }
-                            image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
                             type="search"
+                            numberId={ product.id }
                         />
                     )) }
                 </div>

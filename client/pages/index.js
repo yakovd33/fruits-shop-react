@@ -4,7 +4,6 @@ import Slider from "../components/Home/Slider";
 import ProductShowcase from "../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ProductStrip from "../components/ProductStrip";
-const { PRODUCT_THUMBS_PUBLIC_BUCKET } = process.env;
 import "react-multi-carousel/lib/styles.css";
 import "react-multi-carousel/lib/styles.css";
 
@@ -29,7 +28,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 				query += `&search=${searchKeywords}`;
 			}
 
-			axios.get(process.env.API_URL + "/products/?page=" + curPage + query).then((res) => {
+			axios.get(process.env.NEXT_PUBLIC_API_URL + "/products/?page=" + curPage + query).then((res) => {
 				if (curPage == 1) {
 					setProducts(res.data.products);
 				} else {
@@ -218,7 +217,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 										salePrice={product.salePrice}
 										unit={product.unitType}
 										badge={ product.badge }
-										image={`https://${PRODUCT_THUMBS_PUBLIC_BUCKET}/${product.id}.jpg `}
+										numberId={ product.id }
 									/>
 								))}
 							</div>
@@ -230,10 +229,10 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 }
 
 export async function getStaticProps(context) {
-	const { data: weeklyData } = await axios.get(process.env.API_URL + "/products/?isRecommended=true");
-	const { data: hotData } = await axios.get(process.env.API_URL + "/products/?isHomepage=true");
-	const { data: allData } = await axios.get(process.env.API_URL + "/products/?page=1");
-	const { data: slidesData } = await axios.get(process.env.API_URL + "/slides");
+	const { data: weeklyData } = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/products/?isRecommended=true");
+	const { data: hotData } = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/products/?isHomepage=true");
+	const { data: allData } = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/products/?page=1");
+	const { data: slidesData } = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/slides");
 
 	return {
 	  props: {

@@ -21,15 +21,15 @@ const HeaderBottomLink = ({ categoryId, href, title, subCategories }) => {
     
   return (
     <>
-        <Link href={ href }>
-            <a className="header-bottom-link" id={`category-link-${categoryId}`} onMouseOver={handleOver} onMouseLeave={(e) => handleLeave(e)}>{ title }</a>
+        <Link href={ href } className="header-bottom-link" id={`category-link-${categoryId}`} onMouseOver={handleOver} onMouseLeave={(e) => handleLeave(e)}>
+            { title }
         </Link>
 
         <div className={`subcategories-menu ${showSubcategories && categoryId ? 'show' : ''}`} style={{left: menuLeft - 330}} onMouseLeave={(e) => setShowSubCategories(false)}>
             <div className="subcategories-menu-links">
                 { subCategories.map((sub) => (
                     sub.category == categoryId ?
-                        <Link href={`${href}/?subcategory=${sub.name}`}><a>{ sub.name }</a></Link>
+                        <Link href={`${href}/?subcategory=${sub.name}`}>{ sub.name }</Link>
                     : null
                 )) }
             </div>

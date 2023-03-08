@@ -19,8 +19,10 @@ const MobileNav = ({ mobileNavTog, setMobileNavTog, subCategories }) => {
 	}, [router.asPath]);
 
 	useEffect(() => {
-		axios.get(`${process.env.API_URL}/categories`).then((res) => {
+		axios.get(`${process.env.NEXT_PUBLIC_API_URL}/categories`).then((res) => {
 			setCategories(res.data);
+		}).catch((error) => {
+			console.log(error);
 		});
 	}, []);
 
@@ -35,22 +37,16 @@ const MobileNav = ({ mobileNavTog, setMobileNavTog, subCategories }) => {
 			</div>
 
 			<div id="mobile-nav-links">
-				<Link href="/">
-					<a className="mobile-nav-link">
-						דף הבית
-					</a>
+				<Link href="/" className="mobile-nav-link">
+					דף הבית
 				</Link>
 				
-				<Link href="/about">
-					<a className="mobile-nav-link">
-						אודות
-					</a>
+				<Link href="/about" className="mobile-nav-link">
+					אודות
 				</Link>
 
-				<Link href="/legal">
-					<a className="mobile-nav-link">
-						תקנון
-					</a>
+				<Link href="/legal" className="mobile-nav-link">
+					תקנון
 				</Link>
 
 				{ (categories || []).map((category) => (

@@ -25,7 +25,7 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
         setDiscount(0);
 
         cartItems.map((item) => {
-            axios.get(`${process.env.API_URL}/discounts/product_discount/${ item.id }/${ item.amount }`).then(discount => {
+            axios.get(`${process.env.NEXT_PUBLIC_API_URL}/discounts/product_discount/${ item.id }/${ item.amount }`).then(discount => {
                 setDiscount((prevDis) => prevDis + parseInt(discount.data))
             })
         });

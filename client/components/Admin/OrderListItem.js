@@ -21,7 +21,7 @@ const OrderListItem = ({ order, orders, setOrders }) => {
 	// Get the gift
 	useEffect(() => {
 		if (order.gift) {
-			axios.get(`${process.env.API_URL}/products/${ order.gift }`).then((res) => {
+			axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products/${ order.gift }`).then((res) => {
 				setGift(res.data);
 			});
 		}
@@ -34,7 +34,7 @@ const OrderListItem = ({ order, orders, setOrders }) => {
 
 	const handleDelete = () => {
 		if (prompt('על מנת למחוק הזמנה הקש סיסמא') == '123123') {
-			axios.delete(`${process.env.API_URL}/orders/${order._id}`).then((res) => {
+			axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/orders/${order._id}`).then((res) => {
 				setOrders(orders.filter((item) => item._id !== order._id));
 			});
 		}

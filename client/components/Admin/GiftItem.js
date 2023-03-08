@@ -7,7 +7,7 @@ const GiftItem = ({ gift, gifts, setGifts }) => {
 
     const deleteGift = (productId) => {
         if (prompt("הזן סיסמא") == '123123') {
-            axios.delete(`${process.env.API_URL}/gifts/${ productId }`).then(res => {
+            axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/gifts/${ productId }`).then(res => {
                 console.log(res);
                 setGifts(gifts.filter((gif) => gif.productId !== productId))
             });
@@ -16,7 +16,7 @@ const GiftItem = ({ gift, gifts, setGifts }) => {
 
     useEffect(() => {
         // Get product details
-        axios.get(`${process.env.API_URL}/products/${ gift.productId }`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products/${ gift.productId }`).then((res) => {
             setProduct(res.data);
         });
     }, []);

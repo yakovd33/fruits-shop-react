@@ -9,7 +9,7 @@ const MainSlider = ({ tab }) => {
     const [ order, setOrder ] = useState(0);
 
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/slides`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slides`).then((res) => {
             setSlides(res.data);
         });
     }, [ tab ]);
@@ -21,7 +21,7 @@ const MainSlider = ({ tab }) => {
         formData.append('file', file);
         formData.append('order', order);
 
-        axios.post(`${process.env.API_URL}/slides`, formData).then((res) => {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/slides`, formData).then((res) => {
             console.log(res);
             // setFile(null)
         })
@@ -29,7 +29,7 @@ const MainSlider = ({ tab }) => {
 
     const deleteSlide = (slide_id) => {
         if (prompt("הזן סיסמא") == '123123') {
-            axios.delete(`${process.env.API_URL}/slides/${ slide_id }`).then(res => {
+            axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/slides/${ slide_id }`).then(res => {
                 console.log(res)
                 setSlides(slides.filter((dis) => dis._id !== slide_id))
             });

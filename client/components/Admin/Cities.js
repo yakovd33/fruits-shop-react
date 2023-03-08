@@ -8,7 +8,7 @@ const Cities = ({ tab }) => {
     const [ price, setPrice ] = useState(0);
 
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/cities`).then((res) => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/cities`).then((res) => {
             setCities(res.data);
         });
     }, [ tab ]);
@@ -16,7 +16,7 @@ const Cities = ({ tab }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post(`${process.env.API_URL}/cities`, {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/cities`, {
             name: city, price
         }).then((res) => {
             console.log(res);
@@ -27,7 +27,7 @@ const Cities = ({ tab }) => {
 
     const deleteCity = (city_id) => {
         if (prompt("הזן סיסמא") == '123123') {
-            axios.delete(`${process.env.API_URL}/cities/${ city_id }`).then(res => {
+            axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/cities/${ city_id }`).then(res => {
                 console.log(res)
                 setCities(cities.filter((dis) => dis._id !== city_id))
             });
