@@ -241,6 +241,6 @@ export async function getStaticProps(context) {
 		allProducts: allData?.products,
 		slides: slidesData,
 	  },
-	  revalidate: 10
+	  revalidate: 5
 	}
 }
