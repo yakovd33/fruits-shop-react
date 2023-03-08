@@ -9,22 +9,19 @@ function MyApp({ Component, pageProps }) {
 	const [ cartItems, setCartItems ] = useState([]);
 	const [ didCartLoad, setDidCartLoad ] = useState(false);
 
+	useEffect(() => {
+		// Localize cart
+		if (didCartLoad) {
+			window?.localStorage.setItem('cart', JSON.stringify(cartItems));
+		}
+	}, [cartItems, didCartLoad]);
+
     useEffect(() => {
-        if (localStorage.getItem('cart')) {
-            setCartItems(JSON.parse(localStorage.getItem('cart')));
+        if (window?.localStorage && !didCartLoad) {
+            setCartItems(JSON.parse(localStorage.getItem('cart')) || []);
 			setDidCartLoad(true);
         }
     }, []);
-
-	const localizeCart = () => {
-		localStorage.setItem('cart', JSON.stringify(cartItems));
-	}
-
-	useEffect(() => {
-		if (didCartLoad) {
-			localizeCart();
-		}
-	}, [ cartItems ]);
 
 	return (
 		<>
