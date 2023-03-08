@@ -7,10 +7,7 @@ module.exports = {
 		}, {
 			protocol: 'https',
 			hostname: process.env.NEXT_PUBLIC_MAIN_SLIDER_PUBLIC_BUCKET,
-		}, {
-			protocol: 'https',
-			hostname: 'undefined',
-		},]
+		}]
 	},
 	env: {
 		NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
