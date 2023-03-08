@@ -14,7 +14,6 @@ const CategoryItem = ({ category, categories, setCategories, deleteCallback }) =
     }, []);
     
     const deleteCategory = (categoryId) => {
-        console.log(categoryId);
         if (prompt("הזן סיסמא") == '123123') {
             axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/categories/${ categoryId }`).then(res => {
                 setCategories(categories.filter((cat) => cat.id !== categoryId))
