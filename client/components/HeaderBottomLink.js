@@ -18,6 +18,8 @@ const HeaderBottomLink = ({ categoryId, href, title, subCategories }) => {
             setShowSubCategories(false);
         }
     }
+
+    const linkSubCategories = subCategories.filter((sub) => (sub.category == categoryId));
     
   return (
     <>
@@ -25,27 +27,27 @@ const HeaderBottomLink = ({ categoryId, href, title, subCategories }) => {
             { title }
         </Link>
 
-        <div className={`subcategories-menu ${showSubcategories && categoryId ? 'show' : ''}`} style={{left: menuLeft - 330}} onMouseLeave={(e) => setShowSubCategories(false)}>
-            <div className="subcategories-menu-links">
-                { subCategories.map((sub) => (
-                    sub.category == categoryId ?
-                        <Link href={`${href}/?subcategory=${sub.name}`}>{ sub.name }</Link>
-                    : null
-                )) }
-            </div>
-            
-            { categoryId < 6 &&
-                <div className="subcategories-menu-image">
-                    <Image
-                        src={`/images/header-categories/${ categoryId }.jpeg`}
-                        height={300}
-                        width={200}
-                        placeholder="blur"
-                        blurDataURL="URL"
-                    />
+        { linkSubCategories.length > 0 && 
+            <div className={`subcategories-menu ${showSubcategories && categoryId ? 'show' : ''}`} style={{left: menuLeft - 330}} onMouseLeave={(e) => setShowSubCategories(false)}>
+                <div className="subcategories-menu-links">
+                    { linkSubCategories.map((sub) => (
+                            <Link href={`${href}/?subcategory=${sub.name}`}>{ sub.name }</Link>
+                    )) }
                 </div>
-            }
-        </div>
+                
+                { categoryId < 6 &&
+                    <div className="subcategories-menu-image">
+                        <Image
+                            src={`/images/header-categories/${ categoryId }.jpeg`}
+                            height={300}
+                            width={200}
+                            placeholder="blur"
+                            blurDataURL="URL"
+                        />
+                    </div>
+                }
+            </div>
+        }
     </>
   )
 }

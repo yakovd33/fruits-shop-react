@@ -18,8 +18,8 @@ const HeaderBottom = ({ subCategories }) => {
             <div className="left">
                 <HeaderBottomLink href="/category/6" categoryId={6} title="יבשים" subCategories={subCategories}/>
                 <HeaderBottomLink href="/category/7" title="מבצעים" subCategories={subCategories}/>
-                <HeaderBottomLink href="/category/28" title="מארזים" subCategories={subCategories}/>
-                <HeaderBottomLink href="/category/25" title="המיוחדים" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/28" categoryId={28} title="מארזים" subCategories={subCategories}/>
+                <HeaderBottomLink href="/category/25" categoryId={25} title="המיוחדים" subCategories={subCategories}/>
             </div>
         </div>
     </div>
