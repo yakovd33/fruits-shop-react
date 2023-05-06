@@ -44,6 +44,8 @@ const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = f
             name={product.name}
             price={product.price}
             salePrice={product.salePrice}
+            priceKg={product.priceKg}
+            salePriceKg={product.salePriceKg}
             unit={product.unitType}
             badge={ product.badge }
             numberId={ product.id }

@@ -28,6 +28,8 @@ const CartSuggestions = ({ cartItems, setCartItems, cartTog, orderFormTog }) => 
 						name={product.name}
 						price={product.price}
 						salePrice={product.salePrice}
+						priceKg={product.priceKg}
+						salePriceKg={product.salePriceKg}
 						unit={product.unitType}
 						badge={ product.badge }
 						bottomAddToCart={ true }

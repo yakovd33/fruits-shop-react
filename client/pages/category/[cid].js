@@ -122,6 +122,8 @@ const Category = ({ cartItems, setCartItems }) => {
                                             name={ product.name }
                                             salePrice={ product.salePrice }
                                             price={ product.price }
+                                            priceKg={product.priceKg}
+                                            salePriceKg={product.salePriceKg}
                                             unit={ product.unitType }
                                             numberId={ product.id }
                                         />

@@ -148,6 +148,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
                     <select name="" id="" onChange={ (e) => setUnit(e.target.value) }>
                         <option value={`ק"ג`}>ק"ג</option>
                         <option value={`יחידה`}>יחידה</option>
+                        <option value={`both`}>ק״ג ויחידה</option>
                         <option value={`חבילה`}>חבילה</option>
                     </select>
                 </div>

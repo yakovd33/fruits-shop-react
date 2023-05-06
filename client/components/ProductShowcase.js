@@ -7,10 +7,20 @@ import Image from 'next/image';
 import { BsInfoCircleFill } from 'react-icons/bs'
 import { addToCartAnimation, handleRemoveFromCart, productHandleMinus, productHandlePlus } from '../helpers/CartHelper';
 
-const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, badge, unit, cartItems, setCartItems, bottomAddToCart, type="product", numberId }) => {
+const unitTranslations = {
+    'kg': 'ק"ג',
+    'ק״ג': 'ק"ג',
+    'יחידה': 'יחידה',
+    'unit': 'יחידה',
+}
+
+const ProductShowcase = ({ id, name, price, salePrice, priceKg, salePriceKg, description, minAmount, badge, unit, cartItems, setCartItems, bottomAddToCart, type="product", numberId }) => {
     const [ amount, setAmount ] = useState(minAmount);
     const [ discount, setDiscount ] = useState(0);
     const [ cartAmount, setCartAmount ] = useState(0);
+    const [ selectedUnit, setSelectedUnit ] = useState(`${unit == 'both' ? 'ק״ג' : unit}`);
+    const actualPrice = selectedUnit == 'ק״ג' ? priceKg : price;
+    const actualSalePrice = selectedUnit == 'ק״ג' ? salePriceKg : salePrice;
 
     useEffect(() => {
         // Find product in card
@@ -28,7 +38,7 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
     }, [cartItems]);
 
     useEffect(() => {
-        setAmount(minAmount);
+        setAmount(minAmount || 1);
     }, [ minAmount ])
 
     const handleAddToCart = (e, justAnimation = false) => {
@@ -59,8 +69,8 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
             });
 
             if (!found) {
-                let finalPrice = (salePrice) ? salePrice : price;
-                setCartItems(cartItems => [ ...cartItems, { id, name, amount, minAmount, originalPrice: price, price: finalPrice, image } ]);
+                let finalPrice = (actualSalePrice) ? actualSalePrice : actualPrice;
+                setCartItems(cartItems => [ ...cartItems, { id, name, amount, minAmount, originalPrice: actualPrice, price: finalPrice, image, unit: selectedUnit } ]);
             } else {
                 let newCart = cartItems.map((item, i) => {
                     if (item.name == name) return { ...item, amount: item.amount + 1 };
@@ -114,17 +124,25 @@ const ProductShowcase = ({ id, name, price, salePrice, description, minAmount, b
 
             <div className="product-showcase-textuals">
             <div className="product-showcase-name">{ name }</div>
+
+                {
+                    unit == 'both' && <span className="product-unit-select">
+                        <span className={`product-unit-select-item ${selectedUnit == 'יחידה' ? 'active' : ''}`} onClick={() => setSelectedUnit('יחידה')}>יחידה</span>
+                        <span className={`product-unit-select-item ${selectedUnit == 'ק״ג' ? 'active' : ''}`} onClick={() => setSelectedUnit('ק״ג')}>ק״ג</span>
+                    </span>
+                }
+
                 <div className="product-showcase-price">
                     <span className={ `showcase-price ${!salePrice ? 'db' : 'dn'} `}>
-                        {`${!salePrice ? `${price}₪` : ''}`}
-                    </span>
-                    
-                    <span className={ `showcase-price ${salePrice ? 'db' : 'dn'} `}>
-                        <span className="new-price">{salePrice}₪</span>
-                        <span className="old-price">{price}₪</span>
+                        {`${!actualSalePrice ? `${actualPrice}₪` : ''}`}
                     </span>
 
-                    / { unit }
+                    <span className={ `showcase-price ${actualSalePrice ? 'db' : 'dn'} `}>
+                        <span className="new-price">{actualSalePrice}₪</span>
+                        <span className="old-price">{actualPrice}₪</span>
+                    </span>
+
+                    / { unitTranslations[selectedUnit] || unit }
                 </div>
 
                 { badge && <span className="discount-badge-mobile">{ badge }</span> }

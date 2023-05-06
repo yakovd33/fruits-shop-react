@@ -52,7 +52,9 @@ const NewProduct = ({ tab }) => {
     const [ cat, setCat ] = useState(1);
     const [ unit, setUnit ] = useState('ק"ג');
     const [ price, setPrice ] = useState('');
+    const [priceKg, setPriceKg] = useState('');
     const [ salePrice, setSalePrice ] = useState('');
+    const [salePriceKg, setSalePriceKg] = useState('');
     const [ description, setDescription ] = useState('');
     const [ image, setImage ] = useState(null);
     const [ isRecommended, setIsRecommended ] = useState(false);
@@ -80,7 +82,9 @@ const NewProduct = ({ tab }) => {
         fd.append('category', cat);
         fd.append('unitType', unit);
         fd.append('price', price);
+        fd.append('priceKg', priceKg);
         fd.append('salePrice', salePrice);
+        fd.append('salePriceKg', salePriceKg);
         fd.append('description', description);
         fd.append('isRecommended', isRecommended);
         fd.append('isHomepage', isHomepage);
@@ -146,13 +150,14 @@ const NewProduct = ({ tab }) => {
                 <select name="" id="" onClick={ (e) => setUnit(e.target.value) }>
                     <option value={`ק"ג`}>ק"ג</option>
                     <option value={`יחידה`}>יחידה</option>
+                    <option value={`both`}>ק״ג ויחידה</option>
                     <option value={`חבילה`}>חבילה</option>
                 </select>
             </div>
 
             <>
                 <div className="input-group">
-                    <input type="number" placeholder="מחיר" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
+                    <input type="number" placeholder="מחיר ליחידה" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
                 </div>
 
                 <div className="input-group">
@@ -162,11 +167,11 @@ const NewProduct = ({ tab }) => {
 
             <>
                 <div className="input-group">
-                    <input type="number" placeholder="מחיר לקילו" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
+                    <input type="number" placeholder="מחיר לקילו" value={ priceKg } onChange={ (e) => setPriceKg(e.target.value) } className="input-box" />
                 </div>
 
                 <div className="input-group">
-                    <input type="number" placeholder="מחיר מבצע לקילו" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
+                    <input type="number" placeholder="מחיר מבצע לקילו" value={ salePriceKg } onChange={ (e) => setSalePriceKg(e.target.value) } className="input-box" />
                 </div>
             </>
 

@@ -5,7 +5,6 @@ import ProductShowcase from "../components/ProductShowcase";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ProductStrip from "../components/ProductStrip";
 import "react-multi-carousel/lib/styles.css";
-import "react-multi-carousel/lib/styles.css";
 
 export default function Home({ cartItems, setCartItems, weeklyProducts, hotProducts, allProducts, slides }) {
 	const [products, setProducts] = useState(allProducts || []);
@@ -215,6 +214,8 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 										name={product.name}
 										price={product.price}
 										salePrice={product.salePrice}
+										priceKg={product.priceKg}
+										salePriceKg={product.salePriceKg}
 										unit={product.unitType}
 										badge={ product.badge }
 										numberId={ product.id }

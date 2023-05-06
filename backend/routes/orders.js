@@ -77,18 +77,23 @@ router.post("/", async function (req, res, next) {
 			res.status(500).json({msg: 'עגלה לא תקינה. צרו עמנו קשר'})
 		}
 
+		let test = 'aa';
+
 		for (var i = 0; i < cart.length; i++) {
 			let productId = cart[i].id;
 			let amount = cart[i].amount;
+			let unit = cart[i].unit;
 			
 			let product = await Product.findOne({ _id: productId });
 
 			if (product) {
-				let price = product.salePrice ? product.salePrice : product.price;
-
+				let regularPrice = unit == 'יחידה' ? product.price : product.priceKg;
+				let salePrice = unit == 'יחידה' ? product.salePrice : product.salePriceKg;
+				let price = salePrice ? salePrice : regularPrice;
+				
 				// Get discounts
 				let discount = await getProductDiscount(productId, amount);
-
+				
 				
 				final_price += price * amount - discount;
 			}
@@ -115,6 +120,8 @@ router.post("/", async function (req, res, next) {
 		var pageCode = process.env.PAGE_CODE_CREDIT;
 		if (method == 'bit') {
 			pageCode = process.env.PAGE_CODE_BIT;
+		} else if (method == "apple") {
+			pageCode = process.env.PAGE_CODE_APPLE_PAY
 		}
 		
 		params.append('pageCode', pageCode);

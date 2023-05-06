@@ -5,6 +5,8 @@ import CartHelper from '../helpers/CartHelper';
 import OrderGiftItem from './OrderGiftItem';
 import Select from 'react-select';
 import { SiVisa } from 'react-icons/si'
+import { FaApplePay } from 'react-icons/fa';
+import BitIcon from './Cart/BitIcon';
 
 const OrderForm = ({ setOrderFormTog }) => {
     const [ fullname, setFullname ] = useState('');
@@ -159,12 +161,22 @@ const OrderForm = ({ setOrderFormTog }) => {
                 </div>
 
                 <div className="input-group" id="order-form-submits">
-                    {/* <div className="payment-btn">
+                    <div className="payment-btn" onClick={ () => handleSubmit('credit') }>
                         <span className="icon"><SiVisa/></span>
                         <span className="text">כרטיס אשראי</span>
-                    </div> */}
-                    <input type="submit" onClick={ () => handleSubmit('credit') } className="cute-btn" value="תשלום באשראי" disabled={ !termsAgreed } />
-                    <input type="submit" onClick={ () => handleSubmit('bit') } className="cute-btn bit" value="תשלום בביט" disabled={ !termsAgreed } />
+                    </div>
+
+                    <div className="payment-btn" onClick={ () => handleSubmit('bit') }>
+                        <span className="icon bit"><img src="/images/bit_logo.png" alt="" /></span>
+                        <span className="text">Bit</span>
+                    </div>
+
+                    <div className="payment-btn" onClick={ () => handleSubmit('apple') }>
+                        <span className="icon"><FaApplePay/></span>
+                        <span className="text">Apple Pay</span>
+                    </div>
+                    {/* <input type="submit" onClick={ () => handleSubmit('credit') } className="cute-btn" value="תשלום באשראי" disabled={ !termsAgreed } />
+                    <input type="submit" onClick={ () => handleSubmit('bit') } className="cute-btn bit" value="תשלום בביט" disabled={ !termsAgreed } /> */}
                 </div>
             </div>
 
