@@ -150,8 +150,6 @@ const OrderForm = ({ setOrderFormTog }) => {
                     <label htmlFor=""><input type="checkbox" onChange={ () => setTermsAgreed(!termsAgreed) } checked={ termsAgreed }/> אני מאשר/ת את <Link href="/legal">תקנון האתר.</Link></label>
                 </div>
 
-                { feedback && <p id="order-form-feedback">{ feedback }</p> }
-
                 <div id="arrival-msg-order">
                     המשלוח אמור להגיע אליכם עד 2 ימי עסקים עקב קטיפים רבים שמתבצעים ומשתנים כול העת כך אנו אוספים מהחקלאים שלנו את המוצרים שלכם לפי הזמנה בלבד ,לאחר ההזמנה נצור אתכם קשר לתיאום הגעה (שעות ההגעה הם בין 12 בלילה ל8 בבוקר משאירים מחוץ לדלת הבית) ,בנוסף ניתן לצור קשר בוואטספ או מס' נייד המצורף בבועות שבצדדים
                 </div>
@@ -159,6 +157,8 @@ const OrderForm = ({ setOrderFormTog }) => {
                 <div id="shipping-msg">
                     { city && cartAmount < 250 && <p>עלות משלוח עבור { cityObject.name } היא { cityObject.price }₪</p> } 
                 </div>
+
+                { feedback && <p id="order-form-feedback">{ feedback }</p> }
 
                 <div className="input-group" id="order-form-submits">
                     <div className="payment-btn" onClick={ () => handleSubmit('credit') }>

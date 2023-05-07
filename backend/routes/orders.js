@@ -87,13 +87,16 @@ router.post("/", async function (req, res, next) {
 			let product = await Product.findOne({ _id: productId });
 
 			if (product) {
-				let regularPrice = unit == 'יחידה' ? product.price : product.priceKg;
-				let salePrice = unit == 'יחידה' ? product.salePrice : product.salePriceKg;
-				let price = salePrice ? salePrice : regularPrice;
-				
+				let price = product.salePrice ? product.salePrice : product.price;
+
+				if (product.unit == 'both') {
+					let regularPrice = (unit == 'יחידה' || unit == 'חבילה') ? product.price : product.priceKg;
+					let salePrice = (unit == 'יחידה' || unit == 'חבילה') ? product.salePrice : product.salePriceKg;
+					price = salePrice ? salePrice : regularPrice;
+				}
+
 				// Get discounts
 				let discount = await getProductDiscount(productId, amount);
-				
 				
 				final_price += price * amount - discount;
 			}
@@ -135,6 +138,8 @@ router.post("/", async function (req, res, next) {
 		params.append('pageField[email]', req.body.email);
 		params.append('cField1', newOrder._id);
 		params.append('cField2', pageCode);
+
+		console.log('final price: ' + final_price);
 		
 		let result = await axios.post('https://secure.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
 		res.status(200).json(result.data);

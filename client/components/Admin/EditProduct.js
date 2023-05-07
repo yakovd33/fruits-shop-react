@@ -49,6 +49,8 @@ const EditProduct = ({ id, product, setShowEdit }) => {
     const [ unit, setUnit ] = useState(product.unitType);
     const [ price, setPrice ] = useState(product.price);
     const [ salePrice, setSalePrice ] = useState(product.salePrice);
+    const [ priceKg, setPriceKg ] = useState(product.priceKg);
+    const [ salePriceKg, setSalePriceKg ] = useState(product.salePriceKg);
     const [ description, setDescription ] = useState(product.description);
     const [ badge, setBadge ] = useState(product.badge);
     const [ image, setImage ] = useState(null);
@@ -70,18 +72,20 @@ const EditProduct = ({ id, product, setShowEdit }) => {
         e.preventDefault();
 
         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/products/update/${id}`, {
-            name: name,
+            name,
             minAmount: min,
             availability: stock,
             category: cat,
             unitType: unit,
-            price: price,
+            price,
             description: description,
-            salePrice: salePrice,
-            badge: badge,
+            salePrice,
+            badge,
             isRecommended,
             isHomepage,
-            subCategory
+            subCategory,
+            priceKg,
+            salePriceKg
         }).then((res) => {
             setFeedback(res.data);
 
@@ -165,11 +169,11 @@ const EditProduct = ({ id, product, setShowEdit }) => {
 
                 <>
                     <div className="input-group">
-                        <input type="number" placeholder="מחיר קילו" value={ price } onChange={ (e) => setPrice(e.target.value) } className="input-box" />
+                        <input type="number" placeholder="מחיר קילו" value={ priceKg } onChange={ (e) => setPriceKg(e.target.value) } className="input-box" />
                     </div>
 
                     <div className="input-group">
-                        <input type="number" placeholder="מחיר מבצע קילו" value={ salePrice } onChange={ (e) => setSalePrice(e.target.value) } className="input-box" />
+                        <input type="number" placeholder="מחיר מבצע קילו" value={ salePriceKg } onChange={ (e) => setSalePriceKg(e.target.value) } className="input-box" />
                     </div>
                 </>
 
