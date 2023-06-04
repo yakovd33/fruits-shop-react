@@ -141,7 +141,14 @@ router.post("/", async function (req, res, next) {
 
 		console.log('final price: ' + final_price);
 		
-		let result = await axios.post('https://secure.meshulam.co.il/api/light/server/1.0/createPaymentProcess', params);
+
+		let paymentUrl = 'https://secure.meshulam.co.il/api/light/server/1.0/createPaymentProcess';
+		if (method == 'apple') {
+			paymentUrl = 'https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess';
+		}
+
+		let result = await axios.post(paymentUrl, params);
+		console.log(result.data);
 		res.status(200).json(result.data);
 	} catch (e) {
 		res.status(500).json({msg: e.toString()})
