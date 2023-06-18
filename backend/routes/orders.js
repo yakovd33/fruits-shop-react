@@ -139,13 +139,7 @@ router.post("/", async function (req, res, next) {
 		params.append('cField1', newOrder._id);
 		params.append('cField2', pageCode);
 
-		console.log('final price: ' + final_price);
-		
-
 		let paymentUrl = 'https://secure.meshulam.co.il/api/light/server/1.0/createPaymentProcess';
-		if (method == 'apple') {
-			paymentUrl = 'https://sandbox.meshulam.co.il/api/light/server/1.0/createPaymentProcess';
-		}
 
 		let result = await axios.post(paymentUrl, params);
 		console.log(result.data);
