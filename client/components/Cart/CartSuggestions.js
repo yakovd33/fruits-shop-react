@@ -21,6 +21,7 @@ const CartSuggestions = ({ cartItems, setCartItems, cartTog, orderFormTog }) => 
             <div id="cart-suggestions-showcases">
                 { products && products.map((product) => (
 					<ProductShowcase id={ product._id }
+						product={product}
 						cartItems={cartItems}
 						minAmount={ product.minAmount }
 						setCartItems={setCartItems}

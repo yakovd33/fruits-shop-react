@@ -4,6 +4,9 @@ import Layout from "../components/Layout";
 import "../styles/globals.css";
 import "../styles/responsive.css";
 import Script from 'next/script';
+import globalStore from '../stores/GlobalStore';
+import { ProductPopup } from '../components/Layout/ProductPopup';
+import { observer } from 'mobx-react';
 
 function MyApp({ Component, pageProps }) {
 	const [ cartItems, setCartItems ] = useState([]);
@@ -34,9 +37,11 @@ function MyApp({ Component, pageProps }) {
 				<Component { ...pageProps } cartItems={ cartItems } setCartItems={ setCartItems } />
 			</Layout>
 
+			{ globalStore.popupProduct && <ProductPopup product={globalStore.popupProduct}/> }
+
 			<Script src="https://cdn.enable.co.il/licenses/enable-L804575kdnhulif-0221-25262/init.js" strategy="lazyOnload" />
 		</>
 	);
 }
 
-export default MyApp;
+export default observer(MyApp);

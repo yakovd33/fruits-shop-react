@@ -113,7 +113,7 @@ const EditProduct = ({ id, product, setShowEdit }) => {
                 <div className="input-group">
                     <input type="text" placeholder="שם המוצר" value={ name } onChange={ (e) => setName(e.target.value) } className="input-box" />
                 </div>
-                
+
                 <div className="input-group">
                     <input type="number" placeholder="כמות מינימום" value={ min } onChange={ (e) => setMin(e.target.value) } className="input-box" />
                 </div>

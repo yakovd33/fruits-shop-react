@@ -36,6 +36,7 @@ const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = f
     const [ isDragged, setIsDragged ] = useState(false)
     const cards = (products || []).map((product, i) => (
         <ProductShowcase
+            product={product}
             id={ product._id }
             cartItems={cartItems}
             minAmount={ product.minAmount }

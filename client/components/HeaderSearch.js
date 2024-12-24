@@ -35,6 +35,7 @@ const HeaderSearch = ({ cartItems, setCartItems }) => {
                 <div id="header-search-results-wrap">
                     { (searchResults || []).map((product) => (
                         <ProductShowcase
+                            product={product}
                             id={ product._id }
                             cartItems={cartItems}
                             minAmount={ product.minAmount }

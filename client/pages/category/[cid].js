@@ -113,6 +113,7 @@ const Category = ({ cartItems, setCartItems }) => {
                                 <div className="main-products-list">
                                     { products && products.map((product) => (
                                         <ProductShowcase
+                                            product={product}
                                             id={ product._id }
                                             description={ product.description }
                                             badge={ product.badge }

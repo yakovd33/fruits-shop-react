@@ -1602,3 +1602,25 @@ margin-top: 20px; }
 .products-strip .products-strip-arrows .products-strip-see-all-link svg {
 	margin-right: 5px;
 }
+
+/* Product popup */
+#product-popup-bg {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+	z-index: 999;
+}
+
+#product-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	background-color: #fff;
+	padding: 15px;
+	border-radius: 10px
+}

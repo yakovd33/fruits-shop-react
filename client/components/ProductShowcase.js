@@ -6,6 +6,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import { BsInfoCircleFill } from 'react-icons/bs'
 import { addToCartAnimation, handleRemoveFromCart, productHandleMinus, productHandlePlus } from '../helpers/CartHelper';
+import globalStore from '../stores/GlobalStore';
 
 const unitTranslations = {
     'kg': 'ק"ג',
@@ -14,7 +15,7 @@ const unitTranslations = {
     'unit': 'יחידה',
 }
 
-const ProductShowcase = ({ id, name, price, salePrice, priceKg, salePriceKg, description, minAmount, badge, unit, cartItems, setCartItems, bottomAddToCart, type="product", numberId }) => {
+const ProductShowcase = ({ id, name, price, salePrice, priceKg, salePriceKg, description, minAmount, badge, unit, cartItems, setCartItems, bottomAddToCart, product, type="product", numberId }) => {
     const [ amount, setAmount ] = useState(minAmount);
     const [ discount, setDiscount ] = useState(0);
     const [ cartAmount, setCartAmount ] = useState(0);
@@ -97,6 +98,10 @@ const ProductShowcase = ({ id, name, price, salePrice, priceKg, salePriceKg, des
 
     const image = `https://${process.env.NEXT_PUBLIC_PRODUCT_THUMBS_PUBLIC_BUCKET}/${numberId}.jpg` || '';
 
+    const openProductPopup = () => {
+        globalStore.popupProduct = product;
+    }
+
     return (
         <div className="product-showcase">
             {/* { description && <div className="product-description">{ description }</div> } */}
@@ -115,6 +120,7 @@ const ProductShowcase = ({ id, name, price, salePrice, priceKg, salePriceKg, des
                     blurDataURL="URL"
                     placeholder="blur"
                     loading="lazy"
+                    onClick={openProductPopup}
                     style={{
                         width: 'auto',
                         height: 'auto',

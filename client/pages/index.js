@@ -206,6 +206,7 @@ export default function Home({ cartItems, setCartItems, weeklyProducts, hotProdu
 							<div className="main-products-list">
 								{ (products || []).map((product) => (
 									<ProductShowcase
+										product={product}
 										id={ product._id }
 										cartItems={cartItems}
 										minAmount={ product.minAmount }
