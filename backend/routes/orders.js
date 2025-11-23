@@ -7,6 +7,8 @@ const axios = require('axios').default;
 var FormData = require('form-data');
 const discountModel = require('../models/discountModel');
 const citiesModel = require('../models/cityModel');
+const Coupon = require('../models/couponModel');
+const { normalizeCouponCode, validateCouponForTotal } = require('../utils/couponUtils');
 
 // Get all orders
 router.get("/", async (req, res, next) => {
@@ -102,7 +104,29 @@ router.post("/", async function (req, res, next) {
 			}
 		}
 
-		req.body.price = final_price;
+		const rawCouponCode = req.body.couponCode;
+		let couponDiscount = 0;
+		let appliedCoupon = null;
+		let normalizedCouponCode = null;
+
+		if (rawCouponCode) {
+			normalizedCouponCode = normalizeCouponCode(rawCouponCode);
+			const coupon = await Coupon.findOne({ code: normalizedCouponCode });
+			const validation = validateCouponForTotal(coupon, final_price);
+
+			if (!validation.valid) {
+				return res.status(400).json({ msg: validation.message || 'קופון לא תקף' });
+			}
+
+			couponDiscount = validation.discount;
+			appliedCoupon = coupon;
+			final_price -= couponDiscount;
+		}
+
+		final_price = Math.max(final_price, 0);
+
+		req.body.couponDiscount = couponDiscount;
+		req.body.couponCode = normalizedCouponCode;
 
 		if (final_price < 250) {
 			req.body.gift = null;
@@ -112,9 +136,15 @@ router.post("/", async function (req, res, next) {
 			let shipping_price = city.price;
 			final_price += shipping_price;
 		}
+
+		req.body.price = final_price;
 		
 		const newOrder = new Order(req.body);
 		await newOrder.save();
+
+		if (appliedCoupon) {
+			await Coupon.updateOne({ _id: appliedCoupon._id }, { $inc: { usageCount: 1 } });
+		}
 
 		const params = new URLSearchParams();
 

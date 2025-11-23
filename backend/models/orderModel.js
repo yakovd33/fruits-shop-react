@@ -13,6 +13,8 @@ const orderSchema = new mongoose.Schema({
     date: { type: Number, default: Date.now() },
     payed: { type: Boolean, default: false },
     gift: { type: String, default: null, required: false },
+    couponCode: { type: String, default: null },
+    couponDiscount: { type: Number, default: 0 },
 });
 
 module.exports = mongoose.model('Order', orderSchema);

@@ -23,6 +23,7 @@ const citiesRouter = require('./routes/cities');
 const slidesRouter = require('./routes/slides');
 const subcategoriesRouter = require('./routes/subcategories');
 const categoriesRouter = require('./routes/categories');
+const couponsRouter = require('./routes/coupons');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
@@ -55,6 +56,7 @@ app.use('/cities', citiesRouter);
 app.use('/slides', slidesRouter);
 app.use('/subcategories', subcategoriesRouter);
 app.use('/categories', categoriesRouter);
+app.use('/coupons', couponsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -8,6 +8,7 @@ import Gifts from '../components/Admin/Gifts';
 import Cities from '../components/Admin/Cities';
 import MainSlider from '../components/Admin/MainSlider';
 import CategoriesList from '../components/Admin/CategoriesList';
+import Coupons from '../components/Admin/Coupons';
 
 const Admin = () => {
     const [ tab, setTab ] = useState('products');
@@ -26,6 +27,7 @@ const Admin = () => {
                     <div className={ `tab-trigger ${tab == 'orders' ? 'active' : ''}` } onClick={ () => setTab('orders') }>הזמנות</div>
                     <div className={ `tab-trigger ${tab == 'new-product' ? 'active' : ''}` } onClick={ () => setTab('new-product') }>מוצר חדש</div>
                     <div className={ `tab-trigger ${tab == 'discounts' ? 'active' : ''}` } onClick={ () => setTab('discounts') }>מבצעים</div>
+                    <div className={ `tab-trigger ${tab == 'coupons' ? 'active' : ''}` } onClick={ () => setTab('coupons') }>קופונים</div>
                     <div className={ `tab-trigger ${tab == 'gifts' ? 'active' : ''}` } onClick={ () => setTab('gifts') }>מתנות</div>
                     <div className={ `tab-trigger ${tab == 'cities' ? 'active' : ''}` } onClick={ () => setTab('cities') }>ערים</div>
                     <div className={ `tab-trigger ${tab == 'slider' ? 'active' : ''}` } onClick={ () => setTab('slider') }>סליידר ראשי</div>
@@ -38,6 +40,7 @@ const Admin = () => {
                         { tab == 'orders' && <OrdersList tab={ tab }/> }
                         { tab == 'new-product' && <NewProduct tab={ tab }/> }
                         { tab == 'discounts' && <Discounts tab={ tab }/> }
+                        { tab == 'coupons' && <Coupons tab={ tab }/> }
                         { tab == 'gifts' && <Gifts tab={ tab }/> }
                         { tab == 'cities' && <Cities tab={ tab }/> }
                         { tab == 'slider' && <MainSlider tab={ tab }/> }

@@ -26,6 +26,8 @@ const OrderForm = ({ setOrderFormTog }) => {
     const [ gifts, setGifts ] = useState([]);
     const [ chosenGift, setChosenGift ] = useState(null);
     const [ cities, setCities ] = useState([]);
+    const [ couponCode, setCouponCode ] = useState(null);
+    const [ couponDiscount, setCouponDiscount ] = useState(0);
 
     useEffect(() => {
         if (paymentUrl) {
@@ -41,6 +43,26 @@ const OrderForm = ({ setOrderFormTog }) => {
     useEffect(() => {
         // setCartAmount(CartHelper.getAmountFromLocalStorage(localStorage.getItem('cart')));
         setCartAmount(localStorage.getItem('cart-price'));
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') {
+            return;
+        }
+
+        const storedCoupon = window.localStorage.getItem('cart-coupon');
+
+        if (storedCoupon) {
+            try {
+                const parsed = JSON.parse(storedCoupon);
+                if (parsed?.code) {
+                    setCouponCode(parsed.code);
+                    setCouponDiscount(Number(parsed.discount) || 0);
+                }
+            } catch (error) {
+                window.localStorage.removeItem('cart-coupon');
+            }
+        }
     }, []);
 
     useEffect(() => {
@@ -66,15 +88,17 @@ const OrderForm = ({ setOrderFormTog }) => {
                     notes: notes,
                     cart: localStorage.getItem('cart'),
                     gift: chosenGift,
-                    method
+                    method,
+                    couponCode,
+                    couponDiscount
                 }).then((res) => {
                     console.log(res.data);
 
                     if (res.data.data.url) {
                         setPaymentUrl(res.data.data.url);
                     }
-                }).catch((res) => {
-                    setFeedback(res?.data?.msg || 'אירעה שגיאה')
+                }).catch((error) => {
+                    setFeedback(error?.response?.data?.msg || 'אירעה שגיאה')
                 });
 
                 setFeedback('הנך מועבר/ת לתשלום.');
