@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "echo \"Backend build: nothing to compile.\"",
     "start": "node ./bin/www",
     "deploy": "git add . && git diff --cached --quiet && echo \"No changes to deploy.\" || (git commit -m \"Deploy backend\" && git push)"
   },
