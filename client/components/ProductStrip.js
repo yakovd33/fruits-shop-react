@@ -28,12 +28,14 @@ const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = f
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
-          items: 1,
+          items: 2,
           slidesToSlide: 1
         }
     };
 
     const [ isDragged, setIsDragged ] = useState(false)
+    const maxVisibleItems = Math.max(...Object.values(defaultResponsive).map((cfg) => cfg.items));
+    const isInfinite = (products?.length || 0) > maxVisibleItems;
     const cards = (products || []).map((product, i) => (
         <ProductShowcase
             product={product}
@@ -50,25 +52,30 @@ const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = f
             unit={product.unitType}
             badge={ product.badge }
             numberId={ product.id }
+            relatedProductsPool={ products }
         />
     ));
 
-    const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const ButtonGroup = ({ next, previous, isInfinite, ...rest }) => {
         const { carouselState: { currentSlide, totalItems, itemWidth, slidesToShow } } = rest;
+        const disablePrev = !isInfinite && currentSlide === 0;
+        const disableNext = !isInfinite && currentSlide + slidesToShow >= totalItems;
 
         return (
-            <div className="products-strip-arrows">
-                { seeAllLink &&
-                    <Link href={seeAllLink}>
-                        <button className="products-strip-see-all-link">כל המוצרים <FaAngleLeft/></button>
-                    </Link>
-                }
-                
-                <button disabled={currentSlide === 0} className="products-strip-arrow" onClick={previous}>
+            <div className="products-strip-arrows" aria-hidden="true">
+                <button
+                    disabled={disablePrev}
+                    className="products-strip-arrow products-strip-arrow--prev"
+                    onClick={previous}
+                >
                     <FaAngleRight/>
                 </button>
 
-                <button disabled={currentSlide + slidesToShow >= totalItems} className="products-strip-arrow" onClick={next}>
+                <button
+                    disabled={disableNext}
+                    className="products-strip-arrow products-strip-arrow--next"
+                    onClick={next}
+                >
                     <FaAngleLeft/>
                 </button>
             </div>
@@ -79,14 +86,25 @@ const ProductStrip = ({ cartItems, setCartItems, title, products, seeAllLink = f
     <div className="products-strip">
         {products && (
             <>
-                <h2 className="products-strip-title">{title}</h2>
+                { (title || seeAllLink) && (
+                    <div className="products-strip-header">
+                        { title && <h2 className="products-strip-title">{ title }</h2> }
+
+                        { seeAllLink && (
+                            <Link href={seeAllLink}>
+                                <button className="products-strip-see-all-link">כל המוצרים <FaAngleLeft/></button>
+                            </Link>
+                        ) }
+                    </div>
+                ) }
 
                 <div className="products-strip-list">
                     <Carousel
                         ssr
                         arrows={false}
                         responsive={defaultResponsive}
-                        customButtonGroup={<ButtonGroup />}
+                        infinite={isInfinite}
+                        customButtonGroup={<ButtonGroup isInfinite={isInfinite} />}
                         containerClass="products-slider-container"
                         sliderClass="products-strip-slider"
                         itemClass="products-strip-item"

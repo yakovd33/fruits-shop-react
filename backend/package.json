@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "deploy": "git add . && git diff --cached --quiet && echo \"No changes to deploy.\" || (git commit -m \"Deploy backend\" && git push)"
   },
   "dependencies": {
     "aws-sdk": "^2.1243.0",

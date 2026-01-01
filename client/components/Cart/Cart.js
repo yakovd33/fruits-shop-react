@@ -4,8 +4,10 @@ import { AiOutlineClose } from 'react-icons/ai';
 import OrderForm from '../OrderForm';
 import axios from 'axios';
 import CartSuggestions from './CartSuggestions';
+import { useRouter } from 'next/router';
 
-const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
+const Cart = ({ cartTog = false, setCartTog, cartItems, setCartItems, variant = 'panel' }) => {
+    const router = useRouter();
     const [ orderFormTog, setOrderFormTog ] = useState(false);
     const [ cartSum, setCartSum ] = useState(0);
     const [ cartSumBeforeDiscounts, setCartSumBeforeDiscounts ] = useState(0);
@@ -179,59 +181,127 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                     setCouponMessage(data.message);
                     setCouponMessageType('success');
                     setCouponCodeInput('');
-                } else {
-                    setCouponMessage('');
-                    setCouponMessageType(null);
                 }
             } else {
                 setAppliedCoupon(null);
                 setCouponDiscount(0);
-                window.localStorage.removeItem('cart-coupon');
-                setCouponMessage(data.message);
-                setCouponMessageType('error');
+
+                if (typeof window !== 'undefined') {
+                    window.localStorage.removeItem('cart-coupon');
+                }
+
+                if (!silent) {
+                    setCouponMessage(data.message || 'קוד הקופון אינו תקף להזמנה זו');
+                    setCouponMessageType('error');
+                }
             }
         } catch (error) {
-            setCouponMessage(error?.response?.data?.message || 'שגיאה בבדיקת הקופון');
-            setCouponMessageType('error');
+            if (!silent) {
+                setCouponMessage('אירעה שגיאה בעת בדיקת הקופון. נסו שוב בעוד רגע.');
+                setCouponMessageType('error');
+            }
         } finally {
             setCouponLoading(false);
         }
     };
 
-    const handleApplyCoupon = (event) => {
+    const handleApplyCoupon = async (event) => {
         event.preventDefault();
-        validateCoupon(couponCodeInput, { silent: false });
+        await validateCoupon(couponCodeInput);
     };
 
     const handleRemoveCoupon = () => {
         setAppliedCoupon(null);
         setCouponDiscount(0);
-        setCouponMessage('הקופון הוסר');
+        setCouponMessage('הקופון הוסר מהעגלה');
         setCouponMessageType('info');
         setCouponCodeInput('');
-        window.localStorage.removeItem('cart-coupon');
+
+        if (typeof window !== 'undefined') {
+            window.localStorage.removeItem('cart-coupon');
+        }
     };
 
     const hasOriginalDiscount = Math.abs(cartSumBeforeDiscounts - saleSubtotal) >= 0.01;
     const hasProductDiscount = Math.abs(saleSubtotal - subtotalAfterDiscounts) >= 0.01;
     const hasCouponDiscount = appliedCoupon?.code && Math.abs(Number(couponDiscount)) >= 0.01;
+    const cartCount = cartItems.length;
 
-    return ( 
-        <div id="cart-wrap">
-            <div id="cart-bg" className={ `${ (cartTog || orderFormTog) ? 'active' : '' }` } onClick={ () => { setCartTog(!cartTog); setOrderFormTog(false) } }></div>
+    const isPageVariant = variant === 'page';
 
-            <div id="cart" className={ `${ (cartTog && !orderFormTog) ? 'active' : '' }`}>
-                <h3 id="cart-title"><span id="cart-close-icon" onClick={ () => setCartTog(!cartTog) }><AiOutlineClose/></span> סל הקניות שלכם</h3>
+    const toggleCartPanel = () => {
+        if (typeof setCartTog === 'function') {
+            setCartTog(!cartTog);
+        }
+    };
 
-                <div id="cart-items">
-                    { cartItems.map((item) => (
-                        <CartItem key={ item.id } name={ item.name } minAmount={ item.minAmount } price={ item.price } image={ item.image } amount={ item.amount } cartItems= { cartItems } setCartItems={ setCartItems }/>
-                    )) }
+    const closeCartPanel = () => {
+        if (typeof setCartTog === 'function') {
+            setCartTog(false);
+        }
+    };
 
-                   <p className={ `${ cartItems.length ? 'hide' : '' }` }>העגלה ריקה, אולי תוסיפו קצת ירקות?</p>
+    const handleCheckoutClick = () => {
+        if (!cartItems.length) {
+            return;
+        }
+
+        setOrderFormTog(false);
+        closeCartPanel();
+        router.push('/order');
+    };
+
+    const cartInner = (
+        <>
+            <header className="cart-header">
+                <div>
+                    <h3>סל הקניות שלכם</h3>
                 </div>
+                <div className="cart-header-actions">
+                    <span className="cart-pill">{ cartCount } פריטים</span>
+                    { !isPageVariant && (
+                        <button
+                            type="button"
+                            className="cart-close"
+                            onClick={ toggleCartPanel }
+                            aria-label="סגירת סל הקניות"
+                        >
+                            <AiOutlineClose />
+                        </button>
+                    ) }
+                </div>
+            </header>
 
-                <div id="cart-coupon">
+            <div className="cart-items-list">
+                { cartItems.length ? (
+                    cartItems.map((item) => (
+                        <CartItem
+                            key={ item.id }
+                            name={ item.name }
+                            minAmount={ item.minAmount }
+                            price={ item.price }
+                            image={ item.image }
+                            amount={ item.amount }
+                            cartItems={ cartItems }
+                            setCartItems={ setCartItems }
+                        />
+                    ))
+                ) : (
+                    <div className="cart-empty-state">
+                        <p>סל הקניות ממתין למשהו טעים. התחילו להוסיף ירקות, פירות ומעדנים טריים.</p>
+                    </div>
+                ) }
+            </div>
+
+            { isPageVariant && (
+                <section id="cart-coupon" className="cart-card">
+                    <div className="cart-card-heading">
+                        <div>
+                            <span className="cart-card-eyebrow">יש לכם קוד?</span>
+                            <h4>הוספת קופון</h4>
+                        </div>
+                        { appliedCoupon?.code && <span className="cart-pill subtle">{ appliedCoupon.code }</span> }
+                    </div>
                     <form id="cart-coupon-form" onSubmit={ handleApplyCoupon }>
                         <input
                             type="text"
@@ -241,27 +311,94 @@ const Cart = ({ cartTog, setCartTog, cartItems, setCartItems }) => {
                             disabled={ couponLoading }
                         />
                         <button type="submit" disabled={ couponLoading }>החלת קופון</button>
-                        { appliedCoupon?.code && <button type="button" className="remove" onClick={ handleRemoveCoupon } disabled={ couponLoading }>הסרת קופון</button> }
+                        { appliedCoupon?.code && (
+                            <button type="button" className="remove" onClick={ handleRemoveCoupon } disabled={ couponLoading }>
+                                הסרת קופון
+                            </button>
+                        ) }
                     </form>
                     { couponMessage && <div className={ `cart-coupon-message ${ couponMessageType || '' }` }>{ couponMessage }</div> }
                     { appliedCoupon?.code && <div className="cart-coupon-applied">קופון פעיל: { appliedCoupon.code }</div> }
-                </div>
+                </section>
+            ) }
 
+            <section className="cart-card cart-summary-card">
+                <div className="cart-card-heading">
+                    <div>
+                        <span className="cart-card-eyebrow">סיכום</span>
+                        <h4>פרטי הסל</h4>
+                    </div>
+                </div>
                 <div id="cart-sum">
-                    { hasOriginalDiscount && <div><strong>סכום לפני הנחות: </strong> { formatMoney(cartSumBeforeDiscounts) }₪</div> }
-                    { hasProductDiscount && <div><strong>מחירי מבצע והנחות כמות: </strong> -{ formatMoney(saleSubtotal - subtotalAfterDiscounts) }₪</div> }
-                    { hasCouponDiscount && <div><strong>קופון { appliedCoupon.code }: </strong> -{ formatMoney(couponDiscount) }₪</div> }
-                    <div><strong>סיכום הזמנה: </strong> { formatMoney(cartSum) }₪</div>
+                    { hasOriginalDiscount && (
+                        <div className="cart-summary-row">
+                            <span>סכום לפני הנחות</span>
+                            <span className="value">{ formatMoney(cartSumBeforeDiscounts) }₪</span>
+                        </div>
+                    ) }
+                    { hasProductDiscount && (
+                        <div className="cart-summary-row discount">
+                            <span>מבצעים והנחות כמות</span>
+                            <span className="value">-{ formatMoney(saleSubtotal - subtotalAfterDiscounts) }₪</span>
+                        </div>
+                    ) }
+                    { hasCouponDiscount && (
+                        <div className="cart-summary-row discount">
+                            <span>קופון { appliedCoupon.code }</span>
+                            <span className="value">-{ formatMoney(couponDiscount) }₪</span>
+                        </div>
+                    ) }
+                    <div className="cart-summary-row cart-summary-total">
+                        <span>סיכום הזמנה</span>
+                        <span className="value">{ formatMoney(cartSum) }₪</span>
+                    </div>
                 </div>
+            </section>
 
-                <div id="cart-link-to-checkout" onClick={ () => setOrderFormTog(!orderFormTog) }>להמשך הזמנה</div>
-            </div>
+            <button
+                type="button"
+                className="cart-checkout-button"
+                onClick={ handleCheckoutClick }
+                disabled={ !cartItems.length }
+            >
+                להמשך הזמנה
+            </button>
+            <p className="cart-delivery-note">זמני אספקה מתעדכנים מדי יום בהתאם לביקוש ולמסלולי החלוקה.</p>
+        </>
+    );
 
-            <CartSuggestions cartTog={ cartTog } orderFormTog={ orderFormTog } cartItems={ cartItems } setCartItems={ setCartItems }/>
+    if (isPageVariant) {
+        return (
+            <section className="cart-page-shell">
+                <div className="cart-page-panel">
+                    { cartInner }
+                </div>
+                <CartSuggestions cartTog={ cartTog } orderFormTog={ orderFormTog } cartItems={ cartItems } setCartItems={ setCartItems } />
+                { orderFormTog && <OrderForm setOrderFormTog={ setOrderFormTog } /> }
+            </section>
+        );
+    }
 
-            { orderFormTog && <OrderForm setOrderFormTog={ setOrderFormTog }/> }
+    return (
+        <div id="cart-wrap">
+            <div
+                id="cart-bg"
+                className={ `${ (cartTog || orderFormTog) ? 'active' : '' }` }
+                onClick={ () => {
+                    toggleCartPanel();
+                    setOrderFormTog(false);
+                } }
+            ></div>
+
+            <aside id="cart" className={ `${ (cartTog && !orderFormTog) ? 'active' : '' }`}>
+                { cartInner }
+            </aside>
+
+            <CartSuggestions cartTog={ cartTog } orderFormTog={ orderFormTog } cartItems={ cartItems } setCartItems={ setCartItems } />
+
+            { orderFormTog && <OrderForm setOrderFormTog={ setOrderFormTog } /> }
         </div>
-     );
-}
- 
+    );
+};
+
 export default Cart;

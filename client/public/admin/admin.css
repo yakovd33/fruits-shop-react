@@ -201,10 +201,6 @@ input[type="submit"] {
     margin-bottom: 5px;
 }
 
-#bottom-contact {
-    display: none;
-}
-
 .discount-list-item {
     background-color: #fff;
     box-shadow: 0 0 10px #c3c3c378;
