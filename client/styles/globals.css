@@ -1,3 +1,92 @@
+.not-found {
+	min-height: calc(100vh - 140px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4rem 1.5rem;
+}
+
+.not-found .card {
+	width: min(560px, 100%);
+	background: rgba(255, 255, 255, 0.92);
+	border-radius: 28px;
+	padding: 3rem 2.5rem;
+	box-shadow: 0 25px 60px rgba(15, 51, 32, 0.15);
+	border: 1px solid rgba(15, 159, 102, 0.12);
+	text-align: center;
+	color: #123328;
+}
+
+.not-found .eyebrow {
+	display: inline-flex;
+	padding: 0.4rem 1.2rem;
+	border-radius: 999px;
+	background: rgba(15, 159, 102, 0.12);
+	color: #0f9f66;
+	font-size: 0.95rem;
+	letter-spacing: 0.08em;
+	margin-bottom: 1rem;
+}
+
+.not-found h1 {
+	font-size: clamp(2.4rem, 6vw, 3.4rem);
+	margin: 0 0 1rem;
+	color: #0c6b45;
+}
+
+.not-found .subtitle {
+	font-size: 1.1rem;
+	margin: 0 auto 1.5rem;
+	max-width: 32ch;
+	color: #415950;
+	line-height: 1.6;
+}
+
+.not-found .hint {
+	display: block;
+	margin-bottom: 2rem;
+	color: #6c7d75;
+}
+
+.not-found .actions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.not-found .actions a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	padding: 0.85rem 1.8rem;
+	font-weight: 600;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.not-found .actions a:hover {
+	transform: translateY(-2px);
+}
+
+.not-found .primary {
+	background: linear-gradient(120deg, #0f9f66, #08c07f);
+	color: #fff;
+	box-shadow: 0 15px 35px rgba(10, 107, 71, 0.25);
+}
+
+.not-found .ghost {
+	color: #0f9f66;
+	border: 1px solid rgba(15, 159, 102, 0.3);
+	background: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+	.not-found .card {
+		padding: 2.5rem 1.75rem;
+	}
+}
 /* @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap"); */
 /* @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;800;900&family=IBM+Plex+Mono:wght@300;500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;800;900&family=IBM+Plex+Mono:wght@300;500&display=swap');

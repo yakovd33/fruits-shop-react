@@ -1,9 +1,7 @@
 import React, { useMemo } from 'react';
 
 const QuickSearchItem = ({ product, cartItems = [], setCartItems }) => {
-    if (!product) {
-        return null;
-    }
+    const hasProduct = Boolean(product);
 
     const thumbSrc = useMemo(() => {
         if (product?.id && process.env.NEXT_PUBLIC_PRODUCT_THUMBS_PUBLIC_BUCKET) {
@@ -48,6 +46,10 @@ const QuickSearchItem = ({ product, cartItems = [], setCartItems }) => {
             return [ ...prev, newEntry ];
         });
     };
+
+    if (!hasProduct) {
+        return null;
+    }
 
     return (
         <div className="quick-search-item">

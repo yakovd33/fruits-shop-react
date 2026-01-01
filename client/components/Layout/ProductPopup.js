@@ -27,6 +27,7 @@ const getDefaultUnitSelection = (item) => {
 const isKgUnitSelection = (unit) => KG_UNIT_VALUES.includes(unit);
 
 export const ProductPopup = ({ product, cartItems = [], setCartItems }) => {
+    const hasProduct = Boolean(product);
     const initialUnit = useMemo(() => getDefaultUnitSelection(product), [ product ]);
 
     const [ selectedUnit, setSelectedUnit ] = useState(initialUnit);
@@ -40,8 +41,6 @@ export const ProductPopup = ({ product, cartItems = [], setCartItems }) => {
     const handleClose = useCallback(() => {
         globalStore.popupProduct = null;
     }, []);
-
-    if (!product) return null;
 
     const formatMoney = (value) => {
         const numberValue = Number(value) || 0;
@@ -302,6 +301,10 @@ export const ProductPopup = ({ product, cartItems = [], setCartItems }) => {
             }
         };
     }, [ product ]);
+
+    if (!hasProduct) {
+        return null;
+    }
 
     return (
         <>
