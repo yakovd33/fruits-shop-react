@@ -270,4 +270,10 @@ const Category = ({ cartItems, setCartItems }) => {
     );
 };
 
+export async function getServerSideProps() {
+    return {
+        props: {}
+    };
+}
+
 export default Category;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BiTrash, BiPowerOff, BiPowerOn } from 'react-icons/bi';
+import { BiTrash, BiPowerOff } from 'react-icons/bi';
+import { FiPower } from 'react-icons/fi';
 
 const defaultFormState = {
     code: '',
@@ -150,7 +151,7 @@ const Coupons = ({ tab }) => {
 
                         <div className="coupon-actions">
                             <button type="button" onClick={ () => toggleCouponActive(coupon._id, coupon.active) }>
-                                { coupon.active ? <BiPowerOff/> : <BiPowerOn/> }
+                                { coupon.active ? <BiPowerOff/> : <FiPower/> }
                                 <span>{ coupon.active ? 'השבתה' : 'הפעלה' }</span>
                             </button>
                             <button type="button" className="delete" onClick={ () => deleteCoupon(coupon._id) }>
