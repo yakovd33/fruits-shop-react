@@ -9,11 +9,12 @@ function processConnectionOptions(uri, options) {
     ? opts.readPreference
     : getUriReadPreference(uri);
 
-  const resolvedOpts = (readPreference && readPreference !== 'primary')
-    ? resolveOptsConflicts(readPreference, opts)
-    : opts;
+  const clonedOpts = clone(opts);
+  const resolvedOpts = (readPreference && readPreference !== 'primary' && readPreference !== 'primaryPreferred')
+    ? resolveOptsConflicts(readPreference, clonedOpts)
+    : clonedOpts;
 
-  return clone(resolvedOpts);
+  return resolvedOpts;
 }
 
 function resolveOptsConflicts(pref, opts) {
