@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const slideModel = require('../models/heroSlide');
 const s3 = require('../s3')
+const upload = require('../middleware/upload');
 
 router.get('/', async (req, res, next) => {
     try {
@@ -23,9 +24,13 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', upload.single('file'), async (req, res, next) => {
     try {
-        const fileContent = Buffer.from(req.files.file.data, 'binary');
+        if (!req.file) {
+            return res.status(400).json({ message: 'No slide image uploaded' });
+        }
+
+        const fileContent = req.file.buffer;
         const params = {
             Bucket: 'main-slides',
             Key: `main-slide-item-${Math.floor(Math.random() * 9999).toString()}.jpg`, // File name you want to save as in S3

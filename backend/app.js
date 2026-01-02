@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
-const fileUpload = require('express-fileupload');
 
 mongoose.connect(process.env.MONGODB_URL, (err) => {
   if (err) console.log(err);
@@ -37,7 +36,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/image', express.static('uploads'));
-app.use(fileUpload());
 
 // CORS
 app.use(cors());

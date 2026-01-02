@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const productModel = require("../models/productModel");
 const s3 = require('../s3')
+const upload = require('../middleware/upload');
 
 // Get all products
 router.get("/", async (req, res, next) => {
@@ -96,13 +97,13 @@ router.delete("/:id", async (req, res, next) => {
 });
 
 // Upload a product
-router.post('/', async (req, res, next) => {
-	if (req?.files?.file) {
+router.post('/', upload.single('file'), async (req, res, next) => {
+	if (req.file) {
 		try {
 			var product_id = Date.now();
 			req.body.id = product_id;
 
-			const fileContent = Buffer.from(req.files.file.data, 'binary');
+			const fileContent = req.file.buffer;
 			const params = {
 				Bucket: 'pryerek-product-thumbs',
 				Key: `${product_id}.jpg`, // File name you want to save as in S3
@@ -151,12 +152,12 @@ router.post('/update/:id', async (req, res, next) => {
 
 
 // Update thumb
-router.post('/update_thumb/:id', async (req, res, next) => {
+router.post('/update_thumb/:id', upload.single('file'), async (req, res, next) => {
 	let id = req.params.id;
 
 	try {
-		if (req.files?.file) {
-			const fileContent = Buffer.from(req.files.file.data, 'binary');
+		if (req.file) {
+			const fileContent = req.file.buffer;
 			const params = {
 				Bucket: 'pryerek-product-thumbs',
 				Key: `${id}.jpg`,
