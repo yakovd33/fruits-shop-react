@@ -7,9 +7,7 @@
     ],
     "functions": {
         "app.js": {
-            "includeFiles": [
-                "node_modules/busboy/**"
-            ]
+            "includeFiles": "node_modules/busboy/**"
         }
     }
 }
