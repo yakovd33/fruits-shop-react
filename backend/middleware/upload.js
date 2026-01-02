@@ -1,8 +1,8 @@
-const multer = require('multer');
+import multer, { memoryStorage } from 'multer';
 
 const MAX_FILE_SIZE_MB = 8;
 
-const storage = multer.memoryStorage();
+const storage = memoryStorage();
 
 const upload = multer({
     storage,
@@ -11,4 +11,4 @@ const upload = multer({
     }
 });
 
-module.exports = upload;
+export default upload;
