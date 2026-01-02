@@ -3,7 +3,6 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineShoppingCart } from 'react-icon
 import { TbTrash } from 'react-icons/tb';
 import ReactTooltip from 'react-tooltip';
 import axios from 'axios';
-import Image from 'next/image';
 import { BsInfoCircleFill } from 'react-icons/bs'
 import { addToCartAnimation, handleRemoveFromCart, productHandleMinus, productHandlePlus } from '../helpers/CartHelper';
 import globalStore from '../stores/GlobalStore';
@@ -145,18 +144,17 @@ const ProductShowcase = ({ id, name, price, salePrice, priceKg, salePriceKg, des
 
             <div className="product-showcase-image">
                 { badge && <span className="discount-badge">{ badge }</span> }
-                <Image
+                <img
                     src={image}
                     alt="פרי וירק ארצנו"
                     height="200"
                     width="200"
-                    blurDataURL="URL"
-                    placeholder="blur"
                     loading="lazy"
                     onClick={openProductPopup}
                     style={{
                         width: 'auto',
                         height: 'auto',
+                        cursor: 'pointer',
                     }}
                 />
             </div>
