@@ -4,5 +4,12 @@
     ],
     "routes": [
         { "src": "/(.*)", "dest": "app.js" }
-    ]
+    ],
+    "functions": {
+        "app.js": {
+            "includeFiles": [
+                "node_modules/busboy/**"
+            ]
+        }
+    }
 }
