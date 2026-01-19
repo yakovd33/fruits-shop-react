@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const slideModel = require('../models/heroSlide');
 const s3 = require('../s3')
-const upload = require('../middleware/upload').default;
+const upload = require('../middleware/upload');
 
 router.get('/', async (req, res, next) => {
     try {

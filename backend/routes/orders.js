@@ -7,6 +7,7 @@ const axios = require('axios').default;
 var FormData = require('form-data');
 const discountModel = require('../models/discountModel');
 const citiesModel = require('../models/cityModel');
+const { validateCouponForTotal } = require('../utils/couponService');
 
 // Get all orders
 router.get("/", async (req, res, next) => {
@@ -74,10 +75,8 @@ router.post("/", async function (req, res, next) {
 		let final_price = 0;
 
 		if (!cart) {
-			res.status(500).json({msg: 'עגלה לא תקינה. צרו עמנו קשר'})
+			return res.status(500).json({msg: 'עגלה לא תקינה. צרו עמנו קשר'});
 		}
-
-		let test = 'aa';
 
 		for (var i = 0; i < cart.length; i++) {
 			let productId = cart[i].id;
@@ -102,16 +101,34 @@ router.post("/", async function (req, res, next) {
 			}
 		}
 
-		req.body.price = final_price;
+		const cartSubtotal = final_price;
+		let couponDiscount = 0;
 
-		if (final_price < 250) {
+		if (req.body.couponCode) {
+			const couponResult = await validateCouponForTotal(req.body.couponCode, cartSubtotal, { consume: true });
+			if (!couponResult.valid) {
+				return res.status(400).json({ msg: couponResult.message || 'קופון אינו תקף' });
+			}
+
+			couponDiscount = couponResult.discount;
+			req.body.couponCode = couponResult.coupon.code;
+		} else {
+			req.body.couponCode = null;
+		}
+
+		final_price = Math.max(cartSubtotal - couponDiscount, 0);
+		req.body.couponDiscount = couponDiscount;
+
+		if (cartSubtotal < 250) {
 			req.body.gift = null;
 
 			// Get shipping price
 			let city = await citiesModel.findOne({ _id: req.body.city });
-			let shipping_price = city.price;
+			let shipping_price = city?.price ? Number(city.price) : 0;
 			final_price += shipping_price;
 		}
+
+		req.body.price = final_price;
 		
 		const newOrder = new Order(req.body);
 		await newOrder.save();

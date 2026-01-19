@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const productModel = require("../models/productModel");
 const s3 = require('../s3')
-const upload = require('../middleware/upload').default;
+const upload = require('../middleware/upload');
 
 // Get all products
 router.get("/", async (req, res, next) => {
