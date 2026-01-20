@@ -69,50 +69,56 @@ const Category = ({ cartItems, setCartItems }) => {
     const [subcategoriesLoading, setSubcategoriesLoading] = useState(false);
 
     const loadProducts = () => {
-		if (pageLoaded) {
-			let query = '&category_id=' + cid;
+        if (!router.isReady || !cid) {
+            return;
+        }
 
-			if (searchKeywords.length) {
-				query += `&search=${searchKeywords}`;
-			}
+        let query = '&category_id=' + cid;
 
-            if (subcategory) {
-                query += `&subcategory=${subcategory}`
+        if (searchKeywords.length) {
+            query += `&search=${searchKeywords}`;
+        }
+
+        if (subcategory) {
+            query += `&subcategory=${subcategory}`
+        }
+
+        axios.get(process.env.NEXT_PUBLIC_API_URL + "/products/?page=" + curPage + query).then((res) => {
+            if (curPage == 1) {
+                setProducts(res.data.products);
+            } else {
+                setProducts((prevProducts) => prevProducts.concat(res.data.products));
             }
 
-            axios.get(process.env.NEXT_PUBLIC_API_URL + "/products/?page=" + curPage + query).then((res) => {
-            	if (curPage == 1) {
-            		setProducts(res.data.products);
-            	} else {
-            		setProducts(products.concat(res.data.products));
-            	}
+            if (!res.data.products.length) {
+                setHasMore(false);
+            }
+        });
+    };
 
-            	if (!res.data.products.length) {
-            		setHasMore(false);
-            	}
-            });
-		}
-	};
+    useEffect(() => {
+        if (pageLoaded) {
+            loadProducts();
+        }
+    }, [curPage]);
 
-	useEffect(() => {
-		if (pageLoaded) {
-			loadProducts();
-		}
-	}, [curPage]);
+    useEffect(() => {
+        if (pageLoaded) {
+            setProducts([]);
+            setCurPage(1);
+            setHasMore(true);
+            loadProducts();
+        }
+    }, [searchKeywords, router.query]);
 
-	useEffect(() => {
-		if (pageLoaded) {
-			setProducts([]);
-			setCurPage(1);
-			setHasMore(true);
-			loadProducts();
-		}
-	}, [searchKeywords, router.query]);
+    useEffect(() => {
+        if (!router.isReady) {
+            return;
+        }
 
-	useEffect(() => {
         loadProducts();
-		setPageLoaded(true)
-	}, [])
+        setPageLoaded(true)
+    }, [router.isReady])
 
     useEffect(() => {
         if (!cid) {
