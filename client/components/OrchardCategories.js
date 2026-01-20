@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const OrchardCategories = ({
@@ -34,6 +35,7 @@ const OrchardCategories = ({
 			bottom: '0',
 			...(mediaConfig.style || {})
 		};
+		const resolvedCtaLabel = item.cardCtaLabel || cardCtaLabel;
 
 		return (
 			<article
@@ -53,10 +55,17 @@ const OrchardCategories = ({
 					<p>{ item.description }</p>
 				</div>
 				<footer className="orchard-card-footer">
-					<button type="button" className="orchard-card-link" onClick={ handleCtaClick }>
-						{ cardCtaLabel }
-						<AiOutlineArrowLeft />
-					</button>
+					{ item.href ? (
+						<Link href={ item.href } className="orchard-card-link" aria-label={ `${item.title} – ${resolvedCtaLabel}` }>
+							{ resolvedCtaLabel }
+							<AiOutlineArrowLeft />
+						</Link>
+					) : (
+						<button type="button" className="orchard-card-link" onClick={ handleCtaClick }>
+							{ resolvedCtaLabel }
+							<AiOutlineArrowLeft />
+						</button>
+					) }
 				</footer>
 			</article>
 		);

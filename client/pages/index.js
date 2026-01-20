@@ -44,6 +44,7 @@ const orchardHighlights = {
 	leftColumn: [
 		{
 			id: 'forest-mushrooms',
+			href: '/category/4?subcategory=עלים',
 			badge: 'שף ממליץ',
 			title: 'ירוקים זה החיים',
 			description: 'מבחר ירוקים ועלים טריים לבישול וסלטים.',
@@ -64,6 +65,7 @@ const orchardHighlights = {
 		},
 		{
 			id: 'root-colors',
+			href: '/category/4?subcategory=פטריות',
 			badge: 'שוק הצבעים',
 			title: 'פטריות או לא להיות',
 			description: 'מבחר פטריות טריות לבישול ומנות גורמה.',
@@ -82,6 +84,7 @@ const orchardHighlights = {
 		},
 		{
 			id: 'leafy-delight',
+			href: '/category/3',
 			badge: 'מומלץ לתזונה',
 			title: 'המעדנייה',
 			description: 'מוצרי מעדנייה איכותיים לכריכים ובישול.',
@@ -103,6 +106,7 @@ const orchardHighlights = {
 	rightColumn: {
 		feature: {
 			id: 'warm-basket',
+			href: '/category/2',
 			badge: 'עונה עכשיו',
 			title: 'פירות העונה',
 			description: 'מבחר פירות טריים, עסיסיים, צבעוניים ומלאי טעם.',
@@ -123,6 +127,7 @@ const orchardHighlights = {
 		secondary: [
 			{
 				id: 'herb-garden',
+				href: '/category/5?subcategory=מאפייה',
 				badge: 'עלי תיבול',
 				title: 'המאפייה',
 				description: 'מאפים ולחמים טריים שנאפים מדי יום.',
@@ -140,6 +145,7 @@ const orchardHighlights = {
 			},
 			{
 				id: 'japanese-greens',
+				href: '/category/28',
 				badge: 'חדש',
 				title: 'המארזים שלנו',
 				description: 'מארזים מוכנים ומעוצבים, מתאימים לכל אירוע וחג.',
