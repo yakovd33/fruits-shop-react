@@ -6,6 +6,10 @@
     .container {
         max-width: 1250px !important;
     }
+
+    #header-links {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
